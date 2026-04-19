@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import NavbarLayoutFloatingOverlay from "@/components/navbar/NavbarLayoutFloatingOverlay/NavbarLayoutFloatingOverlay";
 import HeroSplitDoubleCarousel from "@/components/sections/hero/HeroSplitDoubleCarousel";
 import FeatureBento from "@/components/sections/feature/FeatureBento";
+import ServicesStackSection from "@/components/sections/services/ServicesStackSection";
 import FeatureCardTwentySix from "@/components/sections/feature/FeatureCardTwentySix";
 import FeatureCardSixteen from "@/components/sections/feature/FeatureCardSixteen";
 import MetricCardOne from "@/components/sections/metrics/MetricCardOne";
@@ -69,47 +70,37 @@ export default function WebAgency2Page() {
           ]}
           carouselItemClassName="!aspect-[4/5]"
         />
-        <section id="services">
-          <FeatureBento
-            title="Our Core Services"
-            description="What We Build. Comprehensive digital solutions for modern brands."
-            textboxLayout="default"
-            useInvertedBackground={false}
-            animationType="slide-up"
-            buttons={[{ text: "Explore All", href: "#services" }]}
-            buttonAnimation="slide-up"
-          features={[
+        <ServicesStackSection
+          eyebrow="What We Do"
+          title="Our Services"
+          description="Comprehensive digital solutions for modern brands."
+          services={[
             {
+              number: "01",
+              label: "Service 01",
               title: "Custom Web Apps",
-              description: "Scalable, high-performance web applications built with modern technology stacks.",
-              bentoComponent: "marquee",
-              centerIcon: Zap,
-              variant: "text",
-              texts: ["React", "Next.js", "TypeScript", "APIs", "Cloud Deploy", "Performance", "Security", "Scalability"],
+              description: "Scalable, high-performance web applications built with modern technology stacks. We merge innovation with creativity to deliver intuitive, visually stunning platforms that captivate audiences and adapt to future opportunities.",
+              imageSrc: "/images/web-agency-2/macbook-mockup.png",
+              imageAlt: "PD Labs web platform",
             },
             {
+              number: "02",
+              label: "Service 02",
               title: "UI & UX Design",
-              description: "Beautiful, intuitive interfaces that engage users and drive conversions.",
-              bentoComponent: "media-stack",
-              items: [
-                { imageSrc: "/images/web-agency-2/macbook-mockup.png", imageAlt: "PD Labs web design" },
-                { imageSrc: "/images/web-agency-2/phone-in-hand-2.jpg", imageAlt: "PD Labs mobile design" },
-                { imageSrc: "/images/web-agency-2/venue-mockup.jpg", imageAlt: "PD Labs presentation design" },
-              ],
+              description: "Beautiful, intuitive interfaces that engage users and drive conversions. We craft visuals and layouts that communicate purpose, inspire trust, and connect emotionally with your audience.",
+              imageSrc: "/images/web-agency-2/phone-in-hand-2.jpg",
+              imageAlt: "PD Labs mobile design",
             },
             {
+              number: "03",
+              label: "Service 03",
               title: "Brand Identity",
-              description: "Complete brand solutions that resonate with your target audience.",
-              bentoComponent: "media-stack",
-              items: [
-                { imageSrc: "/images/web-agency-2/hoodie-mockup.jpg", imageAlt: "PD Labs brand merchandise" },
-                { imageSrc: "/images/web-agency-2/tshirt-mockup.jpg", imageAlt: "PD Labs brand apparel" },
-                { imageSrc: "/images/web-agency-2/pd-bcard.jpg", imageAlt: "PD Labs business card" },
-              ],
+              description: "Complete brand solutions that resonate with your target audience. From logo and typography to merchandise and collateral — we build brands that leave a lasting impression.",
+              imageSrc: "/images/web-agency-2/pd-bcard.jpg",
+              imageAlt: "PD Labs brand identity",
             },
           ]}
-          />
-        </section>
+        />
         <section id="portfolio">
           <FeatureCardTwentySix
             title="Featured Projects"
