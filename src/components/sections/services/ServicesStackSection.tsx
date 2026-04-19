@@ -51,10 +51,10 @@ export default function ServicesStackSection({
                 {/* Left: label, number, title, description */}
                 <div className="relative w-full md:w-1/2 md:h-full flex flex-col justify-between p-8 md:p-12">
                   <div className="flex flex-col gap-4 md:gap-6">
-                    <span className="px-3 py-1 text-sm rounded-full border border-foreground/15 bg-foreground/5 inline-flex items-center gap-2 w-fit text-foreground/60">
+                    <span className="px-3 py-1 text-sm rounded-full border border-foreground/15 bg-foreground/5 inline-flex items-center gap-2 w-fit text-foreground/60 font-mono">
                       {service.label}
                     </span>
-                    <h2 className="text-6xl md:text-8xl font-medium leading-none text-foreground">
+                    <h2 className="text-6xl md:text-8xl font-medium leading-none text-foreground font-mono">
                       {service.number}
                     </h2>
                   </div>
