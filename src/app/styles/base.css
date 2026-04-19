@@ -11,7 +11,7 @@ html {
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter-tight), sans-serif;
+  font-family: 'Satoshi', sans-serif;
   position: relative;
   min-height: 100vh;
   overscroll-behavior: none;
@@ -24,5 +24,13 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-inter-tight), sans-serif;
+  font-family: 'Satoshi', sans-serif;
+}
+
+code,
+pre,
+kbd,
+samp,
+.font-mono {
+  font-family: var(--font-jetbrains-mono), monospace;
 }
