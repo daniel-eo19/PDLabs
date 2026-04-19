@@ -92,9 +92,9 @@ export default function WebAgency2Page() {
               description: "Beautiful, intuitive interfaces that engage users and drive conversions.",
               bentoComponent: "media-stack",
               items: [
-                { imageSrc: "/images/web-agency-2/dev-2.webp", imageAlt: "UI Design project" },
-                { imageSrc: "/images/web-agency-2/dev-1.webp", imageAlt: "UX Design project" },
-                { imageSrc: "/images/web-agency-2/dev-3.webp", imageAlt: "Design system project" },
+                { imageSrc: "/images/web-agency-2/macbook-mockup.png", imageAlt: "PD Labs web design" },
+                { imageSrc: "/images/web-agency-2/phone-in-hand-2.jpg", imageAlt: "PD Labs mobile design" },
+                { imageSrc: "/images/web-agency-2/venue-mockup.jpg", imageAlt: "PD Labs presentation design" },
               ],
             },
             {
@@ -102,9 +102,9 @@ export default function WebAgency2Page() {
               description: "Complete brand solutions that resonate with your target audience.",
               bentoComponent: "media-stack",
               items: [
-                { imageSrc: "/images/web-agency-2/shot-1.webp", imageAlt: "Brand identity 1" },
-                { imageSrc: "/images/web-agency-2/shot-2.webp", imageAlt: "Brand identity 2" },
-                { imageSrc: "/images/web-agency-2/shot-4.webp", imageAlt: "Brand identity 3" },
+                { imageSrc: "/images/web-agency-2/hoodie-mockup.jpg", imageAlt: "PD Labs brand merchandise" },
+                { imageSrc: "/images/web-agency-2/tshirt-mockup.jpg", imageAlt: "PD Labs brand apparel" },
+                { imageSrc: "/images/web-agency-2/pd-bcard.jpg", imageAlt: "PD Labs business card" },
               ],
             },
           ]}
