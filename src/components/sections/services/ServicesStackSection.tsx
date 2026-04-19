@@ -70,7 +70,7 @@ export default function ServicesStackSection({
 
                 {/* Right: ghost number + rotated image */}
                 <div className="relative w-full md:w-5/12 md:h-full flex flex-col gap-6 p-8 md:p-12">
-                  <span className="hidden md:block text-9xl font-medium text-foreground/8 self-end leading-none select-none">
+                  <span className="hidden md:block text-9xl font-medium text-foreground/8 self-end leading-none select-none font-mono">
                     {service.number}
                   </span>
                   <div className="relative flex-1 min-h-0 w-full rounded-xl overflow-hidden rotate-3">
