@@ -25,7 +25,7 @@ export default function ServicesStackSection({
   services,
 }: ServicesStackSectionProps) {
   return (
-    <section className="relative overflow-visible h-fit py-20 w-full" id="services">
+    <section className="relative overflow-visible h-fit py-20 w-full">
       <div className="w-content-width mx-auto flex flex-col gap-12">
 
         {/* Header */}
