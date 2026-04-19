@@ -56,6 +56,13 @@ const ButtonTextStagger = ({
           bgClassName
         )}
       ></div>
+      {className.includes("glossy-btn") && (
+        <span
+          aria-hidden="true"
+          className="glossy-sweep absolute! inset-0 rounded-theme pointer-events-none"
+          style={{ zIndex: 2 }}
+        />
+      )}
       <span
         data-button-animate-chars=""
         className={cls(
