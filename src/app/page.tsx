@@ -233,7 +233,7 @@ export default function WebAgency2Page() {
           rating={5}
           author="— Client Success Story"
           avatars={[
-            { src: "/images/web-agency-2/team-1.webp", alt: "Client testimonial" },
+            { src: "/images/web-agency-2/phone-in-hand-2.jpg", alt: "Client testimonial" },
           ]}
           ratingAnimation="slide-up"
             avatarsAnimation="slide-up"
@@ -289,9 +289,9 @@ export default function WebAgency2Page() {
           animationType="slide-up"
           mediaClassName="object-[65%_center]"
           team={[
-            { id: "1", name: "Team Member", role: "Lead Developer", imageSrc: "/images/web-agency-2/team-1.webp", imageAlt: "Team member" },
-            { id: "2", name: "Team Member", role: "Creative Director", imageSrc: "/images/web-agency-2/team-2.webp", imageAlt: "Team member" },
-              { id: "3", name: "Team Member", role: "UX Designer", imageSrc: "/images/web-agency-2/team-3.webp", imageAlt: "Team member" },
+            { id: "1", name: "Team Member", role: "Lead Developer", imageSrc: "/images/web-agency-2/phone-in-hand-2.jpg", imageAlt: "Team member" },
+            { id: "2", name: "Team Member", role: "Creative Director", imageSrc: "/images/web-agency-2/phone-in-hand-3.jpg", imageAlt: "Team member" },
+            { id: "3", name: "Team Member", role: "UX Designer", imageSrc: "/images/web-agency-2/phone-in-hand-4.jpg", imageAlt: "Team member" },
             ]}
           />
         </section>
