@@ -55,17 +55,17 @@ export default function WebAgency2Page() {
           buttonAnimation="slide-up"
           carouselPosition="right"
           leftCarouselItems={[
-            { imageSrc: "/images/web-agency-2/shot-1.webp", imageAlt: "UI UX Design - Daily Life app" },
-            { imageSrc: "/images/web-agency-2/shot-4.webp", imageAlt: "UI UX Design - SaaS platform" },
-            { imageSrc: "/images/web-agency-2/shot-6.webp", imageAlt: "UI UX Design - Luminé skincare" },
-            { imageSrc: "/images/web-agency-2/shot-7.webp", imageAlt: "UI UX Design - Online courses" },
-            { imageSrc: "/images/web-agency-2/shot-9.webp", imageAlt: "UI UX Design - Business coach" },
+            { imageSrc: "/images/web-agency-2/phone-in-hand-2.jpg", imageAlt: "PD Labs - Mobile app design" },
+            { imageSrc: "/images/web-agency-2/phone-in-hand-3.jpg", imageAlt: "PD Labs - Mobile experience" },
+            { imageSrc: "/images/web-agency-2/phone-in-hand-4.jpg", imageAlt: "PD Labs - Digital product" },
+            { imageSrc: "/images/web-agency-2/hoodie-mockup.jpg", imageAlt: "PD Labs - Brand merchandise" },
+            { imageSrc: "/images/web-agency-2/tshirt-mockup.jpg", imageAlt: "PD Labs - Brand apparel" },
           ]}
           rightCarouselItems={[
-            { imageSrc: "/images/web-agency-2/shot-2.webp", imageAlt: "UI UX Design - Luxuria travel" },
-            { imageSrc: "/images/web-agency-2/shot-5.webp", imageAlt: "UI UX Design - Dental practice" },
-            { imageSrc: "/images/web-agency-2/shot-3.webp", imageAlt: "UI UX Design - AI product builder" },
-            { imageSrc: "/images/web-agency-2/shot-8.webp", imageAlt: "UI UX Design - AI automation" },
+            { imageSrc: "/images/web-agency-2/macbook-mockup.png", imageAlt: "PD Labs - Web platform" },
+            { imageSrc: "/images/web-agency-2/venue-mockup.jpg", imageAlt: "PD Labs - Venue presentation" },
+            { imageSrc: "/images/web-agency-2/pd-bcard.jpg", imageAlt: "PD Labs - Brand identity" },
+            { imageSrc: "/images/web-agency-2/pd-favicon.jpg", imageAlt: "PD Labs - Logo design" },
           ]}
           carouselItemClassName="!aspect-[4/5]"
         />
