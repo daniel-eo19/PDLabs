@@ -29,6 +29,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${jetbrainsMono.variable} antialiased`}>
+        <Preloader />
         {children}
       </body>
     </html>
