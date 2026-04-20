@@ -567,7 +567,7 @@ export default function PortfolioPage() {
         {/* ── CTA ──────────────────────────────────────────────────────── */}
         <section
           className="mt-8 mb-16 md:mt-12 md:mb-24 py-16 md:py-24 border-t border-b flex flex-col md:flex-row items-start md:items-end justify-between gap-8"
-          style={{ borderColor: "var(--foreground)", borderOpacity: 0.08 }}
+          style={{ borderColor: "rgba(255,255,255,0.08)" }}
         >
           <div className="flex flex-col gap-3">
             <span
