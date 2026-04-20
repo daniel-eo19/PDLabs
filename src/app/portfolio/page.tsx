@@ -203,22 +203,28 @@ export default function PortfolioPage() {
         <section className="relative overflow-visible h-fit pb-20 w-full">
           <div className="w-content-width mx-auto flex flex-col gap-8">
 
-            {/* Filter pills */}
-            <div className="flex flex-wrap gap-2" role="group" aria-label="Filter projects by category">
-              {FILTERS.map((filter) => (
-                <button
-                  key={filter}
-                  onClick={() => setActiveFilter(filter)}
-                  aria-pressed={activeFilter === filter}
-                  className={`px-3 py-1 text-sm rounded-full border font-mono transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/30 ${
-                    activeFilter === filter
-                      ? "border-foreground/35 bg-foreground/10 text-foreground"
-                      : "border-foreground/15 bg-foreground/5 text-foreground/55 hover:border-foreground/25 hover:text-foreground/75"
-                  }`}
-                >
-                  {filter}
-                </button>
-              ))}
+            {/* Filter tab bar */}
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-mono text-foreground/30 uppercase tracking-widest">Filter</span>
+              <div
+                role="group"
+                aria-label="Filter projects by category"
+                className="flex items-center gap-1 p-1 rounded-full border border-foreground/10 bg-foreground/[0.03]"
+              >
+                {FILTERS.map((filter) => (
+                  <button
+                    key={filter}
+                    onClick={() => setActiveFilter(filter)}
+                    className={`px-4 py-1.5 text-sm rounded-full font-mono transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/30 whitespace-nowrap ${
+                      activeFilter === filter
+                        ? "bg-foreground/12 text-foreground"
+                        : "text-foreground/45 hover:text-foreground/70"
+                    }`}
+                  >
+                    {filter}
+                  </button>
+                ))}
+              </div>
             </div>
 
             {/* Card stack */}
@@ -302,6 +308,8 @@ export default function PortfolioPage() {
                 </div>
               </div>
             ))}
+            </div>
+
           </div>
         </section>
 
