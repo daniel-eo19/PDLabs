@@ -384,10 +384,10 @@ export default function WebAgency2Page() {
             {
               title: "Services",
               items: [
-                { label: "Custom Web Apps", href: "#" },
-                { label: "UI & UX Design", href: "#" },
-                { label: "Brand Identity", href: "#" },
-                { label: "Development", href: "#" },
+                { label: "Custom Web Apps & Landing Pages", href: "#services" },
+                { label: "Mobile App Development", href: "#services" },
+                { label: "UI & UX Design", href: "#services" },
+                { label: "Brand Identity", href: "#services" },
               ],
             },
             {
