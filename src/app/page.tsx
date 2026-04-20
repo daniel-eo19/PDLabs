@@ -153,7 +153,7 @@ export default function WebAgency2Page() {
             description="Latest work showcasing our expertise in digital design and development."
             textboxLayout="default"
             useInvertedBackground={false}
-            buttons={[{ text: "View Portfolio", href: "#portfolio" }]}
+            buttons={[{ text: "View Portfolio", href: "/portfolio" }]}
             buttonAnimation="slide-up"
             cardClassName="!h-auto aspect-video"
             features={[
