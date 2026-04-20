@@ -10,24 +10,25 @@ export default function Preloader() {
   useEffect(() => {
     if (!ref.current) return;
 
-    const barLeft   = ref.current.querySelector<HTMLElement>(".pl-bar-left");
-    const barRight  = ref.current.querySelector<HTMLElement>(".pl-bar-right");
-    const textTop   = ref.current.querySelector<HTMLElement>(".pl-text-top");
-    const textBot   = ref.current.querySelector<HTMLElement>(".pl-text-bottom");
-    const overlay   = ref.current.querySelector<HTMLElement>(".pl-overlay");
+    const overlay    = ref.current.querySelector<HTMLElement>(".pl-overlay");
+    const barL       = ref.current.querySelector<HTMLElement>(".pl-bar-l");
+    const barR       = ref.current.querySelector<HTMLElement>(".pl-bar-r");
+    const topInner   = ref.current.querySelector<HTMLElement>(".pl-top-inner");
+    const botInner   = ref.current.querySelector<HTMLElement>(".pl-bot-inner");
 
     document.body.style.overflow = "hidden";
 
-    /* ─── Initial states ─────────────────────────────────────────── */
-    // Bars: collapsed to 0 width, anchored at the screen center
-    gsap.set(barLeft,  { scaleX: 0, transformOrigin: "right center" });
-    gsap.set(barRight, { scaleX: 0, transformOrigin: "left center"  });
+    /*
+     * INITIAL STATE
+     * Bars:  8×8 px white squares, centred on screen, no height yet
+     * Text:  "PD" starts BELOW its clip  (y = +100%)
+     *        "LABS" starts ABOVE its clip (y = -100%)
+     */
+    gsap.set(barL,     { width: 8,  height: 8 });
+    gsap.set(barR,     { width: 8,  height: 8 });
+    gsap.set(topInner, { y: "100%" });
+    gsap.set(botInner, { y: "-100%" });
 
-    // Text: hidden off-screen on opposite sides
-    gsap.set(textTop, { xPercent: 120 });   // "PD"   starts off RIGHT
-    gsap.set(textBot, { xPercent: -120 });  // "LABS" starts off LEFT
-
-    /* ─── Timeline ───────────────────────────────────────────────── */
     const tl = gsap.timeline({
       onComplete: () => {
         document.body.style.overflow = "";
@@ -36,32 +37,54 @@ export default function Preloader() {
     });
 
     tl
-      // 1 ─ Bars grow from the centre outward into blocks
-      .to([barLeft, barRight], {
-        scaleX: 0.35,
+      /*
+       * PHASE 1 — squares grow into horizontal bars
+       * Matches: "minimal bar elements → structured blocks"
+       */
+      .to([barL, barR], {
+        width:    "clamp(80px, 11vw, 140px)",
+        height:   8,
         duration: 0.55,
-        ease: "power3.out",
+        ease:     "power3.out",
       })
 
-      // 2 ─ Text slides in from opposite sides (split typography reveal)
-      .to(textTop, { xPercent: 0, duration: 0.5, ease: "power3.out" }, "-=0.25")
-      .to(textBot, { xPercent: 0, duration: 0.5, ease: "power3.out" }, "<")
+      /*
+       * PHASE 2 — split typography reveal (opposing direction)
+       * "PD"   rises  UP  into its clip container (from below)
+       * "LABS" drops DOWN into its clip container (from above)
+       */
+      .to(topInner, { y: "0%", duration: 0.5, ease: "power3.out" }, "+=0.05")
+      .to(botInner, { y: "0%", duration: 0.5, ease: "power3.out" }, "<")
 
-      // 3 ─ Hold so the full logo is readable
-      .to({}, { duration: 0.65 })
+      /* HOLD — let the logo be seen */
+      .to({}, { duration: 0.7 })
 
-      // 4 ─ Text exits: top slides UP, bottom slides DOWN
-      .to(textTop, { yPercent: -130, duration: 0.45, ease: "power3.in" })
-      .to(textBot, { yPercent:  130, duration: 0.45, ease: "power3.in" }, "<")
+      /*
+       * PHASE 3 — text exits (reverse of entry)
+       * "PD"   exits UP,   "LABS" exits DOWN
+       */
+      .to(topInner, { y: "-105%", duration: 0.45, ease: "power3.in" })
+      .to(botInner, { y:  "105%", duration: 0.45, ease: "power3.in" }, "<")
 
-      // 5 ─ Bars expand to cover the full screen
-      .to([barLeft, barRight], {
-        scaleX: 1,
-        duration: 0.5,
-        ease: "power3.inOut",
-      }, "-=0.35")
+      /*
+       * PHASE 4 — bars expand to full-screen block
+       * First grow tall (100 vh), then fill the full width
+       * Matches: "expands into a full-screen transition"
+       */
+      .to([barL, barR], {
+        height:   "100vh",
+        duration: 0.35,
+        ease:     "power3.inOut",
+      }, "-=0.3")
+      .to([barL, barR], {
+        width:    "50vw",
+        duration: 0.4,
+        ease:     "power3.inOut",
+      }, "-=0.2")
 
-      // 6 ─ Fade out the whole overlay, revealing the site
+      /*
+       * PHASE 5 — clean fade out, revealing the site
+       */
       .to(overlay, { opacity: 0, duration: 0.4, ease: "power2.inOut" });
 
     return () => {
@@ -72,6 +95,9 @@ export default function Preloader() {
 
   if (hidden) return null;
 
+  /* ─── Shared text style ─────────────────────────────────────── */
+  const fs = "clamp(52px, 9.5vw, 112px)";
+
   return (
     <div
       ref={ref}
@@ -79,59 +105,66 @@ export default function Preloader() {
       style={{ zIndex: 99999 }}
       aria-hidden="true"
     >
+      {/* Full-screen dark backdrop */}
       <div className="pl-overlay absolute inset-0 bg-[#080808]">
 
-        {/* ── Left bar: full height, anchored to right edge of left half ── */}
-        <div
-          className="pl-bar-left absolute top-0 left-0 h-full bg-white"
-          style={{ width: "50%" }}
-        />
+        {/* Centred layout column: [top clip] [bars] [bottom clip] */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="flex flex-col items-center" style={{ gap: 0 }}>
 
-        {/* ── Right bar: full height, anchored to left edge of right half ── */}
-        <div
-          className="pl-bar-right absolute top-0 right-0 h-full bg-white"
-          style={{ width: "50%" }}
-        />
+            {/*
+              TOP CLIP — overflow:hidden hides "PD" until it slides up.
+              Height must match the rendered line-height of the text.
+            */}
+            <div className="overflow-hidden" style={{ height: fs }}>
+              <div className="pl-top-inner">
+                <span style={{
+                  display:        "block",
+                  fontFamily:     "'Satoshi', sans-serif",
+                  fontWeight:     900,
+                  fontSize:       fs,
+                  lineHeight:     1,
+                  letterSpacing:  "-0.04em",
+                  color:          "#ffffff",
+                  whiteSpace:     "nowrap",
+                }}>
+                  PD
+                </span>
+              </div>
+            </div>
 
-        {/* ── Brand name split across two lines ─────────────────────────── */}
-        <div
-          className="absolute inset-0 flex flex-col items-center justify-center"
-          style={{ zIndex: 10, gap: "0.05em" }}
-        >
-          {/* "PD" — slides in from the RIGHT */}
-          <div className="pl-text-top overflow-hidden">
-            <span
-              style={{
-                display: "block",
-                fontFamily: "'Satoshi', sans-serif",
-                fontWeight: 900,
-                fontSize: "clamp(56px, 11vw, 130px)",
-                lineHeight: 0.88,
-                letterSpacing: "-0.04em",
-                color: "#ffffff",
-                whiteSpace: "nowrap",
-              }}
-            >
-              PD
-            </span>
-          </div>
+            {/* BARS — start as two 8×8 squares, grow outward */}
+            <div className="flex items-center justify-center" style={{ gap: 4 }}>
+              <div
+                className="pl-bar-l bg-white"
+                style={{ width: 8, height: 8, transformOrigin: "right center" }}
+              />
+              <div
+                className="pl-bar-r bg-white"
+                style={{ width: 8, height: 8, transformOrigin: "left center" }}
+              />
+            </div>
 
-          {/* "LABS" — slides in from the LEFT */}
-          <div className="pl-text-bottom overflow-hidden">
-            <span
-              style={{
-                display: "block",
-                fontFamily: "'Satoshi', sans-serif",
-                fontWeight: 900,
-                fontSize: "clamp(56px, 11vw, 130px)",
-                lineHeight: 0.88,
-                letterSpacing: "-0.04em",
-                color: "#ffffff",
-                whiteSpace: "nowrap",
-              }}
-            >
-              LABS
-            </span>
+            {/*
+              BOTTOM CLIP — overflow:hidden hides "LABS" until it slides down.
+            */}
+            <div className="overflow-hidden" style={{ height: fs }}>
+              <div className="pl-bot-inner">
+                <span style={{
+                  display:        "block",
+                  fontFamily:     "'Satoshi', sans-serif",
+                  fontWeight:     900,
+                  fontSize:       fs,
+                  lineHeight:     1,
+                  letterSpacing:  "-0.04em",
+                  color:          "#ffffff",
+                  whiteSpace:     "nowrap",
+                }}>
+                  LABS
+                </span>
+              </div>
+            </div>
+
           </div>
         </div>
 
