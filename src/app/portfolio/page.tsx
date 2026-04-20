@@ -110,6 +110,9 @@ const projects: Project[] = [
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default function PortfolioPage() {
+  const [activeFilter, setActiveFilter] = useState<FilterCategory>("All");
+  const filtered = activeFilter === "All" ? projects : projects.filter((p) => p.filterCategory === activeFilter);
+
   return (
     <ThemeProvider
       defaultButtonVariant="text-stagger"
