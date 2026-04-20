@@ -10,9 +10,14 @@ import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 // DATA
 // ─────────────────────────────────────────────────────────────────────────────
 
+type FilterCategory = "All" | "Web App" | "Landing Page" | "Mobile App" | "Brand Identity";
+
+const FILTERS: FilterCategory[] = ["All", "Web App", "Landing Page", "Mobile App", "Brand Identity"];
+
 interface Project {
   id: string;
   category: string;
+  filterCategory: FilterCategory;
   title: string;
   summary: string;
   tags: string[];
