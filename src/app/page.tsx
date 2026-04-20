@@ -90,6 +90,16 @@ export default function WebAgency2Page() {
                 texts: ["React", "Next.js", "TypeScript", "APIs", "Cloud Deploy", "Performance", "Security", "Scalability"],
               },
               {
+                title: "Mobile App Development",
+                description: "Native and cross-platform mobile apps for iOS and Android. Fast, beautiful, and intuitive experiences your users will love.",
+                bentoComponent: "media-stack",
+                items: [
+                  { imageSrc: "/images/web-agency-2/phone-in-hand-2.jpg", imageAlt: "PD Labs mobile app" },
+                  { imageSrc: "/images/web-agency-2/phone-in-hand-3.jpg", imageAlt: "PD Labs mobile design" },
+                  { imageSrc: "/images/web-agency-2/phone-in-hand-4.jpg", imageAlt: "PD Labs mobile experience" },
+                ],
+              },
+              {
                 title: "UI & UX Design",
                 description: "Beautiful, intuitive interfaces that engage users and drive conversions.",
                 bentoComponent: "media-stack",
