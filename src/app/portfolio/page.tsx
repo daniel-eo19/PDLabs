@@ -224,10 +224,9 @@ function CardContent({ project }: { project: Project }) {
             key={tag}
             className="px-2.5 py-1 text-xs rounded-full border"
             style={{
-              borderColor: "var(--foreground)",
+              borderColor: "rgba(255,255,255,0.15)",
               color: "var(--foreground)",
-              opacity: 0.45,
-              borderOpacity: 0.12,
+              opacity: 0.65,
             }}
           >
             {tag}
