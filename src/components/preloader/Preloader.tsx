@@ -21,7 +21,6 @@ export default function Preloader() {
     const panels = containerRef.current.querySelectorAll<HTMLElement>(".pl-panel");
     const logo = containerRef.current.querySelector<HTMLElement>(".pl-logo");
 
-    // Prevent scroll during preloader
     document.body.style.overflow = "hidden";
 
     const tl = gsap.timeline({
@@ -34,23 +33,23 @@ export default function Preloader() {
     // Logo entrance
     tl.fromTo(
       logo,
-      { opacity: 0, y: 16 },
-      { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.65, ease: "power3.out" }
     )
       // Hold
-      .to({}, { duration: 0.9 })
-      // Logo exit
-      .to(logo, { opacity: 0, y: -12, duration: 0.4, ease: "power2.in" })
-      // Panels wipe upward with stagger
+      .to({}, { duration: 1.0 })
+      // Logo exit upward
+      .to(logo, { opacity: 0, y: -16, duration: 0.35, ease: "power2.in" })
+      // Panels wipe upward with left-to-right stagger
       .to(
         panels,
         {
-          yPercent: -100,
-          duration: 0.9,
+          yPercent: -105,
+          duration: 0.85,
           ease: "power3.inOut",
-          stagger: 0.07,
+          stagger: 0.065,
         },
-        "-=0.15"
+        "+=0.05"
       );
 
     return () => {
@@ -68,32 +67,36 @@ export default function Preloader() {
       style={{ zIndex: 99999 }}
       aria-hidden="true"
     >
-      {/* Diagonal panels */}
+      {/* Diagonal panels — skewed so the reveal edge is diagonal like Malkain */}
       {Array.from({ length: PANEL_COUNT }).map((_, i) => (
         <div
           key={i}
-          className="pl-panel absolute top-0 h-[110%] bg-[#0a0a0a]"
+          className="pl-panel absolute top-0 bg-[#080808]"
           style={{
-            left: `${i * 20 - 3}%`,
-            width: "24%",
-            transform: "skewX(-8deg)",
+            left: `${i * 20}%`,
+            width: "22%",
+            height: "110%",
+            transform: "skewX(-6deg)",
             transformOrigin: "top left",
+            /* Thin white line on right edge acts as the diagonal divider */
+            borderRight: i < PANEL_COUNT - 1 ? "1px solid rgba(255,255,255,0.12)" : "none",
           }}
         />
       ))}
 
-      {/* Logo centered above panels */}
+      {/* Logo — sits above panels, centered */}
       <div
-        className="pl-logo absolute inset-0 flex flex-col items-center justify-center gap-3 z-10"
+        className="pl-logo absolute inset-0 flex items-center justify-center z-10"
         style={{ opacity: 0 }}
       >
         <Image
           src="/images/web-agency-2/PD_LABS_PRIMARY_WHITE.png"
           alt="PD Labs"
-          width={180}
-          height={72}
+          width={200}
+          height={80}
           priority
-          className="w-[140px] md:w-[180px] h-auto"
+          className="w-[150px] md:w-[200px] h-auto select-none"
+          draggable={false}
         />
       </div>
     </div>
