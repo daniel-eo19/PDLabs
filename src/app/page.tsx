@@ -82,8 +82,8 @@ export default function WebAgency2Page() {
             buttonAnimation="slide-up"
             features={[
               {
-                title: "Custom Web Apps",
-                description: "Scalable, high-performance web applications built with modern technology stacks.",
+                title: "Custom Web Apps & Landing Pages",
+                description: "Scalable web applications and high-converting landing pages built with modern technology stacks.",
                 bentoComponent: "marquee",
                 centerIcon: Zap,
                 variant: "text",
