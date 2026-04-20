@@ -255,8 +255,7 @@ export default function PortfolioPage() {
       <header
         className="sticky top-0 z-40 w-full border-b backdrop-blur-md"
         style={{
-          borderColor: "var(--foreground)",
-          borderOpacity: 0.08,
+          borderColor: "rgba(255,255,255,0.08)",
           backgroundColor: "color-mix(in srgb, var(--background) 85%, transparent)",
         }}
       >
@@ -324,7 +323,7 @@ export default function PortfolioPage() {
           {/* Sub-row */}
           <div
             className="mt-6 pt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t"
-            style={{ borderColor: "var(--foreground)", opacity: 1, borderOpacity: 0.08 }}
+            style={{ borderColor: "rgba(255,255,255,0.08)" }}
           >
             <p
               className="text-base md:text-lg max-w-xl leading-relaxed"
