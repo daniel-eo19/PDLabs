@@ -174,7 +174,7 @@ export default function PortfolioPage() {
                 Selected Work
               </span>
               <span className="text-sm font-mono text-foreground/30">
-                {String(projects.length).padStart(2, "0")} Projects
+                {String(filtered.length).padStart(2, "0")} Projects
               </span>
             </div>
 
@@ -201,8 +201,29 @@ export default function PortfolioPage() {
 
         {/* ── Stacked project cards ─────────────────────────────────────────── */}
         <section className="relative overflow-visible h-fit pb-20 w-full">
-          <div className="w-content-width mx-auto flex flex-col gap-[6.25vh]">
-            {projects.map((project) => (
+          <div className="w-content-width mx-auto flex flex-col gap-8">
+
+            {/* Filter pills */}
+            <div className="flex flex-wrap gap-2" role="group" aria-label="Filter projects by category">
+              {FILTERS.map((filter) => (
+                <button
+                  key={filter}
+                  onClick={() => setActiveFilter(filter)}
+                  aria-pressed={activeFilter === filter}
+                  className={`px-3 py-1 text-sm rounded-full border font-mono transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/30 ${
+                    activeFilter === filter
+                      ? "border-foreground/35 bg-foreground/10 text-foreground"
+                      : "border-foreground/15 bg-foreground/5 text-foreground/55 hover:border-foreground/25 hover:text-foreground/75"
+                  }`}
+                >
+                  {filter}
+                </button>
+              ))}
+            </div>
+
+            {/* Card stack */}
+            <div className="flex flex-col gap-[6.25vh]">
+            {filtered.map((project) => (
               <div
                 key={project.id}
                 className="group sticky top-[12.5vh] w-full h-[75vh] rounded-2xl overflow-hidden border border-foreground/10 bg-card/60 backdrop-blur-md cursor-pointer transition-colors duration-300 hover:border-foreground/20"
