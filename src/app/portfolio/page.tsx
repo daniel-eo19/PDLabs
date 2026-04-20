@@ -442,8 +442,7 @@ export default function PortfolioPage() {
               key={project.id}
               className="group relative rounded-2xl overflow-hidden border cursor-pointer transition-all duration-500 hover:-translate-y-0.5"
               style={{
-                borderColor: "var(--foreground)",
-                borderOpacity: 0.1,
+                borderColor: "rgba(255,255,255,0.1)",
                 backgroundColor: "var(--card)",
               }}
             >
