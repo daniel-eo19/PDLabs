@@ -371,7 +371,7 @@ export default function WebAgency2Page() {
             description="Transform your ideas into exceptional digital experiences. Contact PD Labs today to discuss your next project."
             background={{ variant: "rotated-rays-animated" }}
             buttons={[
-              { text: "Start Your Project", href: "/#contact" },
+              { text: "Start Your Project", href: "/contact" },
               { text: "Learn More", href: "#services" },
             ]}
             buttonAnimation="slide-up"
