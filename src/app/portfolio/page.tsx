@@ -162,13 +162,15 @@ export default function PortfolioPage() {
               <span className="font-medium text-sm text-foreground">PD Labs</span>
             </Link>
 
-            <Link
-              href="/#contact"
-              className="hidden sm:inline-flex items-center gap-1.5 text-xs px-4 py-2 rounded-full border border-foreground/15 text-foreground/60 hover:bg-foreground/5 transition-all duration-200 shrink-0"
-            >
-              Start a Project
-              <ArrowUpRight className="w-3 h-3" />
-            </Link>
+            <div className="hidden sm:block shrink-0">
+              <Button
+                variant="text-stagger"
+                text="Start a Project"
+                href="/#contact"
+                className="text-secondary-cta-text"
+                bgClassName="secondary-button"
+              />
+            </div>
           </div>
         </header>
 
