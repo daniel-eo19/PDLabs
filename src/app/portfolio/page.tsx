@@ -178,8 +178,11 @@ export default function PortfolioPage() {
               </span>
             </div>
 
-            {/* Heading — matches landing page: font-medium, no tracking override */}
-            <h1 className="text-5xl sm:text-7xl md:text-8xl 2xl:text-9xl font-medium text-foreground leading-none">
+            {/* Heading — Akira Expanded display font */}
+            <h1
+              className="text-4xl sm:text-6xl md:text-7xl 2xl:text-8xl font-bold text-foreground leading-none tracking-wide uppercase"
+              style={{ fontFamily: "'Akira Expanded', sans-serif" }}
+            >
               Portfolio
             </h1>
 
@@ -245,7 +248,10 @@ export default function PortfolioPage() {
                         <span className="px-3 py-1 text-sm rounded-full border border-foreground/15 bg-foreground/5 inline-flex items-center gap-2 w-fit text-foreground/60 font-mono">
                           {project.category}
                         </span>
-                        <h2 className="text-5xl sm:text-6xl md:text-8xl font-medium leading-none text-foreground font-mono">
+                        <h2
+                          className="text-5xl sm:text-6xl md:text-8xl font-bold leading-none text-foreground"
+                          style={{ fontFamily: "'Akira Expanded', sans-serif" }}
+                        >
                           {project.id}
                         </h2>
                       </div>
