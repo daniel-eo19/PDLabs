@@ -3,8 +3,9 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
+import Button from "@/components/button/Button";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Font helpers
