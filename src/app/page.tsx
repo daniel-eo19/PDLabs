@@ -40,7 +40,7 @@ export default function WebAgency2Page() {
             { name: "Team", id: "team" },
             { name: "Contact", id: "contact" },
           ]}
-          button={{ text: "Get Started", href: "#contact" }}
+          button={{ text: "Get Started", href: "/contact" }}
         />
         <HeroSplitDoubleCarousel
           title="Our Core Services"
