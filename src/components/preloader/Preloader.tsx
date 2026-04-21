@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 
 export default function Preloader() {
@@ -10,24 +11,21 @@ export default function Preloader() {
   useEffect(() => {
     if (!ref.current) return;
 
-    const overlay    = ref.current.querySelector<HTMLElement>(".pl-overlay");
-    const barL       = ref.current.querySelector<HTMLElement>(".pl-bar-l");
-    const barR       = ref.current.querySelector<HTMLElement>(".pl-bar-r");
-    const topInner   = ref.current.querySelector<HTMLElement>(".pl-top-inner");
-    const botInner   = ref.current.querySelector<HTMLElement>(".pl-bot-inner");
+    const overlay   = ref.current.querySelector<HTMLElement>(".pl-overlay");
+    const barL      = ref.current.querySelector<HTMLElement>(".pl-bar-l");
+    const barR      = ref.current.querySelector<HTMLElement>(".pl-bar-r");
+    const logoInner = ref.current.querySelector<HTMLElement>(".pl-logo-inner");
 
     document.body.style.overflow = "hidden";
 
     /*
      * INITIAL STATE
-     * Bars:  8×8 px white squares, centred on screen, no height yet
-     * Text:  "PD" starts BELOW its clip  (y = +100%)
-     *        "LABS" starts ABOVE its clip (y = -100%)
+     * Bars:  8×8 px white squares, centred on screen
+     * Logo:  starts BELOW its clip container (y = +100%)
      */
-    gsap.set(barL,     { width: 8,  height: 8 });
-    gsap.set(barR,     { width: 8,  height: 8 });
-    gsap.set(topInner, { y: "100%" });
-    gsap.set(botInner, { y: "-100%" });
+    gsap.set(barL,      { width: 8, height: 8 });
+    gsap.set(barR,      { width: 8, height: 8 });
+    gsap.set(logoInner, { y: "100%" });
 
     const tl = gsap.timeline({
       onComplete: () => {
@@ -39,7 +37,6 @@ export default function Preloader() {
     tl
       /*
        * PHASE 1 — squares grow into horizontal bars
-       * Matches: "minimal bar elements → structured blocks"
        */
       .to([barL, barR], {
         width:    "clamp(80px, 11vw, 140px)",
@@ -49,27 +46,28 @@ export default function Preloader() {
       })
 
       /*
-       * PHASE 2 — split typography reveal (opposing direction)
-       * "PD"   rises  UP  into its clip container (from below)
-       * "LABS" drops DOWN into its clip container (from above)
+       * PHASE 2 — logo slides up into its clip container
        */
-      .to(topInner, { y: "0%", duration: 0.5, ease: "power3.out" }, "+=0.05")
-      .to(botInner, { y: "0%", duration: 0.5, ease: "power3.out" }, "<")
+      .to(logoInner, {
+        y:        "0%",
+        duration: 0.5,
+        ease:     "power3.out",
+      }, "+=0.05")
 
       /* HOLD — let the logo be seen */
-      .to({}, { duration: 0.7 })
+      .to({}, { duration: 0.75 })
 
       /*
-       * PHASE 3 — text exits (reverse of entry)
-       * "PD"   exits UP,   "LABS" exits DOWN
+       * PHASE 3 — logo exits upward
        */
-      .to(topInner, { y: "-105%", duration: 0.45, ease: "power3.in" })
-      .to(botInner, { y:  "105%", duration: 0.45, ease: "power3.in" }, "<")
+      .to(logoInner, {
+        y:        "-105%",
+        duration: 0.45,
+        ease:     "power3.in",
+      })
 
       /*
        * PHASE 4 — bars expand to full-screen block
-       * First grow tall (100 vh), then fill the full width
-       * Matches: "expands into a full-screen transition"
        */
       .to([barL, barR], {
         height:   "100vh",
@@ -95,8 +93,8 @@ export default function Preloader() {
 
   if (hidden) return null;
 
-  /* ─── Shared text style ─────────────────────────────────────── */
-  const fs = "clamp(52px, 9.5vw, 112px)";
+  /* Logo clip height — matches the rendered logo height */
+  const logoH = "clamp(36px, 5vw, 56px)";
 
   return (
     <div
@@ -108,28 +106,29 @@ export default function Preloader() {
       {/* Full-screen dark backdrop */}
       <div className="pl-overlay absolute inset-0 bg-[#080808]">
 
-        {/* Centred layout column: [top clip] [bars] [bottom clip] */}
+        {/* Centred layout column: [logo clip] [bars] */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="flex flex-col items-center" style={{ gap: 0 }}>
+          <div className="flex flex-col items-center" style={{ gap: 14 }}>
 
             {/*
-              TOP CLIP — overflow:hidden hides "PD" until it slides up.
-              Height must match the rendered line-height of the text.
+              LOGO CLIP — overflow:hidden hides the logo until it slides up.
+              Height must match the rendered logo height.
             */}
-            <div className="overflow-hidden" style={{ height: fs }}>
-              <div className="pl-top-inner">
-                <span style={{
-                  display:        "block",
-                  fontFamily:     "'Satoshi', sans-serif",
-                  fontWeight:     900,
-                  fontSize:       fs,
-                  lineHeight:     1,
-                  letterSpacing:  "-0.04em",
-                  color:          "#ffffff",
-                  whiteSpace:     "nowrap",
-                }}>
-                  PD
-                </span>
+            <div className="overflow-hidden" style={{ height: logoH }}>
+              <div className="pl-logo-inner flex items-center justify-center">
+                <Image
+                  src="/images/web-agency-2/PD_LABS_PRIMARY_WHITE.png"
+                  alt="PD Labs"
+                  width={220}
+                  height={56}
+                  style={{
+                    height:     logoH,
+                    width:      "auto",
+                    objectFit:  "contain",
+                    display:    "block",
+                  }}
+                  priority
+                />
               </div>
             </div>
 
@@ -143,26 +142,6 @@ export default function Preloader() {
                 className="pl-bar-r bg-white"
                 style={{ width: 8, height: 8, transformOrigin: "left center" }}
               />
-            </div>
-
-            {/*
-              BOTTOM CLIP — overflow:hidden hides "LABS" until it slides down.
-            */}
-            <div className="overflow-hidden" style={{ height: fs }}>
-              <div className="pl-bot-inner">
-                <span style={{
-                  display:        "block",
-                  fontFamily:     "'Satoshi', sans-serif",
-                  fontWeight:     900,
-                  fontSize:       fs,
-                  lineHeight:     1,
-                  letterSpacing:  "-0.04em",
-                  color:          "#ffffff",
-                  whiteSpace:     "nowrap",
-                }}>
-                  LABS
-                </span>
-              </div>
             </div>
 
           </div>
