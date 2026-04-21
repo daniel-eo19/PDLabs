@@ -167,11 +167,21 @@ export async function submitContactForm(
     });
 
     if (!res.ok) {
-      const err = await res.json().catch(() => ({}));
-      console.error("[contact] Resend API error:", err);
+      const err = await res.json().catch(() => ({})) as { statusCode?: number; message?: string; name?: string };
+      console.error("[contact] Resend API error:", JSON.stringify(err));
+
+      if (res.status === 401 || res.status === 403) {
+        return { success: false, message: "Email service misconfigured. Please contact us directly at hello@pdlabs.io" };
+      }
+      if (res.status === 422) {
+        return { success: false, message: `Delivery error: ${err.message ?? "invalid address"}. Please contact us directly.` };
+      }
+      if (res.status === 429) {
+        return { success: false, message: "Too many requests. Please wait a moment and try again." };
+      }
       return {
         success: false,
-        message: "Failed to send. Please try again or email us directly.",
+        message: `Failed to send (${res.status}). Please try again or email us directly.`,
       };
     }
 
