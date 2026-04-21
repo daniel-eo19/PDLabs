@@ -51,7 +51,7 @@ export default function WebAgency2Page() {
           background={{ variant: "canvas-reveal" }}
           buttons={[
             { text: "Explore Services", href: "#services", props: { className: "glossy-btn" } },
-            { text: "Contact Us", href: "#contact" },
+            { text: "Contact Us", href: "/contact" },
           ]}
           buttonAnimation="slide-up"
           carouselPosition="right"
