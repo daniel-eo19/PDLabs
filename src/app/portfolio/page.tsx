@@ -284,7 +284,10 @@ export default function PortfolioPage() {
                       {/* Ghost number — desktop only */}
                       <div className="hidden md:flex items-center justify-between">
                         <span className="text-sm font-mono text-foreground/25">{project.year}</span>
-                        <span className="text-9xl font-medium text-foreground/[0.06] leading-none select-none font-mono">
+                        <span
+                          className="text-9xl font-bold text-foreground/[0.06] leading-none select-none"
+                          style={{ fontFamily: "'Akira Expanded', sans-serif" }}
+                        >
                           {project.id}
                         </span>
                       </div>
