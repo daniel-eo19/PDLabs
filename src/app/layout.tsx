@@ -25,7 +25,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://api.fontshare.com" />
         <link
           rel="stylesheet"
-          href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700&display=swap"
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700&f[]=akira-expanded@400,700,800&display=swap"
         />
       </head>
       <body className={`${jetbrainsMono.variable} antialiased`}>
