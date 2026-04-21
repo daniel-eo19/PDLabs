@@ -217,7 +217,7 @@ export default function PortfolioPage() {
                     onClick={() => setActiveFilter(filter)}
                     className={`px-4 py-1.5 text-sm rounded-full font-mono transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/30 whitespace-nowrap ${
                       activeFilter === filter
-                        ? "bg-foreground/12 text-foreground"
+                        ? "bg-foreground/10 text-foreground"
                         : "text-foreground/45 hover:text-foreground/70"
                     }`}
                   >
