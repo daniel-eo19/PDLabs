@@ -27,24 +27,26 @@ const BUDGET_RANGES = [
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Shared input / label styles
+// Input styles — open, borderless-bottom feel matching editorial layout
 // ─────────────────────────────────────────────────────────────────────────────
 
 const inputCls =
-  "w-full px-4 py-3 rounded-xl bg-foreground/[0.04] border border-foreground/10 " +
-  "text-foreground text-sm placeholder:text-foreground/25 " +
-  "focus:outline-none focus:border-foreground/25 focus:bg-foreground/[0.06] " +
-  "transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed";
+  "w-full px-0 py-3.5 bg-transparent border-0 border-b border-foreground/12 " +
+  "text-foreground text-sm placeholder:text-foreground/25 font-normal " +
+  "focus:outline-none focus:border-foreground/40 " +
+  "transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed";
 
 const selectCls =
-  inputCls +
-  " appearance-none cursor-pointer";
+  "w-full px-0 py-3.5 bg-transparent border-0 border-b border-foreground/12 " +
+  "text-sm font-normal appearance-none cursor-pointer " +
+  "focus:outline-none focus:border-foreground/40 " +
+  "transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed";
 
 const labelCls =
-  "block text-xs font-medium text-foreground/45 uppercase tracking-wider mb-2";
+  "block text-xs font-medium text-foreground/35 uppercase tracking-widest mb-1";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Field wrapper helpers
+// Field wrapper
 // ─────────────────────────────────────────────────────────────────────────────
 
 function Field({
@@ -95,8 +97,6 @@ export default function ContactForm() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-
-    // Client-side validation
     if (!form.fullName.trim() || !form.email.trim() || !form.message.trim()) {
       setError("Please fill in all required fields.");
       return;
@@ -105,7 +105,6 @@ export default function ContactForm() {
       setError("Please enter a valid email address.");
       return;
     }
-
     setError(null);
     startTransition(async () => {
       const result = await submitContactForm(form);
@@ -123,21 +122,21 @@ export default function ContactForm() {
       <div
         role="status"
         aria-live="polite"
-        className="flex flex-col items-start gap-5 py-12"
+        className="flex flex-col items-start gap-6 py-10"
       >
-        <span className="w-12 h-12 rounded-full border border-foreground/15 bg-foreground/5 flex items-center justify-center">
-          <CheckCircle className="w-5 h-5 text-foreground/70" />
+        <span className="w-14 h-14 rounded-2xl border border-foreground/15 bg-foreground/5 flex items-center justify-center">
+          <CheckCircle className="w-6 h-6 text-foreground/60" />
         </span>
         <div className="flex flex-col gap-2">
           <h3 className="text-xl font-semibold text-foreground">Message received.</h3>
-          <p className="text-base text-foreground/55 leading-relaxed max-w-sm">
+          <p className="text-base text-foreground/50 leading-relaxed max-w-sm font-normal">
             Thanks for reaching out. We review every enquiry personally and will
-            get back to you within 24 hours.
+            respond within 24 hours.
           </p>
         </div>
         <button
           onClick={() => { setForm(EMPTY_FORM); setSuccess(false); }}
-          className="text-sm text-foreground/40 hover:text-foreground/70 transition-colors duration-200 underline underline-offset-4"
+          className="text-sm text-foreground/35 hover:text-foreground/65 transition-colors duration-200 underline underline-offset-4 font-normal"
         >
           Send another message
         </button>
@@ -147,10 +146,10 @@ export default function ContactForm() {
 
   // ── Form ───────────────────────────────────────────────────────────────────
   return (
-    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
+    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-7">
 
-      {/* Row 1: Name + Email */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      {/* Row 1: Full Name + Email */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-7 sm:gap-10">
         <Field label="Full Name" htmlFor="fullName" required>
           <input
             id="fullName"
@@ -180,7 +179,7 @@ export default function ContactForm() {
       </div>
 
       {/* Row 2: Company + Project Type */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-7 sm:gap-10">
         <Field label="Company / Brand" htmlFor="company">
           <input
             id="company"
@@ -200,20 +199,17 @@ export default function ContactForm() {
               value={form.projectType}
               onChange={(e) => update("projectType", e.target.value)}
               disabled={isPending}
-              className={selectCls + " pr-10"}
-              style={{ color: form.projectType ? undefined : "rgba(255,255,255,0.25)" }}
+              className={selectCls + " pr-6"}
+              style={{ color: form.projectType ? "var(--foreground)" : "rgba(255,255,255,0.25)" }}
             >
               <option value="" disabled hidden>Select type</option>
               {PROJECT_TYPES.map((t) => (
-                <option key={t} value={t} style={{ color: "#ffffff", background: "#1a1520" }}>
+                <option key={t} value={t} style={{ color: "#fff", background: "#1a1520" }}>
                   {t}
                 </option>
               ))}
             </select>
-            <ChevronDown
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/30 pointer-events-none"
-              aria-hidden
-            />
+            <ChevronDown className="absolute right-0 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-foreground/25 pointer-events-none" aria-hidden />
           </div>
         </Field>
       </div>
@@ -226,20 +222,17 @@ export default function ContactForm() {
             value={form.budget}
             onChange={(e) => update("budget", e.target.value)}
             disabled={isPending}
-            className={selectCls + " pr-10"}
-            style={{ color: form.budget ? undefined : "rgba(255,255,255,0.25)" }}
+            className={selectCls + " pr-6"}
+            style={{ color: form.budget ? "var(--foreground)" : "rgba(255,255,255,0.25)" }}
           >
             <option value="" disabled hidden>Select budget</option>
             {BUDGET_RANGES.map((b) => (
-              <option key={b} value={b} style={{ color: "#ffffff", background: "#1a1520" }}>
+              <option key={b} value={b} style={{ color: "#fff", background: "#1a1520" }}>
                 {b}
               </option>
             ))}
           </select>
-          <ChevronDown
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/30 pointer-events-none"
-            aria-hidden
-          />
+          <ChevronDown className="absolute right-0 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-foreground/25 pointer-events-none" aria-hidden />
         </div>
       </Field>
 
@@ -247,17 +240,22 @@ export default function ContactForm() {
       <Field label="Project Details" htmlFor="message" required>
         <textarea
           id="message"
-          placeholder="Tell us about your project — what you're building, your goals, timeline, or anything else that helps us understand the brief."
+          placeholder="Tell us about your project — what you're building, your goals, timeline, or anything that helps us understand the brief."
           value={form.message}
           onChange={(e) => update("message", e.target.value)}
           disabled={isPending}
-          rows={6}
-          className={inputCls + " resize-none leading-relaxed"}
+          rows={5}
+          className={
+            "w-full px-0 py-3.5 bg-transparent border-0 border-b border-foreground/12 " +
+            "text-foreground text-sm placeholder:text-foreground/25 font-normal resize-none leading-relaxed " +
+            "focus:outline-none focus:border-foreground/40 " +
+            "transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
+          }
           required
         />
       </Field>
 
-      {/* Error message */}
+      {/* Error */}
       {error && (
         <div
           role="alert"
@@ -265,21 +263,21 @@ export default function ContactForm() {
           className="flex items-start gap-2.5 px-4 py-3 rounded-xl border border-red-500/20 bg-red-500/5 text-red-400 text-sm"
         >
           <AlertCircle className="w-4 h-4 mt-0.5 shrink-0" aria-hidden />
-          <span>{error}</span>
+          <span className="font-normal">{error}</span>
         </div>
       )}
 
-      {/* Submit */}
-      <div className="flex items-center gap-4 pt-1">
+      {/* Submit — full width, matching Behance reference */}
+      <div className="flex flex-col gap-3 pt-2">
         <Button
           variant="text-stagger"
           text={isPending ? "Sending…" : "Send Message"}
           type="submit"
-          className="text-primary-cta-text glossy-btn"
+          className="text-primary-cta-text glossy-btn w-full justify-center"
           bgClassName="primary-button"
         />
-        <p className="text-xs text-foreground/30">
-          Required fields marked <span className="text-accent">*</span>
+        <p className="text-xs text-foreground/25 text-center font-normal">
+          Required fields marked <span className="text-accent">*</span> — We respond within 24 hours
         </p>
       </div>
 
