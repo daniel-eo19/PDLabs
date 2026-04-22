@@ -19,6 +19,8 @@ import Preloader from "@/components/preloader/Preloader";
 
 export default function WebAgency2Page() {
   return (
+    <>
+    <Preloader />
     <ThemeProvider
       defaultButtonVariant="text-stagger"
       defaultTextAnimation="entrance-slide"
