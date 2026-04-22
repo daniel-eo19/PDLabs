@@ -269,4 +269,31 @@
     }
   }
 
+  /* ── SceneDecorations animations ──────────────────────────────────────── */
+
+  @keyframes deco-float {
+    0%   { transform: translateY(0px); }
+    100% { transform: translateY(-7px); }
+  }
+
+  @keyframes deco-drift {
+    0%   { transform: translate(0px, 0px); }
+    33%  { transform: translate(3px, -5px); }
+    66%  { transform: translate(-3px, 2px); }
+    100% { transform: translate(0px, 0px); }
+  }
+
+  @keyframes deco-pulse {
+    0%   { transform: scale(1); }
+    100% { transform: scale(1.5); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [style*="deco-float"],
+    [style*="deco-drift"],
+    [style*="deco-pulse"] {
+      animation: none !important;
+    }
+  }
+
 }
