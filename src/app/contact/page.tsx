@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight, Mail, Clock, Globe } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import ContactForm from "./ContactForm";
 import type { Metadata } from "next";
@@ -12,6 +12,53 @@ export const metadata: Metadata = {
 
 const akira   = { fontFamily: "'Akira Expanded', sans-serif" } as const;
 const satoshi = { fontFamily: "'Satoshi', sans-serif" } as const;
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Custom theme-coloured SVG icons
+// ─────────────────────────────────────────────────────────────────────────────
+
+function IconMail() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <rect x="2" y="4" width="20" height="16" rx="2.5"/>
+      <path d="M2 7l8.586 5.657a2.5 2.5 0 002.828 0L22 7"/>
+    </svg>
+  );
+}
+
+function IconClock() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <circle cx="12" cy="12" r="9.5"/>
+      <path d="M12 7v5.25l3.5 2.25"/>
+    </svg>
+  );
+}
+
+function IconGlobe() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <circle cx="12" cy="12" r="9.5"/>
+      <path d="M2.5 12h19M12 2.5c-2.5 3-4 6-4 9.5s1.5 6.5 4 9.5M12 2.5c2.5 3 4 6 4 9.5s-1.5 6.5-4 9.5"/>
+    </svg>
+  );
+}
+
+// Accent-coloured icon badge — matches brand primary CTA color
+function IconBadge({ children }: { children: React.ReactNode }) {
+  return (
+    <span
+      className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+      style={{
+        background: "rgba(230,57,70,0.08)",
+        border:     "1px solid rgba(230,57,70,0.18)",
+        color:      "var(--accent)",
+      }}
+    >
+      {children}
+    </span>
+  );
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Page
@@ -33,31 +80,38 @@ export default function ContactPage() {
     >
       <div style={satoshi}>
 
-        {/* ── Navbar (original) ─────────────────────────────────────────── */}
+        {/* ── Navbar ────────────────────────────────────────────────────── */}
         <header
           className="fixed top-0 left-0 right-0 z-40 h-14 border-b border-foreground/8 backdrop-blur-md"
           style={{ backgroundColor: "color-mix(in srgb, var(--background) 82%, transparent)" }}
         >
           <div className="w-content-width mx-auto h-full px-4 flex items-center justify-between gap-4">
+
+            {/* Back */}
             <Link
               href="/"
               className="inline-flex items-center gap-2 text-sm text-foreground/50 hover:text-foreground/80 transition-colors duration-200 shrink-0"
             >
-              <ArrowLeft className="w-3.5 h-3.5" />
-              <span className="font-medium">Back</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <path d="M19 12H5M12 5l-7 7 7 7"/>
+              </svg>
+              <span className="font-medium hidden xs:inline">Back</span>
             </Link>
 
-            <Link href="/" className="flex items-center gap-2.5 shrink-0">
+            {/* Logo — full primary logo */}
+            <Link href="/" className="flex items-center shrink-0">
               <Image
-                src="/images/web-agency-2/PD_LABS_LOGOMARK_WHITE.png"
+                src="/images/web-agency-2/PD_LABS_PRIMARY_WHITE.png"
                 alt="PD Labs"
-                width={22}
-                height={20}
+                width={88}
+                height={22}
+                style={{ height: "22px", width: "auto", objectFit: "contain" }}
                 className="opacity-90"
+                priority
               />
-              <span className="font-medium text-sm text-foreground">PD Labs</span>
             </Link>
 
+            {/* View Work pill */}
             <Link
               href="/portfolio"
               className="hidden sm:inline-flex items-center gap-1.5 text-xs px-4 py-2 rounded-full border border-foreground/15 text-foreground/60 hover:bg-foreground/5 transition-all duration-200 shrink-0"
@@ -70,28 +124,26 @@ export default function ContactPage() {
 
         <main className="pt-14">
 
-          {/* ── HERO ──────────────────────────────────────────────────────── */}
+          {/* ── HERO ────────────────────────────────────────────────────── */}
           <section
             className="relative w-full flex flex-col items-center justify-center overflow-hidden"
             style={{
-              minHeight: "clamp(280px, 45vh, 520px)",
+              minHeight: "clamp(260px, 44vh, 500px)",
               background: "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(230,57,70,0.10) 0%, transparent 70%)",
             }}
           >
-            {/* Subtle grid overlay */}
+            {/* Grid texture */}
             <div
               className="absolute inset-0 pointer-events-none"
               style={{
                 backgroundImage:
-                  "linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)",
+                  "linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px)",
                 backgroundSize: "60px 60px",
               }}
             />
-
-            {/* Top border line */}
             <div className="absolute top-0 left-0 right-0 h-px bg-foreground/8" />
 
-            <div className="relative z-10 w-full w-content-width mx-auto px-4 flex flex-col items-center gap-6 sm:gap-8 py-16 sm:py-20 md:py-24 text-center">
+            <div className="relative z-10 w-content-width mx-auto px-4 flex flex-col items-center gap-5 sm:gap-7 py-14 sm:py-20 md:py-24 text-center">
 
               {/* Breadcrumb */}
               <nav className="flex items-center gap-2 text-xs font-medium text-foreground/30" aria-label="Breadcrumb">
@@ -100,49 +152,44 @@ export default function ContactPage() {
                 <span className="text-foreground/55">Contact</span>
               </nav>
 
-              {/* Horizontal rule */}
-              <div className="w-full max-w-xs sm:max-w-sm h-px bg-foreground/10" />
+              <div className="w-16 sm:w-24 h-px bg-foreground/10" />
 
-              {/* Main heading */}
               <h1
-                className="text-5xl sm:text-7xl md:text-8xl 2xl:text-9xl font-bold text-foreground leading-none tracking-wide uppercase"
+                className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl 2xl:text-8xl font-bold text-foreground leading-none tracking-wide uppercase"
                 style={akira}
               >
                 Contact Us
               </h1>
 
-              {/* Horizontal rule */}
-              <div className="w-full max-w-xs sm:max-w-sm h-px bg-foreground/10" />
+              <div className="w-16 sm:w-24 h-px bg-foreground/10" />
 
-              {/* Subheading */}
-              <p className="text-base sm:text-lg text-foreground/50 font-normal max-w-lg leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-foreground/50 font-normal max-w-md sm:max-w-lg leading-relaxed">
                 We work with ambitious teams and founders to craft digital
                 products worth noticing. Let&apos;s talk about yours.
               </p>
 
             </div>
 
-            {/* Bottom border line */}
             <div className="absolute bottom-0 left-0 right-0 h-px bg-foreground/8" />
           </section>
 
-          {/* ── MAIN CONTACT SECTION ──────────────────────────────────────── */}
-          <section className="relative w-full py-16 sm:py-20 md:py-24">
+          {/* ── MAIN CONTACT SECTION ──────────────────────────────────── */}
+          <section className="relative w-full py-14 sm:py-18 md:py-24">
             <div className="w-content-width mx-auto px-4">
-              <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 xl:gap-24">
+              <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 xl:gap-24">
 
-                {/* ── LEFT: info ──────────────────────────────────────────── */}
-                <div className="w-full lg:w-5/12 flex flex-col gap-10">
+                {/* ── LEFT: info ────────────────────────────────────────── */}
+                <div className="w-full lg:w-5/12 flex flex-col gap-8 lg:gap-10">
 
-                  {/* Editorial heading */}
-                  <div className="flex flex-col gap-4">
+                  {/* Heading */}
+                  <div className="flex flex-col gap-3 sm:gap-4">
                     <h2
                       className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight uppercase tracking-wide"
                       style={akira}
                     >
                       Get In
                       <br />
-                      <span className="text-foreground/30">Touch.</span>
+                      <span className="text-foreground/25">Touch.</span>
                     </h2>
                     <p className="text-sm sm:text-base leading-relaxed text-foreground/55 font-normal max-w-sm">
                       Every project starts with a conversation. Share your brief
@@ -151,55 +198,43 @@ export default function ContactPage() {
                     </p>
                   </div>
 
-                  {/* Contact info items */}
+                  {/* Contact info */}
                   <div className="flex flex-col gap-0">
                     <p className="text-xs font-medium text-foreground/30 uppercase tracking-widest mb-4">
                       Direct contact
                     </p>
-
                     {[
                       {
-                        icon: <Mail className="w-4 h-4" />,
+                        icon:  <IconMail />,
                         label: "Email us",
                         value: "hello@pdlabs.io",
-                        href: "mailto:hello@pdlabs.io",
+                        href:  "mailto:hello@pdlabs.io",
                       },
                       {
-                        icon: <Clock className="w-4 h-4" />,
+                        icon:  <IconClock />,
                         label: "Response time",
                         value: "Within 24 hours",
-                        href: null,
+                        href:  null,
                       },
                       {
-                        icon: <Globe className="w-4 h-4" />,
+                        icon:  <IconGlobe />,
                         label: "Location",
                         value: "Remote-first — Global",
-                        href: null,
+                        href:  null,
                       },
                     ].map((item) => (
-                      <div
-                        key={item.label}
-                        className="flex items-center gap-4 py-4 border-t border-foreground/8"
-                      >
-                        {/* Icon badge */}
-                        <span className="w-10 h-10 rounded-xl border border-foreground/10 bg-foreground/[0.04] flex items-center justify-center text-foreground/40 shrink-0">
-                          {item.icon}
-                        </span>
+                      <div key={item.label} className="flex items-center gap-4 py-4 border-t border-foreground/8">
+                        <IconBadge>{item.icon}</IconBadge>
                         <div className="flex flex-col gap-0.5">
                           <span className="text-xs text-foreground/30 font-medium uppercase tracking-wider">
                             {item.label}
                           </span>
                           {item.href ? (
-                            <a
-                              href={item.href}
-                              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors duration-200"
-                            >
+                            <a href={item.href} className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors duration-200">
                               {item.value}
                             </a>
                           ) : (
-                            <span className="text-sm font-medium text-foreground/70">
-                              {item.value}
-                            </span>
+                            <span className="text-sm font-medium text-foreground/70">{item.value}</span>
                           )}
                         </div>
                       </div>
@@ -213,20 +248,20 @@ export default function ContactPage() {
                       How it works
                     </p>
                     {[
-                      { num: "01", label: "Share your brief",    desc: "What you're building, goals, and timeline." },
-                      { num: "02", label: "We review & align",   desc: "Clear perspective and honest proposal." },
-                      { num: "03", label: "We get to work",      desc: "Focused, collaborative — start to launch." },
+                      { num: "01", label: "Share your brief",   desc: "What you're building, goals, and timeline." },
+                      { num: "02", label: "We review & align",  desc: "Clear perspective and honest proposal." },
+                      { num: "03", label: "We get to work",     desc: "Focused, collaborative — start to launch." },
                     ].map((step, i, arr) => (
                       <div
                         key={step.num}
-                        className={`flex items-start gap-4 py-4 border-t border-foreground/8 ${i === arr.length - 1 ? "border-b" : ""}`}
+                        className={`flex items-start gap-4 py-3.5 sm:py-4 border-t border-foreground/8 ${i === arr.length - 1 ? "border-b" : ""}`}
                       >
-                        <span className="text-xs font-medium text-foreground/20 mt-0.5 shrink-0 w-6 tabular-nums">
+                        <span className="text-xs font-medium mt-0.5 shrink-0 w-6 tabular-nums" style={{ color: "var(--accent)" }}>
                           {step.num}
                         </span>
                         <div className="flex flex-col gap-0.5">
                           <span className="text-sm font-semibold text-foreground/65">{step.label}</span>
-                          <span className="text-xs text-foreground/35 leading-relaxed">{step.desc}</span>
+                          <span className="text-xs text-foreground/35 leading-relaxed font-normal">{step.desc}</span>
                         </div>
                       </div>
                     ))}
@@ -234,10 +269,10 @@ export default function ContactPage() {
 
                 </div>
 
-                {/* ── RIGHT: form ─────────────────────────────────────────── */}
-                <div className="w-full lg:w-7/12 flex flex-col gap-8">
+                {/* ── RIGHT: form ───────────────────────────────────────── */}
+                <div className="w-full lg:w-7/12 flex flex-col gap-6 sm:gap-8">
 
-                  {/* Form section heading */}
+                  {/* Form heading */}
                   <div className="flex flex-col gap-3 pb-6 border-b border-foreground/8">
                     <span className="px-3 py-1 text-xs rounded-full border border-foreground/15 bg-foreground/5 inline-flex items-center gap-2 w-fit text-foreground/50 font-medium uppercase tracking-wider">
                       Project Brief
@@ -250,13 +285,12 @@ export default function ContactPage() {
                       <br />
                       <span className="text-foreground/25">Something.</span>
                     </h3>
-                    <p className="text-sm text-foreground/40 font-normal leading-relaxed max-w-md">
+                    <p className="text-sm text-foreground/40 font-normal leading-relaxed max-w-sm sm:max-w-md">
                       Fill in what you can — the more detail the better.
-                      Fields marked <span className="text-accent">*</span> are required.
+                      Fields marked <span style={{ color: "var(--accent)" }}>*</span> are required.
                     </p>
                   </div>
 
-                  {/* The form */}
                   <ContactForm />
 
                 </div>
@@ -265,10 +299,10 @@ export default function ContactPage() {
             </div>
           </section>
 
-          {/* ── REASSURANCE STRIP ─────────────────────────────────────────── */}
+          {/* ── REASSURANCE CTA ───────────────────────────────────────── */}
           <section className="relative w-full py-12 sm:py-16 md:py-20">
             <div className="w-content-width mx-auto px-4">
-              <div className="rounded-2xl overflow-hidden primary-button p-8 sm:p-12 md:p-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 sm:gap-8">
+              <div className="rounded-2xl overflow-hidden primary-button p-7 sm:p-12 md:p-14 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
                 <div className="flex flex-col gap-3">
                   <span className="px-3 py-1 text-xs rounded-full border border-primary-cta-text/20 bg-primary-cta-text/10 inline-flex items-center gap-2 w-fit text-primary-cta-text/70 font-medium uppercase tracking-wider">
                     See our work first
@@ -286,7 +320,7 @@ export default function ContactPage() {
                 </div>
                 <Link
                   href="/portfolio"
-                  className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-sm font-semibold bg-primary-cta-text text-primary-cta hover:opacity-90 transition-opacity duration-200 shrink-0"
+                  className="inline-flex items-center gap-2.5 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm font-semibold bg-primary-cta-text text-primary-cta hover:opacity-90 transition-opacity duration-200 shrink-0"
                 >
                   View Portfolio
                   <ArrowUpRight className="w-4 h-4" />
@@ -295,22 +329,26 @@ export default function ContactPage() {
             </div>
           </section>
 
-          {/* ── FOOTER ────────────────────────────────────────────────────── */}
+          {/* ── FOOTER ────────────────────────────────────────────────── */}
           <footer className="py-6 sm:py-8 border-t border-foreground/8">
             <div className="w-content-width mx-auto px-4 flex flex-col sm:flex-row items-center sm:justify-between gap-4">
-              <Link href="/" className="flex items-center gap-2.5">
+
+              {/* Full primary logo */}
+              <Link href="/" className="flex items-center shrink-0">
                 <Image
-                  src="/images/web-agency-2/PD_LABS_LOGOMARK_WHITE.png"
+                  src="/images/web-agency-2/PD_LABS_PRIMARY_WHITE.png"
                   alt="PD Labs"
-                  width={18}
-                  height={16}
-                  className="opacity-60"
+                  width={72}
+                  height={18}
+                  style={{ height: "18px", width: "auto", objectFit: "contain" }}
+                  className="opacity-55"
                 />
-                <span className="text-sm font-medium text-foreground/50">PD Labs</span>
               </Link>
+
               <span className="text-xs sm:text-sm font-medium text-foreground/30 text-center">
                 © {new Date().getFullYear()} PD Labs. All rights reserved.
               </span>
+
               <Link
                 href="/"
                 className="text-sm font-medium text-foreground/40 hover:text-foreground/70 transition-colors duration-200"
