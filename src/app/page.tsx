@@ -314,7 +314,9 @@ export default function WebAgency2Page() {
             { id: "years", value: "5+", title: "Years Experience", description: "In digital design and development", icon: TrendingUp },
           ]}
         />
-        <section id="about">
+        </div>
+        <section id="about" className="relative">
+          <SceneDecorations preset="corners" />
           <FeatureCardSixteen
             title="Why Partner With PD Labs"
           description="Experience the difference that expert digital craftsmanship makes."
