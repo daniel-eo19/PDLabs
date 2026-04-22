@@ -366,7 +366,7 @@ export default function PortfolioPage() {
                   <Button
                     variant="text-stagger"
                     text="Start a Conversation"
-                    href="/#contact"
+                    href="/contact"
                     className="text-primary-cta-text glossy-btn"
                     bgClassName="primary-button"
                   />
@@ -379,15 +379,15 @@ export default function PortfolioPage() {
           {/* ── Footer strip ────────────────────────────────────────────────── */}
           <footer className="py-6 sm:py-8 border-t border-foreground/8">
             <div className="w-content-width mx-auto px-4 flex flex-col sm:flex-row items-center sm:justify-between gap-4">
-              <Link href="/" className="flex items-center gap-2.5">
+              <Link href="/" className="flex items-center shrink-0">
                 <Image
-                  src="/images/web-agency-2/PD_LABS_LOGOMARK_WHITE.png"
+                  src="/images/web-agency-2/PD_LABS_PRIMARY_WHITE.png"
                   alt="PD Labs"
-                  width={18}
-                  height={16}
-                  className="opacity-60"
+                  width={72}
+                  height={18}
+                  style={{ height: "18px", width: "auto", objectFit: "contain" }}
+                  className="opacity-55"
                 />
-                <span className="text-sm font-medium text-foreground/50">PD Labs</span>
               </Link>
               <span className="text-xs sm:text-sm font-medium text-foreground/30 text-center">
                 © {new Date().getFullYear()} PD Labs. All rights reserved.
