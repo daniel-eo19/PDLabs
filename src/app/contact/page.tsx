@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import ContactForm from "./ContactForm";
 import SceneDecorations from "@/components/background/SceneDecorations";
+import SplitHeading from "@/components/text/SplitHeading";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
