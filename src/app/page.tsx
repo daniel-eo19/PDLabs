@@ -315,7 +315,7 @@ export default function WebAgency2Page() {
           ]}
         />
         </div>
-        <section id="about" className="relative">
+        <section id="about" className="relative overflow-hidden">
           <SceneDecorations preset="corners" />
           <FeatureCardSixteen
             title="Why Partner With PD Labs"
@@ -343,7 +343,7 @@ export default function WebAgency2Page() {
             }}
           />
         </section>
-        <section id="team" className="relative">
+        <section id="team" className="relative overflow-hidden">
           <SceneDecorations preset="sparse" />
           <TeamCardFive
           title="Meet Our Team"
