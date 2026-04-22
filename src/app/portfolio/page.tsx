@@ -152,26 +152,25 @@ export default function PortfolioPage() {
               <span className="font-medium tracking-tight">Back</span>
             </Link>
 
-            <Link href="/" className="flex items-center gap-2.5 shrink-0">
+            <Link href="/" className="flex items-center shrink-0">
               <Image
-                src="/images/web-agency-2/PD_LABS_LOGOMARK_WHITE.png"
+                src="/images/web-agency-2/PD_LABS_PRIMARY_WHITE.png"
                 alt="PD Labs"
-                width={22}
-                height={20}
+                width={88}
+                height={22}
+                style={{ height: "22px", width: "auto", objectFit: "contain" }}
                 className="opacity-90"
+                priority
               />
-              <span className="font-medium text-sm text-foreground">PD Labs</span>
             </Link>
 
-            <div className="hidden sm:block shrink-0">
-              <Button
-                variant="text-stagger"
-                text="Start a Project"
-                href="/#contact"
-                className="text-secondary-cta-text"
-                bgClassName="secondary-button"
-              />
-            </div>
+            <Link
+              href="/contact"
+              className="hidden sm:inline-flex items-center gap-1.5 text-xs px-4 py-2 rounded-full border border-foreground/15 text-foreground/60 hover:bg-foreground/5 transition-all duration-200 shrink-0"
+            >
+              Start a Project
+              <ArrowUpRight className="w-3 h-3" />
+            </Link>
           </div>
         </header>
 
