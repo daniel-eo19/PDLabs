@@ -299,7 +299,7 @@ export default function WebAgency2Page() {
             useInvertedBackground={false}
           />
         </section>
-        <div className="relative">
+        <div className="relative overflow-hidden">
           <SceneDecorations preset="sparse" />
         <MetricCardOne
           title="Our Track Record"

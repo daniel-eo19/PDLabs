@@ -352,7 +352,7 @@ export default function PortfolioPage() {
           </section>
 
           {/* ── CTA section ─────────────────────────────────────────────────── */}
-          <section className="relative py-12 sm:py-16 md:py-20 w-full">
+          <section className="relative overflow-hidden py-12 sm:py-16 md:py-20 w-full">
             <SceneDecorations preset="corners" />
             <div className="relative z-10 w-content-width mx-auto px-4">
               <div className="rounded-2xl overflow-hidden primary-button p-8 sm:p-12 md:p-16 flex flex-col md:flex-row items-start md:items-end justify-between gap-6 sm:gap-8">
