@@ -359,7 +359,7 @@ export default function WebAgency2Page() {
             ]}
           />
         </section>
-        <div className="relative">
+        <div className="relative overflow-hidden">
           <SceneDecorations preset="corners" />
         <FaqBase
           title="Common Questions"
