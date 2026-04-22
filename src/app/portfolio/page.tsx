@@ -178,42 +178,54 @@ export default function PortfolioPage() {
         <main className="pt-14">
 
           {/* ── Hero ────────────────────────────────────────────────────────── */}
-          <section className="relative py-12 sm:py-16 md:py-20 w-full">
+          <section
+            className="relative w-full flex flex-col items-center justify-center overflow-hidden"
+            style={{
+              minHeight: "clamp(260px, 44vh, 500px)",
+              background: "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(230,57,70,0.10) 0%, transparent 70%)",
+            }}
+          >
             <SceneDecorations preset="hero" />
-            <div className="relative z-10 w-content-width mx-auto px-4 flex flex-col gap-6 sm:gap-8">
 
-              {/* Eyebrow row */}
-              <div className="flex items-center justify-between">
-                <span className="px-3 py-1 text-xs sm:text-sm rounded-full border border-foreground/15 bg-foreground/5 inline-flex items-center gap-2 text-foreground/60 font-medium tracking-wider uppercase">
-                  Selected Work
-                </span>
-                <span className="text-sm font-medium text-foreground/30">
-                  {String(filtered.length).padStart(2, "0")} Projects
-                </span>
-              </div>
+            {/* Grid texture */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                backgroundImage:
+                  "linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px)",
+                backgroundSize: "60px 60px",
+              }}
+            />
+            <div className="absolute top-0 left-0 right-0 h-px bg-foreground/8" />
 
-              {/* Heading — Akira Expanded */}
+            <div className="relative z-10 w-content-width mx-auto px-4 flex flex-col items-center gap-5 sm:gap-7 py-14 sm:py-20 md:py-24 text-center">
+
+              {/* Breadcrumb */}
+              <nav className="flex items-center gap-2 text-xs font-medium text-foreground/30" aria-label="Breadcrumb">
+                <Link href="/" className="hover:text-foreground/60 transition-colors duration-200">Home</Link>
+                <span>/</span>
+                <span className="text-foreground/55">Portfolio</span>
+              </nav>
+
+              <div className="w-16 sm:w-24 h-px bg-foreground/10" />
+
               <h1
-                className="text-4xl sm:text-6xl md:text-7xl 2xl:text-8xl font-bold text-foreground leading-none tracking-wide uppercase"
+                className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl 2xl:text-8xl font-bold text-foreground leading-none tracking-wide uppercase"
                 style={akira}
               >
                 Portfolio
               </h1>
 
-              {/* Divider + subtext */}
-              <div className="pt-4 sm:pt-6 border-t border-foreground/8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <p className="text-base sm:text-lg leading-relaxed text-foreground/60 max-w-xl font-normal">
-                  A curated selection of digital work — spanning strategy, craft,
-                  and code. Every project starts with a problem worth solving.
-                </p>
-                <div className="flex items-center gap-5 shrink-0 text-sm font-medium text-foreground/30">
-                  <span>2022–Present</span>
-                  <span className="w-px h-4 bg-foreground/20" />
-                  <span>Global Clients</span>
-                </div>
-              </div>
+              <div className="w-16 sm:w-24 h-px bg-foreground/10" />
+
+              <p className="text-sm sm:text-base md:text-lg text-foreground/50 font-normal max-w-md sm:max-w-lg leading-relaxed">
+                A curated selection of digital work — spanning strategy, craft,
+                and code. Every project starts with a problem worth solving.
+              </p>
 
             </div>
+
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-foreground/8" />
           </section>
 
           {/* ── Stacked project cards ───────────────────────────────────────── */}
