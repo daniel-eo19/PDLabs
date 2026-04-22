@@ -375,6 +375,7 @@ export default function WebAgency2Page() {
             { id: "5", title: "How do we get started?", content: "Contact us through our website or reach out directly. We'll discuss your vision and create a customized proposal for your project." },
           ]}
         />
+        </div>
         <section id="contact">
           <ContactCTA
             tag="Let's Connect"
