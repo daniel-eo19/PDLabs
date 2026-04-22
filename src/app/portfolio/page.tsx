@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import Button from "@/components/button/Button";
+import SceneDecorations from "@/components/background/SceneDecorations";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Font helpers
@@ -179,7 +180,8 @@ export default function PortfolioPage() {
 
           {/* ── Hero ────────────────────────────────────────────────────────── */}
           <section className="relative py-12 sm:py-16 md:py-20 w-full">
-            <div className="w-content-width mx-auto px-4 flex flex-col gap-6 sm:gap-8">
+            <SceneDecorations preset="hero" />
+            <div className="relative z-10 w-content-width mx-auto px-4 flex flex-col gap-6 sm:gap-8">
 
               {/* Eyebrow row */}
               <div className="flex items-center justify-between">
