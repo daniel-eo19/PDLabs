@@ -359,6 +359,8 @@ export default function WebAgency2Page() {
             ]}
           />
         </section>
+        <div className="relative">
+          <SceneDecorations preset="corners" />
         <FaqBase
           title="Common Questions"
           description="Get answers about our services and process."
