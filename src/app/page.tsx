@@ -384,7 +384,7 @@ export default function WebAgency2Page() {
             background={{ variant: "rotated-rays-animated" }}
             buttons={[
               { text: "Start Your Project", href: "/contact" },
-              { text: "Learn More", href: "#services" },
+              { text: "Learn More", href: "#faq" },
             ]}
             buttonAnimation="slide-up"
             useInvertedBackground={false}
