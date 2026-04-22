@@ -416,5 +416,6 @@ export default function WebAgency2Page() {
         />
       </ReactLenis>
     </ThemeProvider>
+    </>
   );
 }
