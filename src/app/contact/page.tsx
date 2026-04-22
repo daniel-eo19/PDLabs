@@ -80,7 +80,7 @@ export default function ContactPage() {
       secondaryButtonStyle="glass"
       headingFontWeight="medium"
     >
-      <div style={satoshi}>
+      <div style={satoshi} className="overflow-x-hidden">
 
         {/* ── Navbar ────────────────────────────────────────────────────── */}
         <header
