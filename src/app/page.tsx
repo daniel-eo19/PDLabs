@@ -391,6 +391,8 @@ export default function WebAgency2Page() {
           />
         </section>
         <FooterBase
+          logoSrc="/images/web-agency-2/PD_LABS_PRIMARY_WHITE.png"
+          logoAlt="PD Labs"
           logoText="PD Labs"
           copyrightText="© 2026 | PD Labs. All rights reserved."
           columns={[
