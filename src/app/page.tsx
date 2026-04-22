@@ -299,6 +299,8 @@ export default function WebAgency2Page() {
             useInvertedBackground={false}
           />
         </section>
+        <div className="relative">
+          <SceneDecorations preset="sparse" />
         <MetricCardOne
           title="Our Track Record"
           description="Proven expertise in delivering high-impact digital solutions."
