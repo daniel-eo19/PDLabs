@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import ContactForm from "./ContactForm";
+import SceneDecorations from "@/components/background/SceneDecorations";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -132,6 +133,7 @@ export default function ContactPage() {
               background: "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(230,57,70,0.10) 0%, transparent 70%)",
             }}
           >
+            <SceneDecorations preset="hero" />
             {/* Grid texture */}
             <div
               className="absolute inset-0 pointer-events-none"
