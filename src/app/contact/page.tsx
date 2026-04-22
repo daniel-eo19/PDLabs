@@ -157,12 +157,11 @@ export default function ContactPage() {
 
               <div className="w-16 sm:w-24 h-px bg-foreground/10" />
 
-              <h1
+              <SplitHeading
+                text="Contact Us"
                 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl 2xl:text-8xl font-bold text-foreground leading-none tracking-wide uppercase"
                 style={akira}
-              >
-                Contact Us
-              </h1>
+              />
 
               <div className="w-16 sm:w-24 h-px bg-foreground/10" />
 
