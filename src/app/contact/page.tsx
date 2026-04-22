@@ -177,7 +177,8 @@ export default function ContactPage() {
 
           {/* ── MAIN CONTACT SECTION ──────────────────────────────────── */}
           <section className="relative w-full py-14 sm:py-18 md:py-24">
-            <div className="w-content-width mx-auto px-4">
+            <SceneDecorations preset="sparse" />
+            <div className="relative z-10 w-content-width mx-auto px-4">
               <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 xl:gap-24">
 
                 {/* ── LEFT: info ────────────────────────────────────────── */}
