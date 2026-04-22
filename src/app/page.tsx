@@ -343,7 +343,8 @@ export default function WebAgency2Page() {
             }}
           />
         </section>
-        <section id="team">
+        <section id="team" className="relative">
+          <SceneDecorations preset="sparse" />
           <TeamCardFive
           title="Meet Our Team"
           description="Talented professionals dedicated to your success."
