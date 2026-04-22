@@ -15,6 +15,7 @@ import ContactCTA from "@/components/sections/contact/ContactCTA";
 import FooterBase from "@/components/sections/footer/FooterBase";
 import TestimonialCardFifteen from "@/components/sections/testimonial/TestimonialCardFifteen";
 import { Sparkles, Search, ArrowUpRight, Monitor, Shield, Zap, Puzzle, TrendingUp, Lock, Phone, MessageCircle, BookOpen, Tv, Camera, Music, Settings, Award, Users } from "lucide-react";
+import Preloader from "@/components/preloader/Preloader";
 
 export default function WebAgency2Page() {
   return (
