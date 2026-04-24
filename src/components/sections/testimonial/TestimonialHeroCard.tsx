@@ -65,14 +65,14 @@ export default function TestimonialHeroCard() {
   const avatarSize    = "clamp(60px, 6vw, 76px)";
   const avatarOverlap = "clamp(26px, 2.8vw, 34px)";
 
-  // ── Animate all content elements in from hidden state ──────────────────────
-  const animateIn = useCallback(() => {
+  // ── Animate all content elements in ───────────────────────────────────────
+  const animateIn = useCallback((onDone?: () => void) => {
     gsap.set(avatarWrapRef.current, { scale: 0.93, opacity: 0 });
     gsap.set(nameRef.current,       { y: 6,  opacity: 0 });
     gsap.set(handleRef.current,     { y: 5,  opacity: 0 });
     gsap.set(quoteRef.current,      { y: 8,  opacity: 0, clipPath: "inset(12% 0 0 0)" });
 
-    return gsap.timeline()
+    return gsap.timeline({ onComplete: onDone })
       .to(avatarWrapRef.current, { scale: 1, opacity: 1, duration: 0.70, ease: "power2.out" }, 0.05)
       .to(nameRef.current,       { y: 0,    opacity: 1, duration: 0.55, ease: "power2.out" }, 0.14)
       .to(handleRef.current,     { y: 0,    opacity: 1, duration: 0.50, ease: "power2.out" }, 0.22)
@@ -85,22 +85,21 @@ export default function TestimonialHeroCard() {
       if (isAnimatingRef.current) return;
       isAnimatingRef.current = true;
 
+      // Safety valve: always release the lock after 3 s so the loop can't stall
+      const safetyId = setTimeout(() => { isAnimatingRef.current = false; }, 3000);
+      const unlock = () => { clearTimeout(safetyId); isAnimatingRef.current = false; };
+
       // 1. Animate current content OUT
       gsap.timeline({
         onComplete() {
-          // 2. Swap data
+          // 2. Swap data — update ref first so goNext reads correctly immediately
           activeIndexRef.current = nextIndex;
           setActiveIndex(nextIndex);
 
-          // 3. Wait for React to flush, then animate IN
-          requestAnimationFrame(() =>
-            requestAnimationFrame(() => {
-              const tl = animateIn();
-              tl.eventCallback("onComplete", () => {
-                isAnimatingRef.current = false;
-              });
-            })
-          );
+          // 3. Small delay so React commits the new content before GSAP reads the DOM
+          setTimeout(() => {
+            animateIn(unlock);
+          }, 20);
         },
       })
         .to(avatarWrapRef.current, { scale: 0.94, opacity: 0, duration: 0.40, ease: "power1.inOut" }, 0)
