@@ -287,13 +287,7 @@ export default function WebAgency2Page() {
           ]}
         />
         <section id="testimonials">
-          <TestimonialHeroCard
-            quote="PD Labs delivered exceptional results. Their team created a stunning platform that perfectly captured our brand vision and significantly improved our user engagement metrics."
-            name="Alex Johnson"
-            handle="@alex.johnson"
-            avatarSrc="/images/web-agency-2/phone-in-hand-2.jpg"
-            avatarAlt="Client testimonial"
-          />
+          <TestimonialHeroCard />
         </section>
         <div className="relative overflow-hidden">
           <SceneDecorations preset="sparse" />
