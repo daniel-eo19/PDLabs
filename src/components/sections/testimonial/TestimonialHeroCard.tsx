@@ -46,8 +46,8 @@ export default function TestimonialHeroCard({
   avatarAlt = "Client",
 }: TestimonialHeroCardProps) {
   // Avatar dimensions — responsive via CSS clamp
-  const avatarSize   = "clamp(76px, 8vw, 96px)";
-  const avatarOverlap = "clamp(32px, 3.5vw, 42px)"; // how much it sticks above white card
+  const avatarSize   = "clamp(60px, 6vw, 76px)";
+  const avatarOverlap = "clamp(26px, 2.8vw, 34px)"; // how much it sticks above white card
 
   return (
     <div className="w-content-width mx-auto px-4 py-14 sm:py-18 md:py-24">
