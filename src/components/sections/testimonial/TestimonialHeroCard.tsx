@@ -86,21 +86,26 @@ export default function TestimonialHeroCard() {
       if (isAnimatingRef.current) return;
       isAnimatingRef.current = true;
 
-      // Safety valve: always release the lock after 3 s so the loop can't stall
+      // Safety valve — release lock if anything goes wrong so rotation never stalls
       const safetyId = setTimeout(() => { isAnimatingRef.current = false; }, 3000);
       const unlock = () => { clearTimeout(safetyId); isAnimatingRef.current = false; };
+
+      // Kill any lingering tweens from a previous interrupted animation
+      const targets = [avatarWrapRef.current, nameRef.current, handleRef.current, quoteRef.current];
+      gsap.killTweensOf(targets);
 
       // 1. Animate current content OUT
       gsap.timeline({
         onComplete() {
-          // 2. Swap data — update ref first so goNext reads correctly immediately
-          activeIndexRef.current = nextIndex;
-          setActiveIndex(nextIndex);
+          // 2. flushSync forces React to commit the new content to the DOM
+          //    synchronously — GSAP reads correct nodes immediately after
+          flushSync(() => {
+            activeIndexRef.current = nextIndex;
+            setActiveIndex(nextIndex);
+          });
 
-          // 3. Small delay so React commits the new content before GSAP reads the DOM
-          setTimeout(() => {
-            animateIn(unlock);
-          }, 20);
+          // 3. Animate new content IN
+          animateIn(unlock);
         },
       })
         .to(avatarWrapRef.current, { scale: 0.94, opacity: 0, duration: 0.40, ease: "power1.inOut" }, 0)
