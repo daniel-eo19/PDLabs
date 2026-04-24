@@ -120,7 +120,7 @@ export default function TestimonialHeroCard({
               {/* Dark name banner — fills the right portion of the row */}
               <div
                 className="flex-1 flex items-center px-4 sm:px-6 py-3 sm:py-4"
-                style={{ background: "#0d0a0e", borderTopRightRadius: "0.75rem" }}
+                style={{ background: "rgba(230,57,70,0.10)", borderTop: "1px solid rgba(230,57,70,0.18)", borderTopRightRadius: "0.75rem" }}
               >
                 <span
                   className="text-white font-bold text-xs sm:text-sm md:text-base uppercase tracking-widest leading-tight"
@@ -141,7 +141,7 @@ export default function TestimonialHeroCard({
                 left:   "clamp(1rem, 2vw, 1.5rem)",
                 borderRadius: "50%",
                 overflow: "hidden",
-                border: "4px solid white",
+                border: "3px solid rgba(255,255,255,0.12)",
                 boxShadow: "0 4px 16px rgba(0,0,0,0.35)",
                 zIndex: 20,
               }}
