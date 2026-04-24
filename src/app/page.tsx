@@ -74,8 +74,10 @@ export default function WebAgency2Page() {
           ]}
           carouselItemClassName="!aspect-[4/5]"
         />
+        {/* Services anchor — single scroll target for both mobile and desktop variants */}
+        <div id="services">
         {/* Mobile: bento grid */}
-        <section id="services" className="md:hidden">
+        <section className="md:hidden">
           <FeatureBento
             title="Our Core Services"
             description="What We Build. Comprehensive digital solutions for modern brands."
