@@ -118,7 +118,7 @@ export default function TestimonialHeroCard({
                 style={{ background: "#0d0a0e", borderTopRightRadius: "0.75rem" }}
               >
                 <span
-                  className="text-white font-bold text-sm sm:text-base md:text-lg uppercase tracking-widest leading-tight"
+                  className="text-white font-bold text-xs sm:text-sm md:text-base uppercase tracking-widest leading-tight"
                   style={{ fontFamily: "'Satoshi', sans-serif" }}
                 >
                   {name}
