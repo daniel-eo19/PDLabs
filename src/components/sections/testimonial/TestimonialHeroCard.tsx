@@ -9,7 +9,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import gsap from "gsap";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+
 
 const TESTIMONIALS = [
   {
@@ -256,51 +256,6 @@ export default function TestimonialHeroCard() {
         </div>
       </div>
 
-      {/* ── Controls ────────────────────────────────────────────────────────── */}
-      <div className="flex items-center justify-center gap-4 mt-5 sm:mt-6">
-
-        {/* Prev */}
-        <button
-          onClick={goPrev}
-          aria-label="Previous testimonial"
-          className="w-8 h-8 rounded-full flex items-center justify-center border border-foreground/12 text-foreground/35 hover:text-foreground/65 hover:border-foreground/25 hover:bg-foreground/5 transition-all duration-200"
-        >
-          <ChevronLeft className="w-4 h-4" />
-        </button>
-
-        {/* Indicator dots */}
-        <div className="flex items-center gap-2">
-          {TESTIMONIALS.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => transition(i)}
-              aria-label={`Go to testimonial ${i + 1}`}
-              className="transition-all duration-300"
-              style={{
-                width:     activeIndex === i ? "20px" : "6px",
-                height:    "6px",
-                borderRadius: "3px",
-                background: activeIndex === i
-                  ? "var(--accent)"
-                  : "rgba(255,255,255,0.18)",
-                boxShadow:  activeIndex === i
-                  ? "0 0 8px rgba(230,57,70,0.45)"
-                  : "none",
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Next */}
-        <button
-          onClick={goNext}
-          aria-label="Next testimonial"
-          className="w-8 h-8 rounded-full flex items-center justify-center border border-foreground/12 text-foreground/35 hover:text-foreground/65 hover:border-foreground/25 hover:bg-foreground/5 transition-all duration-200"
-        >
-          <ChevronRight className="w-4 h-4" />
-        </button>
-
-      </div>
     </div>
   );
 }
