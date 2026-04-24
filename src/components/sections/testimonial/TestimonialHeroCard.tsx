@@ -3,7 +3,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // TestimonialHeroCard — rotating slider, 4 testimonials
 // GSAP-driven out/in transitions: fade + y-translate + clip-path reveal
-// Auto-advances every 4.5 s; pauses on hover; prev/next + dot nav
+// Auto-advances every 7 s; pauses on hover
 // ─────────────────────────────────────────────────────────────────────────────
 
 import { useState, useEffect, useRef, useCallback } from "react";
