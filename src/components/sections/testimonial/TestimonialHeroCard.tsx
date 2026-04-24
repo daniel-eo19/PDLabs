@@ -67,16 +67,16 @@ export default function TestimonialHeroCard() {
 
   // ── Animate all content elements in from hidden state ──────────────────────
   const animateIn = useCallback(() => {
-    gsap.set(avatarWrapRef.current, { scale: 0.84, opacity: 0 });
-    gsap.set(nameRef.current,       { y: 10, opacity: 0 });
-    gsap.set(handleRef.current,     { y: 7,  opacity: 0 });
-    gsap.set(quoteRef.current,      { y: 14, opacity: 0, clipPath: "inset(28% 0 0 0)" });
+    gsap.set(avatarWrapRef.current, { scale: 0.93, opacity: 0 });
+    gsap.set(nameRef.current,       { y: 6,  opacity: 0 });
+    gsap.set(handleRef.current,     { y: 5,  opacity: 0 });
+    gsap.set(quoteRef.current,      { y: 8,  opacity: 0, clipPath: "inset(12% 0 0 0)" });
 
     return gsap.timeline()
-      .to(avatarWrapRef.current, { scale: 1, opacity: 1, duration: 0.48, ease: "power3.out" }, 0.04)
-      .to(nameRef.current,       { y: 0,    opacity: 1, duration: 0.38, ease: "power3.out" }, 0.11)
-      .to(handleRef.current,     { y: 0,    opacity: 1, duration: 0.34, ease: "power3.out" }, 0.17)
-      .to(quoteRef.current,      { y: 0,    opacity: 1, clipPath: "inset(0% 0 0 0)", duration: 0.52, ease: "power3.out" }, 0.21);
+      .to(avatarWrapRef.current, { scale: 1, opacity: 1, duration: 0.70, ease: "power2.out" }, 0.05)
+      .to(nameRef.current,       { y: 0,    opacity: 1, duration: 0.55, ease: "power2.out" }, 0.14)
+      .to(handleRef.current,     { y: 0,    opacity: 1, duration: 0.50, ease: "power2.out" }, 0.22)
+      .to(quoteRef.current,      { y: 0,    opacity: 1, clipPath: "inset(0% 0 0 0)", duration: 0.70, ease: "power2.out" }, 0.28);
   }, []);
 
   // ── Transition to a new index ───────────────────────────────────────────────
