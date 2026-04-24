@@ -1,43 +1,156 @@
 "use client";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// TestimonialHeroCard
-// Reference: wide card with dark radial-glow background, 4-pointed sparkle
-// corner accents, inner white card, circular avatar overlapping the top edge,
-// solid dark name banner, handle, and centered quote text.
+// TestimonialHeroCard — rotating slider, 4 testimonials
+// GSAP-driven out/in transitions: fade + y-translate + clip-path reveal
+// Auto-advances every 4.5 s; pauses on hover; prev/next + dot nav
 // ─────────────────────────────────────────────────────────────────────────────
 
+import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
+import gsap from "gsap";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
+const TESTIMONIALS = [
+  {
+    quote:
+      "PD Labs transformed our product completely. The attention to detail in every animation and interaction felt like they understood our brand better than we did. Launch was seamless and results were immediate.",
+    name: "Alex Johnson",
+    handle: "@alex.johnson",
+    avatarSrc: "/images/web-agency-2/dev-1.webp",
+    avatarAlt: "Alex Johnson",
+  },
+  {
+    quote:
+      "We'd been through two agencies before PD Labs. The difference was night and day — fast, clear communication, and the final product exceeded every expectation we had going in. Genuinely impressive team.",
+    name: "Sarah Chen",
+    handle: "@sarahchen.dev",
+    avatarSrc: "/images/web-agency-2/dev-2.webp",
+    avatarAlt: "Sarah Chen",
+  },
+  {
+    quote:
+      "Our conversion rate jumped 34% within the first month of going live. PD Labs nailed the UX and performance — Lighthouse scores we'd never seen before. Would recommend without any hesitation.",
+    name: "Marcus Reid",
+    handle: "@marcusreid",
+    avatarSrc: "/images/web-agency-2/dev-3.webp",
+    avatarAlt: "Marcus Reid",
+  },
+  {
+    quote:
+      "They don't just build what you ask for — they push back, ask the hard questions, and deliver something better. The site PD Labs built became our best sales asset. Every investor mentions it on the first call.",
+    name: "Priya Nair",
+    handle: "@priyanair.co",
+    avatarSrc: "/images/web-agency-2/team-1.webp",
+    avatarAlt: "Priya Nair",
+  },
+] as const;
 
-export interface TestimonialHeroCardProps {
-  quote:      string;
-  name:       string;
-  handle?:    string;
-  avatarSrc:  string;
-  avatarAlt?: string;
-}
+const AUTO_INTERVAL = 4500;
 
-export default function TestimonialHeroCard({
-  quote,
-  name,
-  handle    = "@client",
-  avatarSrc,
-  avatarAlt = "Client",
-}: TestimonialHeroCardProps) {
-  // Avatar dimensions — responsive via CSS clamp
-  const avatarSize   = "clamp(60px, 6vw, 76px)";
-  const avatarOverlap = "clamp(26px, 2.8vw, 34px)"; // how much it sticks above white card
+export default function TestimonialHeroCard() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  // Refs that never trigger re-renders
+  const isPausedRef      = useRef(false);
+  const isAnimatingRef   = useRef(false);
+  const activeIndexRef   = useRef(0);
+
+  // DOM targets for GSAP
+  const avatarWrapRef = useRef<HTMLDivElement>(null);
+  const nameRef       = useRef<HTMLSpanElement>(null);
+  const handleRef     = useRef<HTMLParagraphElement>(null);
+  const quoteRef      = useRef<HTMLParagraphElement>(null);
+
+  const avatarSize    = "clamp(60px, 6vw, 76px)";
+  const avatarOverlap = "clamp(26px, 2.8vw, 34px)";
+
+  // ── Animate all content elements in from hidden state ──────────────────────
+  const animateIn = useCallback(() => {
+    gsap.set(avatarWrapRef.current, { scale: 0.84, opacity: 0 });
+    gsap.set(nameRef.current,       { y: 10, opacity: 0 });
+    gsap.set(handleRef.current,     { y: 7,  opacity: 0 });
+    gsap.set(quoteRef.current,      { y: 14, opacity: 0, clipPath: "inset(28% 0 0 0)" });
+
+    return gsap.timeline()
+      .to(avatarWrapRef.current, { scale: 1, opacity: 1, duration: 0.48, ease: "power3.out" }, 0.04)
+      .to(nameRef.current,       { y: 0,    opacity: 1, duration: 0.38, ease: "power3.out" }, 0.11)
+      .to(handleRef.current,     { y: 0,    opacity: 1, duration: 0.34, ease: "power3.out" }, 0.17)
+      .to(quoteRef.current,      { y: 0,    opacity: 1, clipPath: "inset(0% 0 0 0)", duration: 0.52, ease: "power3.out" }, 0.21);
+  }, []);
+
+  // ── Transition to a new index ───────────────────────────────────────────────
+  const transition = useCallback(
+    (nextIndex: number) => {
+      if (isAnimatingRef.current) return;
+      isAnimatingRef.current = true;
+
+      // 1. Animate current content OUT
+      gsap.timeline({
+        onComplete() {
+          // 2. Swap data
+          activeIndexRef.current = nextIndex;
+          setActiveIndex(nextIndex);
+
+          // 3. Wait for React to flush, then animate IN
+          requestAnimationFrame(() =>
+            requestAnimationFrame(() => {
+              const tl = animateIn();
+              tl.eventCallback("onComplete", () => {
+                isAnimatingRef.current = false;
+              });
+            })
+          );
+        },
+      })
+        .to(avatarWrapRef.current, { scale: 0.88, opacity: 0, duration: 0.24, ease: "power2.in" }, 0)
+        .to(nameRef.current,       { y: -7, opacity: 0, duration: 0.20, ease: "power2.in" }, 0)
+        .to(handleRef.current,     { y: -5, opacity: 0, duration: 0.18, ease: "power2.in" }, 0.03)
+        .to(quoteRef.current,      { y: -10, opacity: 0, clipPath: "inset(0 0 28% 0)", duration: 0.26, ease: "power2.in" }, 0);
+    },
+    [animateIn]
+  );
+
+  const goNext = useCallback(
+    () => transition((activeIndexRef.current + 1) % TESTIMONIALS.length),
+    [transition]
+  );
+
+  const goPrev = useCallback(
+    () => transition((activeIndexRef.current - 1 + TESTIMONIALS.length) % TESTIMONIALS.length),
+    [transition]
+  );
+
+  // Initial animate-in on mount
+  useEffect(() => {
+    isAnimatingRef.current = true;
+    const tl = animateIn();
+    tl.eventCallback("onComplete", () => { isAnimatingRef.current = false; });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Auto-rotation — stable because goNext is stable
+  useEffect(() => {
+    const id = setInterval(() => {
+      if (!isPausedRef.current) goNext();
+    }, AUTO_INTERVAL);
+    return () => clearInterval(id);
+  }, [goNext]);
+
+  const t = TESTIMONIALS[activeIndex];
 
   return (
-    <div className="w-content-width mx-auto px-4 py-10 sm:py-14 md:py-18">
-
+    <div
+      className="w-content-width mx-auto px-4 py-10 sm:py-14 md:py-18"
+      onMouseEnter={() => { isPausedRef.current = true; }}
+      onMouseLeave={() => { isPausedRef.current = false; }}
+    >
       {/* Section title */}
       <p className="text-xs font-medium text-foreground/35 uppercase tracking-widest mb-5 sm:mb-6">
-        Client Success Story
+        Client Success Stories
       </p>
 
-      {/* ── Outer dark card ───────────────────────────────────────────── */}
+      {/* ── Outer dark card ─────────────────────────────────────────────────── */}
       <div
         className="relative rounded-2xl"
         style={{
@@ -50,7 +163,6 @@ export default function TestimonialHeroCard({
           padding: "clamp(1.25rem, 3vw, 2.25rem)",
         }}
       >
-
         {/* Grain texture */}
         <div
           className="absolute inset-0 rounded-2xl pointer-events-none"
@@ -60,61 +172,61 @@ export default function TestimonialHeroCard({
           }}
         />
 
-{/* ── Inner content ─────────────────────────────────────────── */}
-        {/* Extra top padding creates the space the avatar will overlap into */}
-        <div
-          className="relative z-10"
-          style={{ paddingTop: avatarOverlap }}
-        >
+        {/* ── Inner content ────────────────────────────────────────────────── */}
+        <div className="relative z-10" style={{ paddingTop: avatarOverlap }}>
+
           {/* Inner dark card */}
           <div className="rounded-xl" style={{ background: "#1a1520" }}>
 
-            {/* ── Author row ──────────────────────────────────────── */}
-            {/* The avatar is absolutely positioned overlapping the top */}
+            {/* Author row */}
             <div
               className="relative flex items-stretch"
               style={{ minHeight: `calc(${avatarSize} * 0.6)` }}
             >
-              {/* Invisible spacer that matches avatar width so banner aligns */}
+              {/* Invisible spacer so name banner starts after avatar */}
               <div
                 className="shrink-0"
-                style={{
-                  width: `calc(${avatarSize} + clamp(1rem, 2vw, 1.5rem))`,
-                }}
+                style={{ width: `calc(${avatarSize} + clamp(1rem, 2vw, 1.5rem))` }}
               />
 
-              {/* Dark name banner — fills the right portion of the row */}
+              {/* Name banner */}
               <div
-                className="flex-1 flex items-center px-4 sm:px-6 py-3 sm:py-4"
-                style={{ background: "rgba(230,57,70,0.10)", borderTop: "1px solid rgba(230,57,70,0.18)", borderTopRightRadius: "0.75rem" }}
+                className="flex-1 flex items-center px-4 sm:px-6 py-3 sm:py-4 overflow-hidden"
+                style={{
+                  background:          "rgba(230,57,70,0.10)",
+                  borderTop:           "1px solid rgba(230,57,70,0.18)",
+                  borderTopRightRadius: "0.75rem",
+                }}
               >
                 <span
+                  ref={nameRef}
                   className="text-white font-bold text-xs sm:text-sm md:text-base uppercase tracking-widest leading-tight"
                   style={{ fontFamily: "'Satoshi', sans-serif" }}
                 >
-                  {name}
+                  {t.name}
                 </span>
               </div>
             </div>
 
-            {/* Avatar — positioned absolute, overlapping the top of the white card */}
+            {/* Avatar — overlaps top of inner card */}
             <div
+              ref={avatarWrapRef}
               className="absolute"
               style={{
-                width:  avatarSize,
-                height: avatarSize,
-                top:    `calc(${avatarOverlap} * -0.85)`,
-                left:   "clamp(1rem, 2vw, 1.5rem)",
+                width:        avatarSize,
+                height:       avatarSize,
+                top:          `calc(${avatarOverlap} * -0.85)`,
+                left:         "clamp(1rem, 2vw, 1.5rem)",
                 borderRadius: "50%",
-                overflow: "hidden",
-                border: "3px solid rgba(255,255,255,0.12)",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.35)",
-                zIndex: 20,
+                overflow:     "hidden",
+                border:       "3px solid rgba(255,255,255,0.12)",
+                boxShadow:    "0 4px 16px rgba(0,0,0,0.35)",
+                zIndex:       20,
               }}
             >
               <Image
-                src={avatarSrc}
-                alt={avatarAlt}
+                src={t.avatarSrc}
+                alt={t.avatarAlt}
                 fill
                 className="object-cover object-top"
                 sizes="96px"
@@ -123,23 +235,71 @@ export default function TestimonialHeroCard({
 
             {/* Handle */}
             <p
+              ref={handleRef}
               className="text-xs sm:text-sm font-medium text-foreground/45 pt-2 pb-1"
               style={{
                 paddingLeft: `calc(${avatarSize} + clamp(1rem, 2vw, 1.5rem) + 0.25rem)`,
               }}
             >
-              {handle}
+              {t.handle}
             </p>
 
             {/* Quote */}
             <p
+              ref={quoteRef}
               className="text-xs sm:text-sm md:text-base leading-relaxed text-foreground/75 font-normal text-center px-5 sm:px-8 md:px-12 py-4 sm:py-6"
             >
-              &ldquo;{quote}&rdquo;
+              &ldquo;{t.quote}&rdquo;
             </p>
 
-          </div>{/* end white card */}
+          </div>
         </div>
+      </div>
+
+      {/* ── Controls ────────────────────────────────────────────────────────── */}
+      <div className="flex items-center justify-center gap-4 mt-5 sm:mt-6">
+
+        {/* Prev */}
+        <button
+          onClick={goPrev}
+          aria-label="Previous testimonial"
+          className="w-8 h-8 rounded-full flex items-center justify-center border border-foreground/12 text-foreground/35 hover:text-foreground/65 hover:border-foreground/25 hover:bg-foreground/5 transition-all duration-200"
+        >
+          <ChevronLeft className="w-4 h-4" />
+        </button>
+
+        {/* Indicator dots */}
+        <div className="flex items-center gap-2">
+          {TESTIMONIALS.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => transition(i)}
+              aria-label={`Go to testimonial ${i + 1}`}
+              className="transition-all duration-300"
+              style={{
+                width:     activeIndex === i ? "20px" : "6px",
+                height:    "6px",
+                borderRadius: "3px",
+                background: activeIndex === i
+                  ? "var(--accent)"
+                  : "rgba(255,255,255,0.18)",
+                boxShadow:  activeIndex === i
+                  ? "0 0 8px rgba(230,57,70,0.45)"
+                  : "none",
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Next */}
+        <button
+          onClick={goNext}
+          aria-label="Next testimonial"
+          className="w-8 h-8 rounded-full flex items-center justify-center border border-foreground/12 text-foreground/35 hover:text-foreground/65 hover:border-foreground/25 hover:bg-foreground/5 transition-all duration-200"
+        >
+          <ChevronRight className="w-4 h-4" />
+        </button>
+
       </div>
     </div>
   );
