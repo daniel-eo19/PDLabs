@@ -100,8 +100,8 @@ export default function TestimonialHeroCard({
           className="relative z-10"
           style={{ paddingTop: avatarOverlap }}
         >
-          {/* White card */}
-          <div className="bg-white rounded-xl">
+          {/* Inner dark card */}
+          <div className="rounded-xl" style={{ background: "#1a1520" }}>
 
             {/* ── Author row ──────────────────────────────────────── */}
             {/* The avatar is absolutely positioned overlapping the top */}
