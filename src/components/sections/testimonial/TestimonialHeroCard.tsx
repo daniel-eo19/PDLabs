@@ -50,7 +50,7 @@ export default function TestimonialHeroCard({
   const avatarOverlap = "clamp(26px, 2.8vw, 34px)"; // how much it sticks above white card
 
   return (
-    <div className="w-content-width mx-auto px-4 py-14 sm:py-18 md:py-24">
+    <div className="w-content-width mx-auto px-4 py-10 sm:py-14 md:py-18">
 
       {/* ── Outer dark card ───────────────────────────────────────────── */}
       <div
@@ -62,7 +62,7 @@ export default function TestimonialHeroCard({
             "  rgba(26,21,32,0.94) 55%,",
             "  #0d0a0e 100%)",
           ].join(""),
-          padding: "clamp(1.75rem, 4vw, 3.25rem)",
+          padding: "clamp(1.25rem, 3vw, 2.25rem)",
         }}
       >
 
