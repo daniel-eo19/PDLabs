@@ -162,7 +162,7 @@ export default function TestimonialHeroCard({
 
             {/* Quote */}
             <p
-              className="text-sm sm:text-base md:text-lg leading-relaxed text-foreground/75 font-normal text-center px-6 sm:px-10 md:px-14 py-6 sm:py-8"
+              className="text-xs sm:text-sm md:text-base leading-relaxed text-foreground/75 font-normal text-center px-5 sm:px-8 md:px-12 py-4 sm:py-6"
             >
               &ldquo;{quote}&rdquo;
             </p>
