@@ -103,10 +103,10 @@ export default function TestimonialHeroCard() {
           );
         },
       })
-        .to(avatarWrapRef.current, { scale: 0.88, opacity: 0, duration: 0.24, ease: "power2.in" }, 0)
-        .to(nameRef.current,       { y: -7, opacity: 0, duration: 0.20, ease: "power2.in" }, 0)
-        .to(handleRef.current,     { y: -5, opacity: 0, duration: 0.18, ease: "power2.in" }, 0.03)
-        .to(quoteRef.current,      { y: -10, opacity: 0, clipPath: "inset(0 0 28% 0)", duration: 0.26, ease: "power2.in" }, 0);
+        .to(avatarWrapRef.current, { scale: 0.94, opacity: 0, duration: 0.40, ease: "power1.inOut" }, 0)
+        .to(nameRef.current,       { y: -5,  opacity: 0, duration: 0.34, ease: "power1.inOut" }, 0)
+        .to(handleRef.current,     { y: -4,  opacity: 0, duration: 0.30, ease: "power1.inOut" }, 0.04)
+        .to(quoteRef.current,      { y: -6,  opacity: 0, clipPath: "inset(0 0 12% 0)", duration: 0.40, ease: "power1.inOut" }, 0);
     },
     [animateIn]
   );
