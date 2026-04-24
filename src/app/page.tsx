@@ -13,7 +13,7 @@ import TeamCardFive from "@/components/sections/team/TeamCardFive";
 import FaqBase from "@/components/sections/faq/FaqBase";
 import ContactCTA from "@/components/sections/contact/ContactCTA";
 import FooterBase from "@/components/sections/footer/FooterBase";
-import TestimonialCardFifteen from "@/components/sections/testimonial/TestimonialCardFifteen";
+import TestimonialHeroCard from "@/components/sections/testimonial/TestimonialHeroCard";
 import { Sparkles, Search, ArrowUpRight, Monitor, Shield, Zap, Puzzle, TrendingUp, Lock, Phone, MessageCircle, BookOpen, Tv, Camera, Music, Settings, Award, Users } from "lucide-react";
 import Preloader from "@/components/preloader/Preloader";
 import SceneDecorations from "@/components/background/SceneDecorations";
