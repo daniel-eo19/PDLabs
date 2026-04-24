@@ -118,8 +118,7 @@ export default function TestimonialHeroCard() {
   // Initial animate-in on mount
   useEffect(() => {
     isAnimatingRef.current = true;
-    const tl = animateIn();
-    tl.eventCallback("onComplete", () => { isAnimatingRef.current = false; });
+    animateIn(() => { isAnimatingRef.current = false; });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
