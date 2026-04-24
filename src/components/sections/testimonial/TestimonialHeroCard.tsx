@@ -80,21 +80,7 @@ export default function TestimonialHeroCard({
           }}
         />
 
-        {/* Corner sparkles */}
-        <div className="absolute top-4 sm:top-5 left-5 sm:left-7 pointer-events-none">
-          <Sparkle size={26} />
-        </div>
-        <div className="absolute top-4 sm:top-5 right-5 sm:right-7 pointer-events-none">
-          <Sparkle size={26} />
-        </div>
-        <div className="absolute bottom-4 sm:bottom-5 left-5 sm:left-7 pointer-events-none">
-          <Sparkle size={22} />
-        </div>
-        <div className="absolute bottom-4 sm:bottom-5 right-5 sm:right-7 pointer-events-none">
-          <Sparkle size={22} />
-        </div>
-
-        {/* ── Inner content ─────────────────────────────────────────── */}
+{/* ── Inner content ─────────────────────────────────────────── */}
         {/* Extra top padding creates the space the avatar will overlap into */}
         <div
           className="relative z-10"
