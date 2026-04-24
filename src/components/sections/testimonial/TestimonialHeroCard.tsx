@@ -9,26 +9,6 @@
 
 import Image from "next/image";
 
-// 4-pointed star sparkle — thin pointed arms, brand white
-function Sparkle({ size = 30 }: { size?: number }) {
-  const c = size / 2;
-  const tip = 0;
-  const waist = c - c * 0.1; // how close the waist points are to the center
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox={`0 0 ${size} ${size}`}
-      fill="none"
-      aria-hidden
-    >
-      <path
-        d={`M${c} ${tip} L${c + 1.2} ${waist} L${size} ${c} L${c + 1.2} ${c + (c - waist)} L${c} ${size} L${c - 1.2} ${c + (c - waist)} L${tip} ${c} L${c - 1.2} ${waist} Z`}
-        fill="rgba(255,255,255,0.42)"
-      />
-    </svg>
-  );
-}
 
 export interface TestimonialHeroCardProps {
   quote:      string;
