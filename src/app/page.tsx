@@ -130,7 +130,7 @@ export default function WebAgency2Page() {
         </section>
 
         {/* Tablet and up: sticky scroll-stack */}
-        <div className="hidden md:block" id="services">
+        <div className="hidden md:block">
           <ServicesStackSection
             eyebrow="What We Do"
             title="Our Services"
@@ -171,6 +171,7 @@ export default function WebAgency2Page() {
             ]}
           />
         </div>
+        </div>{/* end #services anchor */}
         <section id="portfolio">
           <FeatureCardTwentySix
             title="Featured Projects"
