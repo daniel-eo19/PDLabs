@@ -116,11 +116,6 @@ export default function TestimonialHeroCard() {
     [transition]
   );
 
-  const goPrev = useCallback(
-    () => transition((activeIndexRef.current - 1 + TESTIMONIALS.length) % TESTIMONIALS.length),
-    [transition]
-  );
-
   // Initial animate-in on mount
   useEffect(() => {
     isAnimatingRef.current = true;
