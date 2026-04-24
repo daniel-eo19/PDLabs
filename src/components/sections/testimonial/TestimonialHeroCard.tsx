@@ -52,6 +52,11 @@ export default function TestimonialHeroCard({
   return (
     <div className="w-content-width mx-auto px-4 py-10 sm:py-14 md:py-18">
 
+      {/* Section title */}
+      <p className="text-xs font-medium text-foreground/35 uppercase tracking-widest mb-5 sm:mb-6">
+        Client Success Story
+      </p>
+
       {/* ── Outer dark card ───────────────────────────────────────────── */}
       <div
         className="relative rounded-2xl"
