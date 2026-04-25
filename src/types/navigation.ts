@@ -1,6 +1,7 @@
 export interface NavItem {
     name: string;
     id: string;
+    href?: string;
 }
 
 export interface NavbarProps {
