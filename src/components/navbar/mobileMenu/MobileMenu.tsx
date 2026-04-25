@@ -45,7 +45,7 @@ const MobileMenu = ({
             <div className="flex flex-col gap-4">
                 {navItems.map((item, index) => {
                     const NavButton = () => {
-                        const handleClick = useButtonClick(item.id, () => onNavClick(item.id));
+                        const handleClick = useButtonClick(item.href ?? item.id, () => onNavClick(item.id));
 
                         return (
                             <button
