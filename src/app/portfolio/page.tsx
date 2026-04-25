@@ -298,12 +298,15 @@ export default function PortfolioPage() {
                         </div>
 
                         {/* Image thumbnail */}
-                        <div className="relative w-full h-48 sm:h-64 md:h-auto md:flex-1 rounded-xl overflow-hidden md:rotate-3 transition-transform duration-500 group-hover:rotate-0 group-hover:scale-[1.02]">
+                        <div
+                          className="relative w-full h-48 sm:h-64 md:h-auto md:flex-1 rounded-xl overflow-hidden md:rotate-3 transition-transform duration-500 group-hover:rotate-0 group-hover:scale-[1.02]"
+                          style={project.imageContain ? { background: "#0d0a0e" } : undefined}
+                        >
                           <Image
                             src={project.image}
                             alt={project.title}
                             fill
-                            className="object-cover object-top"
+                            className={project.imageContain ? "object-contain" : "object-cover object-top"}
                             sizes="(max-width: 768px) 100vw, 40vw"
                           />
                         </div>
