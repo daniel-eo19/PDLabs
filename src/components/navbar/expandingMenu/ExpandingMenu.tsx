@@ -71,7 +71,7 @@ const ExpandingMenu = ({
                 >
                     {navItems.map((item) => {
                         const MenuButton = () => {
-                            const handleClick = useButtonClick(item.id, handleNavClick);
+                            const handleClick = useButtonClick(item.href ?? item.id, handleNavClick);
 
                             return (
                                 <button
