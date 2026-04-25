@@ -114,6 +114,30 @@ const projects: Project[] = [
     image: "/images/web-agency-2/shot-7.webp",
     year: "2023",
   },
+  {
+    id: "08",
+    category: "E-Commerce",
+    filterCategory: "Web App",
+    title: "Luchy's Luxe",
+    summary:
+      "Premium jewellery and accessories e-commerce store for a Lagos-based luxury brand — editorial product presentation, custom collections flow, and a seamless storefront built for high-intent shoppers.",
+    tags: ["Shopify", "E-Commerce", "Luxury Retail", "UI Design"],
+    image: "/images/web-agency-2/luchysluxe-screenshot.jpg",
+    year: "2025",
+    link: "https://www.luchysluxe.com",
+  },
+  {
+    id: "09",
+    category: "E-Commerce",
+    filterCategory: "Web App",
+    title: "Modojaa",
+    summary:
+      "Fashion-forward clothing store with a curated catalogue, smooth product discovery, and a bold visual identity — designed to help the brand stand out in a competitive streetwear market.",
+    tags: ["Shopify", "Fashion", "E-Commerce", "Brand Design"],
+    image: "/images/web-agency-2/modojaa-screenshot.jpg",
+    year: "2025",
+    link: "https://www.modojaa.com",
+  },
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
