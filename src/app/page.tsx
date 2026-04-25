@@ -42,7 +42,8 @@ export default function WebAgency2Page() {
             { name: "Services", id: "services" },
             { name: "About", id: "about" },
             { name: "Team", id: "team" },
-            { name: "Contact", id: "contact" },
+            { name: "Portfolio", id: "portfolio", href: "/portfolio" },
+            { name: "Contact", id: "contact", href: "/contact" },
           ]}
           button={{ text: "Get Started", href: "/contact" }}
         />
