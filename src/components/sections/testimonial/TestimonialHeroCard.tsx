@@ -47,7 +47,7 @@ const TESTIMONIALS = [
   },
 ] as const;
 
-const AUTO_INTERVAL = 9000;
+const AUTO_INTERVAL = 6000;
 
 export default function TestimonialHeroCard() {
   const [activeIndex, setActiveIndex] = useState(0);
