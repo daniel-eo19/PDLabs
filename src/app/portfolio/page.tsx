@@ -34,6 +34,7 @@ interface Project {
   image: string;
   year: string;
   link?: string;
+  imageContain?: boolean;
 }
 
 const projects: Project[] = [
