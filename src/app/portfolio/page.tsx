@@ -33,6 +33,7 @@ interface Project {
   tags: string[];
   image: string;
   year: string;
+  link?: string;
 }
 
 const projects: Project[] = [
