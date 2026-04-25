@@ -7,6 +7,7 @@ import { useButtonClick } from '@/components/button/useButtonClick';
 interface NavItem {
     id: string;
     name: string;
+    href?: string;
 }
 
 interface ExpandingMenuProps {
