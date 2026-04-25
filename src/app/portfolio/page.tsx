@@ -51,14 +51,15 @@ const projects: Project[] = [
   },
   {
     id: "02",
-    category: "Brand Identity",
-    filterCategory: "Brand Identity",
-    title: "Ember Identity",
+    category: "Web Design",
+    filterCategory: "Landing Page",
+    title: "Vaness Integrated Resources",
     summary:
-      "Complete visual identity for a creative consultancy — logomark, type hierarchy, colour language, and a living brand guidelines document.",
-    tags: ["Identity Design", "Typography", "Print", "Brand Guidelines"],
-    image: "/images/web-agency-2/pd-bcard.jpg",
-    year: "2024",
+      "Full website for a Lagos-based professional training and consultancy firm — clean service pages, booking flow, client showcase, and a responsive layout built to convert corporate prospects.",
+    tags: ["Web Design", "Landing Page", "Consultancy", "UI/UX"],
+    image: "/images/web-agency-2/vaness-screenshot.jpg",
+    year: "2025",
+    link: "https://www.vaness.org",
   },
   {
     id: "03",
