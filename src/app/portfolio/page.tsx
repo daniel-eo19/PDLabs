@@ -49,6 +49,7 @@ const projects: Project[] = [
     image: "/images/web-agency-2/aetherlabs-screenshot.jpg",
     year: "2025",
     link: "https://www.aetherlabsstudios.com",
+    imageContain: true,
   },
   {
     id: "02",
@@ -61,64 +62,10 @@ const projects: Project[] = [
     image: "/images/web-agency-2/vaness-screenshot.jpg",
     year: "2025",
     link: "https://www.vaness.org",
+    imageContain: true,
   },
   {
     id: "03",
-    category: "Web Platform",
-    filterCategory: "Web App",
-    title: "Atlas Studio",
-    summary:
-      "Agency website and interactive case-study platform — fluid page transitions, immersive galleries, and a custom editorial CMS built for long-term content ownership.",
-    tags: ["Next.js", "GSAP", "Sanity CMS", "Framer Motion"],
-    image: "/images/web-agency-2/shot-6.webp",
-    year: "2024",
-  },
-  {
-    id: "04",
-    category: "Mobile App",
-    filterCategory: "Mobile App",
-    title: "Flux Mobile",
-    summary:
-      "iOS and Android app for a fintech startup — real-time portfolio tracking, intelligent push notifications, and a gesture-first interaction model designed for clarity under pressure.",
-    tags: ["React Native", "Expo", "TypeScript", "Figma"],
-    image: "/images/web-agency-2/phone-in-hand-3.jpg",
-    year: "2023",
-  },
-  {
-    id: "05",
-    category: "Product Design",
-    filterCategory: "Web App",
-    title: "Slate Systems",
-    summary:
-      "Enterprise analytics product for a global logistics firm — modular data tables, live charts, role-based permission views, and a dark-mode-first design system.",
-    tags: ["UX Research", "Figma", "Design System", "Prototyping"],
-    image: "/images/web-agency-2/shot-8.webp",
-    year: "2024",
-  },
-  {
-    id: "06",
-    category: "Digital Campaign",
-    filterCategory: "Landing Page",
-    title: "Crest Campaign",
-    summary:
-      "Multi-channel digital campaign for a luxury property launch — immersive microsite, interactive brand timeline, and social-first motion assets that reached 2M+ impressions in the first week.",
-    tags: ["Microsite", "Motion Design", "Social Content", "Campaign"],
-    image: "/images/web-agency-2/project-5.webp",
-    year: "2023",
-  },
-  {
-    id: "07",
-    category: "Creative Development",
-    filterCategory: "Web App",
-    title: "Horizon Platform",
-    summary:
-      "End-to-end product design and development for a B2B SaaS tool — user research, wireframing, high-fidelity prototypes, and a scalable component library handed off to engineering.",
-    tags: ["Next.js", "TypeScript", "GSAP", "Sanity CMS"],
-    image: "/images/web-agency-2/shot-7.webp",
-    year: "2023",
-  },
-  {
-    id: "08",
     category: "E-Commerce",
     filterCategory: "Web App",
     title: "Luchy's Luxe",
@@ -128,9 +75,10 @@ const projects: Project[] = [
     image: "/images/web-agency-2/luchysluxe-screenshot.jpg",
     year: "2025",
     link: "https://www.luchysluxe.com",
+    imageContain: true,
   },
   {
-    id: "09",
+    id: "04",
     category: "E-Commerce",
     filterCategory: "Web App",
     title: "Modojaa",
@@ -140,6 +88,7 @@ const projects: Project[] = [
     image: "/images/web-agency-2/modojaa-screenshot.jpg",
     year: "2025",
     link: "https://www.modojaa.com",
+    imageContain: true,
   },
 ];
 
