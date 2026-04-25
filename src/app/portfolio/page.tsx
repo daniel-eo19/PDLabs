@@ -359,11 +359,23 @@ export default function PortfolioPage() {
                         {/* View arrow */}
                         <div className="flex items-center justify-between">
                           <span className="text-xs font-medium text-foreground/30 uppercase tracking-widest">
-                            Case Study
+                            {project.link ? "Live Site" : "Case Study"}
                           </span>
-                          <span className="w-9 h-9 rounded-full border border-foreground/15 flex items-center justify-center transition-all duration-300 group-hover:border-foreground/40 group-hover:bg-foreground/5">
-                            <ArrowUpRight className="w-3.5 h-3.5 text-foreground/60 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                          </span>
+                          {project.link ? (
+                            <a
+                              href={project.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="w-9 h-9 rounded-full border border-foreground/15 flex items-center justify-center transition-all duration-300 group-hover:border-foreground/40 group-hover:bg-foreground/5"
+                            >
+                              <ArrowUpRight className="w-3.5 h-3.5 text-foreground/60 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                            </a>
+                          ) : (
+                            <span className="w-9 h-9 rounded-full border border-foreground/15 flex items-center justify-center transition-all duration-300 group-hover:border-foreground/40 group-hover:bg-foreground/5">
+                              <ArrowUpRight className="w-3.5 h-3.5 text-foreground/60 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                            </span>
+                          )}
                         </div>
 
                       </div>
