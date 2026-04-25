@@ -15,35 +15,35 @@ import gsap from "gsap";
 const TESTIMONIALS = [
   {
     quote:
-      "PD Labs transformed our product completely. The attention to detail in every animation and interaction felt like they understood our brand better than we did. Launch was seamless and results were immediate.",
-    name: "Alex Johnson",
-    handle: "@alex.johnson",
+      "PD Labs built our entire studio website from scratch and absolutely nailed the aesthetic. The dark cinematic feel, the 3D visuals, the animations — it all came together exactly how we envisioned. Our clients consistently mention the site as the reason they reached out.",
+    name: "Aether Labs Studios",
+    handle: "@aetherlabsstudios",
     avatarSrc: "/images/web-agency-2/dev-1.webp",
-    avatarAlt: "Alex Johnson",
+    avatarAlt: "Aether Labs Studios",
   },
   {
     quote:
-      "We'd been through two agencies before PD Labs. The difference was night and day — fast, clear communication, and the final product exceeded every expectation we had going in. Genuinely impressive team.",
-    name: "Sarah Chen",
-    handle: "@sarahchen.dev",
-    avatarSrc: "/images/web-agency-2/dev-2.webp",
-    avatarAlt: "Sarah Chen",
-  },
-  {
-    quote:
-      "Our conversion rate jumped 34% within the first month of going live. PD Labs nailed the UX and performance — Lighthouse scores we'd never seen before. Would recommend without any hesitation.",
-    name: "Marcus Reid",
-    handle: "@marcusreid",
-    avatarSrc: "/images/web-agency-2/dev-3.webp",
-    avatarAlt: "Marcus Reid",
-  },
-  {
-    quote:
-      "They don't just build what you ask for — they push back, ask the hard questions, and deliver something better. The site PD Labs built became our best sales asset. Every investor mentions it on the first call.",
-    name: "Priya Nair",
-    handle: "@priyanair.co",
+      "We needed a professional web presence that would speak to corporate clients and government agencies. PD Labs delivered a clean, credible platform with a smooth booking flow. Enquiries have increased significantly since we launched.",
+    name: "Vaness Integrated Resources",
+    handle: "@vaness.org",
     avatarSrc: "/images/web-agency-2/team-1.webp",
-    avatarAlt: "Priya Nair",
+    avatarAlt: "Vaness Integrated Resources",
+  },
+  {
+    quote:
+      "Our Shopify store needed to feel as luxurious as our jewellery. PD Labs understood the assignment — every detail feels premium. Customers regularly compliment how beautiful the site is before they've even browsed the collection.",
+    name: "Luchy's Luxe",
+    handle: "@luchysluxe",
+    avatarSrc: "/images/web-agency-2/dev-2.webp",
+    avatarAlt: "Luchy's Luxe",
+  },
+  {
+    quote:
+      "PD Labs gave Hippo Voices a platform we're genuinely proud to show off. The marketplace experience is seamless, the branding is bold, and the whole build was handled professionally from brief to launch. Exactly the partner we needed.",
+    name: "Hippo Voices",
+    handle: "@hippovoices.com",
+    avatarSrc: "/images/web-agency-2/dev-3.webp",
+    avatarAlt: "Hippo Voices",
   },
 ] as const;
 
