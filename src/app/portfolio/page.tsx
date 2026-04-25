@@ -90,6 +90,19 @@ const projects: Project[] = [
     link: "https://www.modojaa.com",
     imageContain: true,
   },
+  {
+    id: "05",
+    category: "Web Platform",
+    filterCategory: "Web App",
+    title: "Hippo Voices",
+    summary:
+      "Full-stack platform for casting African voice-over talents, translators and dubbing professionals — talent discovery, job listings, quote requests, and a vibrant brand identity built for a pan-African audience.",
+    tags: ["Web App", "Marketplace", "UI/UX", "Brand Identity"],
+    image: "/images/web-agency-2/hippovoices-screenshot.jpg",
+    year: "2025",
+    link: "https://hippovoices.com",
+    imageContain: true,
+  },
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
