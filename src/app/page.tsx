@@ -68,10 +68,10 @@ export default function WebAgency2Page() {
             { imageSrc: "/images/web-agency-2/tshirt-mockup.jpg", imageAlt: "PD Labs Brand Apparel" },
           ]}
           rightCarouselItems={[
-            { imageSrc: "/images/web-agency-2/macbook-mockup.png", imageAlt: "PD Labs - Web platform" },
-            { imageSrc: "/images/web-agency-2/venue-mockup.jpg", imageAlt: "PD Labs - Venue presentation" },
-            { imageSrc: "/images/web-agency-2/pd-bcard.jpg", imageAlt: "PD Labs - Brand identity" },
-            { imageSrc: "/images/web-agency-2/pd-favicon.jpg", imageAlt: "PD Labs - Logo design" },
+            { imageSrc: "/images/web-agency-2/macbook-mockup.png", imageAlt: "PD Labs Web Platform" },
+            { imageSrc: "/images/web-agency-2/venue-mockup.jpg", imageAlt: "PD Labs Venue Presentation" },
+            { imageSrc: "/images/web-agency-2/pd-bcard.jpg", imageAlt: "PD Labs Brand Identity" },
+            { imageSrc: "/images/web-agency-2/pd-favicon.jpg", imageAlt: "PD Labs Logo Design" },
           ]}
           carouselItemClassName="!aspect-[4/5]"
         />
@@ -90,7 +90,7 @@ export default function WebAgency2Page() {
             features={[
               {
                 title: "Custom Web Apps & Landing Pages",
-                description: "Scalable web applications and high-converting landing pages built with modern technology stacks.",
+                description: "Scalable web applications and high converting landing pages built with modern technology stacks.",
                 bentoComponent: "marquee",
                 centerIcon: Zap,
                 variant: "text",
