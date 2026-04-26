@@ -129,6 +129,30 @@ const projects: Project[] = [
     link: "https://davidschristiancentre.org",
     imageContain: true,
   },
+  {
+    id: "08",
+    category: "Mobile App",
+    filterCategory: "Mobile App",
+    title: "Destina App",
+    summary:
+      "Modern transport booking platform enabling users to search routes, reserve seats, track trips, and manage travel seamlessly. Built with Flutter for a smooth cross platform mobile experience backed by Python and PostgreSQL.",
+    tags: ["Mobile App", "Flutter", "Python", "UI/UX"],
+    image: "/images/web-agency-2/destina-screenshot.jpg",
+    year: "2025",
+    imageContain: true,
+  },
+  {
+    id: "09",
+    category: "Mobile App",
+    filterCategory: "Mobile App",
+    title: "Vaultify App",
+    summary:
+      "Smart estate management app enabling access codes, visitor tracking, service bookings, payments, and alerts in one unified mobile experience. Built with Flutter, Python, PostgreSQL, and Google Maps API.",
+    tags: ["Mobile App", "Flutter", "Estate Management", "UI/UX"],
+    image: "/images/web-agency-2/vaultify-screenshot.jpg",
+    year: "2025",
+    imageContain: true,
+  },
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
