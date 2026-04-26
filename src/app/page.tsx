@@ -322,16 +322,16 @@ export default function WebAgency2Page() {
               "Outdated design systems and frameworks",
               "Poor performance and slow load times",
               "Lack of mobile optimization",
-              "No data-driven design approach",
+              "No data driven design approach",
               "Limited technical support",
             ],
           }}
           positiveCard={{
             items: [
-              "Modern, cutting-edge design solutions",
+              "Modern, cutting edge design solutions",
               "Optimized performance across all devices",
-              "Mobile-first responsive design",
-              "Data-informed strategic approach",
+              "Mobile first responsive design",
+              "Data informed strategic approach",
               "Ongoing partnership and support",
               ],
             }}
