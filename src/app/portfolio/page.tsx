@@ -103,6 +103,58 @@ const projects: Project[] = [
     link: "https://hippovoices.com",
     imageContain: true,
   },
+  {
+    id: "06",
+    category: "Web Design",
+    filterCategory: "Landing Page",
+    title: "Rain Removals",
+    summary:
+      "Clean, professional website for a Greater Manchester based house clearance and rubbish removal company. Built to convert local search traffic with clear service listings, a trust driven layout, and a simple quote request flow.",
+    tags: ["Web Design", "UI/UX", "Local Business"],
+    image: "/images/web-agency-2/rainremovals-screenshot.jpg",
+    year: "2025",
+    link: "https://rainremovals.co.uk",
+    imageContain: true,
+  },
+  {
+    id: "07",
+    category: "Web Design",
+    filterCategory: "Landing Page",
+    title: "Ash K Homes",
+    summary:
+      "Clean and accessible website for a UK based hospice care and domiciliary services agency. The design emphasises trust, simplicity, and easy navigation for elderly users and caregivers — built with Next.js and TailwindCSS, with scroll animations and a HIPAA compliant contact form.",
+    tags: ["Web Design", "Next.js", "Accessibility", "UI/UX"],
+    image: "/images/web-agency-2/macbook-mockup.png",
+    year: "2025",
+    link: "https://ashkhomes.com",
+    imageContain: false,
+  },
+  {
+    id: "08",
+    category: "Web Design",
+    filterCategory: "Web App",
+    title: "David's Christian Centre",
+    summary:
+      "Modern, responsive church website featuring sermon listings, event pages, a blog, and an online giving section. Built with Next.js, TailwindCSS, and Framer Motion for smooth page transitions that give members a richer online experience.",
+    tags: ["Web Design", "Next.js", "Framer Motion", "Web App"],
+    image: "/images/web-agency-2/dcc-screenshot.jpg",
+    year: "2025",
+    link: "https://davidschristiancentre.org",
+    imageContain: true,
+  },
+  {
+    id: "09",
+    category: "Web Design",
+    filterCategory: "Landing Page",
+    title: "Champmedia",
+    summary:
+      "Dynamic portfolio and agency website for a growing digital marketing firm. Built with Next.js, TailwindCSS, and Framer Motion, with CMS features for easy campaign updates and Lenis.js for fluid, high performance scrolling that makes the content feel premium.",
+    tags: ["Web Design", "Next.js", "Digital Marketing", "UI/UX"],
+    image: "/images/web-agency-2/macbook-mockup.png",
+    year: "2025",
+    link: "https://champmedia.com.ng",
+    imageContain: false,
+  },
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
