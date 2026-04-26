@@ -79,12 +79,12 @@ const projects: Project[] = [
   },
   {
     id: "04",
-    category: "E-Commerce",
+    category: "Ecommerce",
     filterCategory: "Web App",
     title: "Modojaa",
     summary:
       "Fashion-forward clothing store with a curated catalogue, smooth product discovery, and a bold visual identity — designed to help the brand stand out in a competitive streetwear market.",
-    tags: ["Shopify", "Fashion", "E-Commerce", "Brand Design"],
+    tags: ["Shopify", "Fashion", "Ecommerce", "Brand Design"],
     image: "/images/web-agency-2/modojaa-screenshot.jpg",
     year: "2025",
     link: "https://www.modojaa.com",
@@ -96,7 +96,7 @@ const projects: Project[] = [
     filterCategory: "Web App",
     title: "Hippo Voices",
     summary:
-      "Full-stack platform for casting African voice-over talents, translators and dubbing professionals — talent discovery, job listings, quote requests, and a vibrant brand identity built for a pan-African audience.",
+      "Full stack platform for casting African voice over talents, translators and dubbing professionals — talent discovery, job listings, quote requests, and a vibrant brand identity built for a pan African audience.",
     tags: ["Web App", "Marketplace", "UI/UX", "Brand Identity"],
     image: "/images/web-agency-2/hippovoices-screenshot.jpg",
     year: "2025",
