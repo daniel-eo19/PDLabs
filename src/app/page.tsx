@@ -61,11 +61,11 @@ export default function WebAgency2Page() {
           buttonAnimation="slide-up"
           carouselPosition="right"
           leftCarouselItems={[
-            { imageSrc: "/images/web-agency-2/phone-in-hand-2.jpg", imageAlt: "PD Labs - Mobile app design" },
-            { imageSrc: "/images/web-agency-2/phone-in-hand-3.jpg", imageAlt: "PD Labs - Mobile experience" },
-            { imageSrc: "/images/web-agency-2/phone-in-hand-4.jpg", imageAlt: "PD Labs - Digital product" },
-            { imageSrc: "/images/web-agency-2/hoodie-mockup.jpg", imageAlt: "PD Labs - Brand merchandise" },
-            { imageSrc: "/images/web-agency-2/tshirt-mockup.jpg", imageAlt: "PD Labs - Brand apparel" },
+            { imageSrc: "/images/web-agency-2/phone-in-hand-2.jpg", imageAlt: "PD Labs Mobile App Design" },
+            { imageSrc: "/images/web-agency-2/phone-in-hand-3.jpg", imageAlt: "PD Labs Mobile Experience" },
+            { imageSrc: "/images/web-agency-2/phone-in-hand-4.jpg", imageAlt: "PD Labs Digital Product" },
+            { imageSrc: "/images/web-agency-2/hoodie-mockup.jpg", imageAlt: "PD Labs Brand Merchandise" },
+            { imageSrc: "/images/web-agency-2/tshirt-mockup.jpg", imageAlt: "PD Labs Brand Apparel" },
           ]}
           rightCarouselItems={[
             { imageSrc: "/images/web-agency-2/macbook-mockup.png", imageAlt: "PD Labs - Web platform" },
