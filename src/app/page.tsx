@@ -149,7 +149,7 @@ export default function WebAgency2Page() {
                 number: "02",
                 label: "Service 02",
                 title: "Mobile App Development",
-                description: "Native and cross-platform mobile apps for iOS and Android. From concept to App Store launch — we build fast, beautiful, and intuitive mobile experiences your users will love.",
+                description: "Native and cross platform mobile apps for iOS and Android. From concept to App Store launch — we build fast, beautiful, and intuitive mobile experiences your users will love.",
                 imageSrc: "/images/web-agency-2/phone-in-hand-2.jpg",
                 imageAlt: "PD Labs mobile app development",
               },
@@ -254,7 +254,7 @@ export default function WebAgency2Page() {
             },
             {
               title: "Secure Hosting",
-              description: "Enterprise-grade security and 99.9% uptime for your website.",
+              description: "Enterprise grade security and 99.9% uptime for your website.",
               bentoComponent: "reveal-icon",
               icon: Shield,
             },
