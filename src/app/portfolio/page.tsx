@@ -44,7 +44,7 @@ const projects: Project[] = [
     filterCategory: "Web App",
     title: "Aether Labs Studios",
     summary:
-      "Full website design and build for a leading product design studio — immersive hero, 3D visual language, service showcases, and a dark cinematic aesthetic that captures the brand's cutting-edge identity.",
+      "Full website design and build for a leading product design studio — immersive hero, 3D visual language, service showcases, and a dark cinematic aesthetic that captures the brand's cutting edge identity.",
     tags: ["Web Design", "UI/UX", "3D Visuals", "Motion UI"],
     image: "/images/web-agency-2/aetherlabs-screenshot.jpg",
     year: "2025",
@@ -57,7 +57,7 @@ const projects: Project[] = [
     filterCategory: "Landing Page",
     title: "Vaness Integrated Resources",
     summary:
-      "Full website for a Lagos-based professional training and consultancy firm — clean service pages, booking flow, client showcase, and a responsive layout built to convert corporate prospects.",
+      "Full website for a Lagos based professional training and consultancy firm — clean service pages, booking flow, client showcase, and a responsive layout built to convert corporate prospects.",
     tags: ["Web Design", "Landing Page", "Consultancy", "UI/UX"],
     image: "/images/web-agency-2/vaness-screenshot.jpg",
     year: "2025",
