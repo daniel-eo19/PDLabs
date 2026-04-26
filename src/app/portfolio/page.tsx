@@ -119,19 +119,6 @@ const projects: Project[] = [
   {
     id: "07",
     category: "Web Design",
-    filterCategory: "Landing Page",
-    title: "Ash K Homes",
-    summary:
-      "Clean and accessible website for a UK based hospice care and domiciliary services agency. The design emphasises trust, simplicity, and easy navigation for elderly users and caregivers — built with Next.js and TailwindCSS, with scroll animations and a HIPAA compliant contact form.",
-    tags: ["Web Design", "Next.js", "Accessibility", "UI/UX"],
-    image: "/images/web-agency-2/macbook-mockup.png",
-    year: "2025",
-    link: "https://ashkhomes.com",
-    imageContain: false,
-  },
-  {
-    id: "08",
-    category: "Web Design",
     filterCategory: "Web App",
     title: "David's Christian Centre",
     summary:
@@ -141,19 +128,6 @@ const projects: Project[] = [
     year: "2025",
     link: "https://davidschristiancentre.org",
     imageContain: true,
-  },
-  {
-    id: "09",
-    category: "Web Design",
-    filterCategory: "Landing Page",
-    title: "Champmedia",
-    summary:
-      "Dynamic portfolio and agency website for a growing digital marketing firm. Built with Next.js, TailwindCSS, and Framer Motion, with CMS features for easy campaign updates and Lenis.js for fluid, high performance scrolling that makes the content feel premium.",
-    tags: ["Web Design", "Next.js", "Digital Marketing", "UI/UX"],
-    image: "/images/web-agency-2/macbook-mockup.png",
-    year: "2025",
-    link: "https://champmedia.com.ng",
-    imageContain: false,
   },
 ];
 
