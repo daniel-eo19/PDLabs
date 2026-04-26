@@ -66,12 +66,12 @@ const projects: Project[] = [
   },
   {
     id: "03",
-    category: "E-Commerce",
+    category: "Ecommerce",
     filterCategory: "Web App",
     title: "Luchy's Luxe",
     summary:
-      "Premium jewellery and accessories e-commerce store for a Lagos-based luxury brand — editorial product presentation, custom collections flow, and a seamless storefront built for high-intent shoppers.",
-    tags: ["Shopify", "E-Commerce", "Luxury Retail", "UI Design"],
+      "Premium jewellery and accessories ecommerce store for a Lagos based luxury brand — editorial product presentation, custom collections flow, and a seamless storefront built for high intent shoppers.",
+    tags: ["Shopify", "Ecommerce", "Luxury Retail", "UI Design"],
     image: "/images/web-agency-2/luchysluxe-screenshot.jpg",
     year: "2025",
     link: "https://www.luchysluxe.com",
