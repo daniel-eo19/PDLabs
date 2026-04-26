@@ -265,9 +265,9 @@ export default function WebAgency2Page() {
               heading: "Project Launch",
               subheading: "Week 1",
               items: [
-                { label: "Discovery & wireframes", detail: "Day 1-3" },
-                { label: "Design & development", detail: "Day 4-10" },
-                { label: "Testing & deployment", detail: "Day 11-14" },
+                { label: "Discovery & wireframes", detail: "Days 1 to 3" },
+                { label: "Design & development", detail: "Days 4 to 10" },
+                { label: "Testing & deployment", detail: "Days 11 to 14" },
               ],
               completedLabel: "Live",
             },
@@ -285,7 +285,7 @@ export default function WebAgency2Page() {
             },
             {
               title: "Growth Trends",
-              description: "Data-driven insights to optimize your search presence and drive traffic.",
+              description: "Data driven insights to optimize your search presence and drive traffic.",
               bentoComponent: "line-chart",
             },
           ]}
