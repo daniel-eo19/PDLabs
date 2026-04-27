@@ -80,6 +80,7 @@ const NavbarLayoutFloatingOverlay = ({
                 />
               </div>
             )}
+            <ThemeToggle />
             <ExpandingMenu
               isOpen={menuOpen}
               onToggle={handleMenuToggle}
