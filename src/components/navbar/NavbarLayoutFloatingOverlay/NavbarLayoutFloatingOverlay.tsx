@@ -3,6 +3,7 @@
 import ExpandingMenu from "../expandingMenu/ExpandingMenu";
 import Button from "../../button/Button";
 import Logo from "../Logo";
+import ThemeToggle from "../../ThemeToggle";
 import { useScrollDetection } from "./useScrollDetection";
 import { useMenuAnimation } from "./useMenuAnimation";
 import { useResponsive } from "./useResponsive";
