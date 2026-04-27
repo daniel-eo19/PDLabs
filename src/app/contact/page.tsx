@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
 import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import ContactForm from "./ContactForm";
 import SceneDecorations from "@/components/background/SceneDecorations";
