@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
 import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import Button from "@/components/button/Button";
 import SceneDecorations from "@/components/background/SceneDecorations";
