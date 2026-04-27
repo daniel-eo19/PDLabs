@@ -2,14 +2,7 @@
   /* Base units */
   /* --vw is set by ThemeProvider */
 
-  /* --background: #f5f4ef;
-  --card: #dad6cd;
-  --foreground: #2a2928;
-  --primary-cta: #2a2928;
-  --secondary-cta: #ecebea;
-  --accent: #ffffff;
-  --background-accent: #ffffff; */
-
+  /* Dark mode (default) */
   --background: #0d0a0e;
   --card: #1a1520;
   --foreground: #ffffff;
