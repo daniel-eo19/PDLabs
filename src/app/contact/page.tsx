@@ -114,14 +114,17 @@ export default function ContactPage() {
               />
             </Link>
 
-            {/* View Work pill */}
-            <Link
-              href="/portfolio"
-              className="hidden sm:inline-flex items-center gap-1.5 text-xs px-4 py-2 rounded-full border border-foreground/15 text-foreground/60 hover:bg-foreground/5 transition-all duration-200 shrink-0"
-            >
-              View Work
-              <ArrowUpRight className="w-3 h-3" />
-            </Link>
+            {/* View Work pill + theme toggle */}
+            <div className="flex items-center gap-3 shrink-0">
+              <ThemeToggle />
+              <Link
+                href="/portfolio"
+                className="hidden sm:inline-flex items-center gap-1.5 text-xs px-4 py-2 rounded-full border border-foreground/15 text-foreground/60 hover:bg-foreground/5 transition-all duration-200"
+              >
+                View Work
+                <ArrowUpRight className="w-3 h-3" />
+              </Link>
+            </div>
           </div>
         </header>
 
