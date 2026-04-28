@@ -80,17 +80,17 @@ export default function WebAgency2Page() {
         {/* Mobile: bento grid */}
         <section className="md:hidden">
           <FeatureBento
-            title="Our Core Services"
-            description="What We Build. Comprehensive digital solutions for modern brands."
+            title="What We Build"
+            description="Comprehensive digital services for brands that mean business."
             textboxLayout="default"
             useInvertedBackground={false}
             animationType="slide-up"
-            buttons={[{ text: "Explore All", href: "#services" }]}
+            buttons={[{ text: "Start Your Project", href: "/contact" }]}
             buttonAnimation="slide-up"
             features={[
               {
                 title: "Custom Web Apps & Landing Pages",
-                description: "Scalable web applications and high converting landing pages built with modern technology stacks.",
+                description: "Scalable web platforms and high converting landing pages built for performance and conversion — from concept through to deployment.",
                 bentoComponent: "marquee",
                 centerIcon: Zap,
                 variant: "text",
