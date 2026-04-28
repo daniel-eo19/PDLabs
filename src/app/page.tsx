@@ -363,11 +363,11 @@ export default function WebAgency2Page() {
           useInvertedBackground={false}
           faqsAnimation="slide-up"
           faqs={[
-            { id: "1", title: "What services does PD Labs offer?", content: "We specialize in custom web app development, UI & UX design, and comprehensive brand identity solutions tailored to your business needs." },
-            { id: "2", title: "What is your typical project timeline?", content: "Project timelines vary based on scope and complexity. We provide detailed estimates and keep you informed throughout the development process." },
-            { id: "3", title: "Do you provide post-launch support?", content: "Yes, we offer comprehensive support packages including maintenance, updates, and optimization to ensure your project continues to succeed." },
-            { id: "4", title: "What technologies do you work with?", content: "We use modern technology stacks including Next.js, React, TypeScript, and Tailwind CSS for building scalable, performant applications." },
-            { id: "5", title: "How do we get started?", content: "Contact us through our website or reach out directly. We'll discuss your vision and create a customized proposal for your project." },
+            { id: "1", title: "What can PD Labs build for me?", content: "We build custom websites, web apps, mobile apps, UI and UX design systems, and brand identity packages. Whether you need a high-converting landing page, a complex web platform, a Shopify store, or a full mobile product — we handle the complete scope from strategy through to launch." },
+            { id: "2", title: "How long does a typical project take?", content: "Most projects run between two and eight weeks depending on scope and complexity. A focused landing page can be live in two weeks. A full web platform or mobile app typically takes six to twelve weeks. We share a clear delivery timeline at the start of every engagement." },
+            { id: "3", title: "What happens after my project goes live?", content: "We offer dedicated post-launch support covering maintenance, updates, performance monitoring, and new feature development. Most clients continue working with us beyond the initial build — we become a long-term partner, not just a delivery vendor." },
+            { id: "4", title: "What technologies does PD Labs use?", content: "We build with Next.js, React, TypeScript, and Tailwind CSS for modern web products. We use Flutter for mobile apps and Shopify for ecommerce projects. We choose the right tool for each project rather than forcing a one-size-fits-all approach." },
+            { id: "5", title: "How do I start a project with PD Labs?", content: "Reach out via our contact page or email us directly at hello@pdlabs.io. Share what you are building, your goals, and your timeline. We review every enquiry personally and respond within 24 hours with a clear, honest perspective on how we can help." },
           ]}
         />
         </div>
