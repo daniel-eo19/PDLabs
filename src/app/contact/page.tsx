@@ -195,9 +195,7 @@ export default function ContactPage() {
                       <span className="text-foreground/25">Touch.</span>
                     </h2>
                     <p className="text-sm sm:text-base leading-relaxed text-foreground/55 font-normal max-w-sm">
-                      Every project starts with a conversation. Share your brief
-                      — we&apos;ll come back with a clear perspective and an honest
-                      assessment within 24 hours.
+                      Every great project starts with a conversation. Share your brief and we will come back with an honest assessment and a clear plan within 24 hours.
                     </p>
                   </div>
 
