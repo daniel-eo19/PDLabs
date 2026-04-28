@@ -167,7 +167,7 @@ export async function submitContactForm(
         from:     FROM_ADDRESS,
         to:       [CONTACT_EMAIL],
         reply_to: clean.email,
-        subject:  `New enquiry: ${clean.projectType} — ${clean.fullName}`,
+        subject:  `New enquiry from ${clean.fullName} — ${clean.projectType || "General"}`,
         text:     textBody,
         html:     htmlBody,
       }),

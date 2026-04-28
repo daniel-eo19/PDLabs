@@ -32,6 +32,7 @@ export const cardStyleMap: Record<CardStyleVariant, string> = {
   `,
   "glass-elevated": `
     position: relative;
+    -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     background: linear-gradient(to bottom right, color-mix(in srgb, var(--color-card) 80%, transparent), color-mix(in srgb, var(--color-card) 40%, transparent));
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
