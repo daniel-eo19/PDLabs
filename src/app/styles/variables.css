@@ -121,19 +121,6 @@
   --padding-hero-page-padding-double: calc(2 * (var(--height-10) + var(--vw-1_5) + var(--vw-1_5) + var(--height-10)));
 }
 
-/* Light mode overrides */
-[data-theme="light"] {
-  --background: #f5f4ef;
-  --card: #e8e3db;
-  --foreground: #1a1520;
-  --primary-cta: #e63946;
-  --primary-cta-text: #ffffff;
-  --secondary-cta: #ddd8cf;
-  --secondary-cta-text: #1a1520;
-  --accent: #e63946;
-  --background-accent: #c1121f;
-}
-
 @media (max-width: 767px) {
   :root {
     /* --vw and text sizing are set by ThemeProvider */
