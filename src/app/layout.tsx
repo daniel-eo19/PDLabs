@@ -21,12 +21,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Prevent flash of wrong theme on load */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `try{var m=localStorage.getItem('pd-color-mode');if(m)document.documentElement.setAttribute('data-theme',m);}catch(e){}`,
-          }}
-        />
         <link rel="preconnect" href="https://api.fontshare.com" />
         <link
           rel="stylesheet"
