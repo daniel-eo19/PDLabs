@@ -227,15 +227,15 @@ export default function WebAgency2Page() {
           />
         </section>
         <FeatureBento
-          title="Our Promise"
-          description="We deliver results that speak for themselves."
+          title="What You Get With PD Labs"
+          description="Every project we take on is built to the same high standard — no exceptions."
           textboxLayout="default"
           useInvertedBackground={false}
           animationType="slide-up"
           features={[
             {
-              title: "All Devices Optimization",
-              description: "Pixel-perfect websites that look stunning on every screen size and device.",
+              title: "Responsive on Every Device",
+              description: "Every interface we build works flawlessly across mobile, tablet, and desktop — with zero layout breaks and no visual compromises.",
               bentoComponent: "phone",
               statusIcon: Lock,
               alertIcon: Monitor,
@@ -253,27 +253,27 @@ export default function WebAgency2Page() {
               ],
             },
             {
-              title: "Secure Hosting",
-              description: "Enterprise grade security and 99.9% uptime for your website.",
+              title: "Performance-First Builds",
+              description: "Optimised code, clean architecture, and fast load times — built to perform on Core Web Vitals and scale confidently as your business grows.",
               bentoComponent: "reveal-icon",
               icon: Shield,
             },
             {
-              title: "Fast Turnaround",
-              description: "From concept to launch in record time without sacrificing quality.",
+              title: "Structured Delivery",
+              description: "From brief to launch in a clear, disciplined timeline. No surprises — you always know exactly what is happening and what is next.",
               bentoComponent: "timeline",
               heading: "Project Launch",
               subheading: "Week 1",
               items: [
-                { label: "Discovery & wireframes", detail: "Days 1 to 3" },
-                { label: "Design & development", detail: "Days 4 to 10" },
-                { label: "Testing & deployment", detail: "Days 11 to 14" },
+                { label: "Discovery and brief alignment", detail: "Days 1 to 3" },
+                { label: "Design and development sprint", detail: "Days 4 to 10" },
+                { label: "QA, testing and deployment", detail: "Days 11 to 14" },
               ],
               completedLabel: "Live",
             },
             {
-              title: "Seamless Integrations",
-              description: "Connect with the tools you already use — CRMs, analytics, payments, and more.",
+              title: "End-to-End Integration",
+              description: "We connect your product with payment systems, CRMs, analytics platforms, and APIs — so your full stack works seamlessly together from day one.",
               bentoComponent: "orbiting-icons",
               centerIcon: Puzzle,
               items: [
@@ -284,8 +284,8 @@ export default function WebAgency2Page() {
               ],
             },
             {
-              title: "Growth Trends",
-              description: "Data driven insights to optimize your search presence and drive traffic.",
+              title: "Outcomes Over Aesthetics",
+              description: "Every design decision is informed by user behaviour and business objectives. We build for real, measurable outcomes — not just great-looking screens.",
               bentoComponent: "line-chart",
             },
           ]}
