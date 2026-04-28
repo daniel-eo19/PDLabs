@@ -165,7 +165,7 @@ export default function WebAgency2Page() {
                 number: "04",
                 label: "Service 04",
                 title: "Brand Identity",
-                description: "Complete brand solutions that resonate with your target audience. From logo and typography to merchandise and collateral — we build brands that leave a lasting impression.",
+                description: "Complete brand systems — logo, typography, colour, and collateral — built to resonate with your audience and hold up consistently across every touchpoint.",
                 imageSrc: "/images/web-agency-2/pd-bcard.jpg",
                 imageAlt: "PD Labs brand identity",
               },
@@ -175,53 +175,53 @@ export default function WebAgency2Page() {
         </div>{/* end #services anchor */}
         <section id="portfolio">
           <FeatureCardTwentySix
-            title="Featured Projects"
-            description="Latest work showcasing our expertise in digital design and development."
+            title="Selected Work"
+            description="A curated look at what we have built for ambitious clients."
             textboxLayout="default"
             useInvertedBackground={false}
-            buttons={[{ text: "View Portfolio", href: "/portfolio" }]}
+            buttons={[{ text: "View All Work", href: "/portfolio" }]}
             buttonAnimation="slide-up"
             cardClassName="!h-auto aspect-video"
             features={[
               {
-                title: "Web Platform",
-                description: "Modern web application for PD Labs",
-                imageSrc: "/images/web-agency-2/macbook-mockup.png",
-                imageAlt: "PD Labs web platform",
+                title: "Aether Labs Studios",
+                description: "Dark cinematic studio website with 3D visual language",
+                imageSrc: "/images/web-agency-2/aetherlabs-screenshot.jpg",
+                imageAlt: "Aether Labs Studios website",
                 buttonIcon: ArrowUpRight,
-                buttonHref: "#",
+                buttonHref: "https://www.aetherlabsstudios.com",
               },
               {
-                title: "Mobile Experience",
-                description: "Seamless mobile product design",
-                imageSrc: "/images/web-agency-2/phone-in-hand-2.jpg",
-                imageAlt: "PD Labs mobile experience",
+                title: "Vaness Integrated Resources",
+                description: "Professional training and consultancy platform",
+                imageSrc: "/images/web-agency-2/vaness-screenshot.jpg",
+                imageAlt: "Vaness Integrated Resources website",
                 buttonIcon: ArrowUpRight,
-                buttonHref: "#",
+                buttonHref: "https://www.vaness.org",
               },
               {
-                title: "Venue Branding",
-                description: "On-site brand presentation",
-                imageSrc: "/images/web-agency-2/venue-mockup.jpg",
-                imageAlt: "PD Labs venue branding",
+                title: "Luchy's Luxe",
+                description: "Premium luxury jewellery ecommerce storefront",
+                imageSrc: "/images/web-agency-2/luchysluxe-screenshot.jpg",
+                imageAlt: "Luchys Luxe ecommerce store",
                 buttonIcon: ArrowUpRight,
-                buttonHref: "#",
+                buttonHref: "https://www.luchysluxe.com",
               },
               {
-                title: "Brand Merchandise",
-                description: "Branded apparel and lifestyle products",
-                imageSrc: "/images/web-agency-2/hoodie-mockup.jpg",
-                imageAlt: "PD Labs brand merchandise",
+                title: "Hippo Voices",
+                description: "African voiceover talent marketplace platform",
+                imageSrc: "/images/web-agency-2/hippovoices-screenshot.jpg",
+                imageAlt: "Hippo Voices marketplace",
                 buttonIcon: ArrowUpRight,
-                buttonHref: "#",
+                buttonHref: "https://hippovoices.com",
               },
               {
-                title: "Brand Identity",
-                description: "Complete visual identity system",
-                imageSrc: "/images/web-agency-2/pd-bcard.jpg",
-                imageAlt: "PD Labs brand identity",
+                title: "Rain Removals",
+                description: "House clearance and removal service for Greater Manchester",
+                imageSrc: "/images/web-agency-2/rainremovals-screenshot.jpg",
+                imageAlt: "Rain Removals website",
                 buttonIcon: ArrowUpRight,
-                buttonHref: "#",
+                buttonHref: "https://rainremovals.co.uk",
               },
             ]}
           />
