@@ -98,7 +98,7 @@ export default function WebAgency2Page() {
               },
               {
                 title: "Mobile App Development",
-                description: "Native and cross platform mobile apps for iOS and Android. Fast, beautiful, and intuitive experiences your users will love.",
+                description: "Native and cross platform mobile apps for iOS and Android, built with Flutter and React Native. Fast, beautiful, and intuitive from day one.",
                 bentoComponent: "media-stack",
                 items: [
                   { imageSrc: "/images/web-agency-2/phone-in-hand-2.jpg", imageAlt: "PD Labs mobile app" },
@@ -141,7 +141,7 @@ export default function WebAgency2Page() {
                 number: "01",
                 label: "Service 01",
                 title: "Custom Web Apps & Landing Pages",
-                description: "Scalable, high performance web applications and high converting landing pages built with modern technology stacks. We merge innovation with creativity to deliver intuitive, visually stunning platforms that captivate audiences and drive results.",
+                description: "Scalable web platforms and high converting landing pages built with modern stacks. We design for conversion and develop for performance — delivering both in one cohesive build.",
                 imageSrc: "/images/web-agency-2/macbook-mockup.png",
                 imageAlt: "PD Labs web platform",
               },
