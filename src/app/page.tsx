@@ -373,13 +373,13 @@ export default function WebAgency2Page() {
         </div>
         <section id="contact">
           <ContactCTA
-            tag="Let's Connect"
-            title="Ready to Build Something Great?"
-            description="Transform your ideas into exceptional digital experiences. Contact PD Labs today to discuss your next project."
+            tag="Ready to Build?"
+            title="Your Next Project Starts Here."
+            description="Tell us what you are building. We will review your brief personally and come back with a clear plan within 24 hours."
             background={{ variant: "rotated-rays-animated" }}
             buttons={[
               { text: "Start Your Project", href: "/contact" },
-              { text: "Learn More", href: "#faq" },
+              { text: "View Our Work", href: "/portfolio" },
             ]}
             buttonAnimation="slide-up"
             useInvertedBackground={false}
