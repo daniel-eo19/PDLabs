@@ -319,20 +319,21 @@ export default function WebAgency2Page() {
           animationType="slide-up"
           negativeCard={{
             items: [
-              "Outdated design systems and frameworks",
-              "Poor performance and slow load times",
-              "Lack of mobile optimization",
-              "No data driven design approach",
-              "Limited technical support",
+              "Template sites that look like everyone else",
+              "Slow pages that cost you conversions",
+              "Mobile layouts that break the brand experience",
+              "Design made for portfolios, not client results",
+              "Delivered and forgotten with no post-launch support",
             ],
           }}
           positiveCard={{
             items: [
-              "Modern, cutting edge design solutions",
-              "Optimized performance across all devices",
-              "Mobile first responsive design",
-              "Data informed strategic approach",
-              "Ongoing partnership and support",
+              "Custom design built for your brand and your goals",
+              "Performance optimised builds with fast load times",
+              "Mobile first and fully responsive on every screen",
+              "Strategy and data led decisions throughout every build",
+              "Ongoing partnership and support beyond launch day",
+              "Transparent process from brief to deployment",
               ],
             }}
           />
