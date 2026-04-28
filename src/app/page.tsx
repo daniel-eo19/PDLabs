@@ -312,8 +312,8 @@ export default function WebAgency2Page() {
         <section id="about" className="relative overflow-hidden">
           <SceneDecorations preset="corners" />
           <FeatureCardSixteen
-            title="Why Partner With PD Labs"
-          description="Experience the difference that expert digital craftsmanship makes."
+            title="Why Choose PD Labs"
+          description="The difference between a good agency and the right one comes down to craft, communication, and genuine investment in your results."
           textboxLayout="default"
           useInvertedBackground={false}
           animationType="slide-up"

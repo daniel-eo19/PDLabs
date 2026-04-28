@@ -83,7 +83,7 @@ const projects: Project[] = [
     filterCategory: "Web App",
     title: "Modojaa",
     summary:
-      "Fashion-forward clothing store with a curated catalogue, smooth product discovery, and a bold visual identity — designed to help the brand stand out in a competitive streetwear market.",
+      "Fashion forward clothing store with a curated catalogue, smooth product discovery, and a bold visual identity — designed to help the brand stand out in a competitive streetwear and fashion market.",
     tags: ["Shopify", "Fashion", "Ecommerce", "Brand Design"],
     image: "/images/web-agency-2/modojaa-screenshot.jpg",
     year: "2025",
