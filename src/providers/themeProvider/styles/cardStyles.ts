@@ -41,6 +41,7 @@ export const cardStyleMap: Record<CardStyleVariant, string> = {
   "glass-depth": `
     position: relative;
     background: color-mix(in srgb, var(--color-card) 80%, transparent);
+    -webkit-backdrop-filter: blur(14px);
     backdrop-filter: blur(14px);
     box-shadow:
       inset 0 0 20px 0 color-mix(in srgb, var(--color-accent) 7.5%, transparent);

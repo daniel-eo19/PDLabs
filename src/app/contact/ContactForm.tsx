@@ -272,11 +272,11 @@ export default function ContactForm() {
           <div className="relative">
             <select
               id="timeline"
-              value={(form as ContactFormData & { timeline: string }).timeline ?? ""}
-              onChange={(e) => update("timeline" as keyof ContactFormData, e.target.value)}
+              value={form.timeline}
+              onChange={(e) => update("timeline", e.target.value)}
               disabled={isPending}
               className={selectCls + " pr-6"}
-              style={{ color: (form as ContactFormData & { timeline: string }).timeline ? "var(--foreground)" : "rgba(255,255,255,0.25)" }}
+              style={{ color: form.timeline ? "var(--foreground)" : "rgba(255,255,255,0.25)" }}
             >
               <option value="" disabled hidden>Select timeline</option>
               {TIMELINE_OPTIONS.map((t) => (
