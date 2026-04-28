@@ -248,7 +248,47 @@ export default function ContactForm() {
         </Field>
       </div>
 
-      {/* Row 3: Message */}
+      {/* Row 3: Budget + Timeline */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10">
+        <Field label="Budget Range" htmlFor="budget">
+          <div className="relative">
+            <select
+              id="budget"
+              value={form.budget}
+              onChange={(e) => update("budget", e.target.value)}
+              disabled={isPending}
+              className={selectCls + " pr-6"}
+              style={{ color: form.budget ? "var(--foreground)" : "rgba(255,255,255,0.25)" }}
+            >
+              <option value="" disabled hidden>Select range</option>
+              {BUDGET_OPTIONS.map((b) => (
+                <option key={b} value={b} style={{ color: "#fff", background: "#1a1520" }}>{b}</option>
+              ))}
+            </select>
+            <ChevronDown className="absolute right-0 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-foreground/25 pointer-events-none" aria-hidden />
+          </div>
+        </Field>
+        <Field label="Timeline" htmlFor="timeline">
+          <div className="relative">
+            <select
+              id="timeline"
+              value={(form as ContactFormData & { timeline: string }).timeline ?? ""}
+              onChange={(e) => update("timeline" as keyof ContactFormData, e.target.value)}
+              disabled={isPending}
+              className={selectCls + " pr-6"}
+              style={{ color: (form as ContactFormData & { timeline: string }).timeline ? "var(--foreground)" : "rgba(255,255,255,0.25)" }}
+            >
+              <option value="" disabled hidden>Select timeline</option>
+              {TIMELINE_OPTIONS.map((t) => (
+                <option key={t} value={t} style={{ color: "#fff", background: "#1a1520" }}>{t}</option>
+              ))}
+            </select>
+            <ChevronDown className="absolute right-0 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-foreground/25 pointer-events-none" aria-hidden />
+          </div>
+        </Field>
+      </div>
+
+      {/* Row 4: Message */}
       <Field label="Project Details" htmlFor="message" required>
         <textarea
           id="message"
