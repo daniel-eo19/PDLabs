@@ -48,15 +48,15 @@ export default function WebAgency2Page() {
           button={{ text: "Get Started", href: "/contact" }}
         />
         <HeroSplitDoubleCarousel
-          title="Our Core Services"
-          description="What We Build. Custom web apps, UI & UX design, and brand identity solutions that transform your vision into reality."
+          title="We Build Premium Digital Products"
+          description="PD Labs designs and builds high-performance websites, web apps, and mobile experiences for brands that demand excellence — strategy-led and beautifully executed."
           tagImageSrc="/images/web-agency-2/PD_LABS_PRIMARY_WHITE.png"
           tagImageAlt="PD Labs Primary"
           tagAnimation="slide-up"
           background={{ variant: "canvas-reveal" }}
           buttons={[
-            { text: "Explore Services", href: "#services", props: { className: "glossy-btn" } },
-            { text: "Contact Us", href: "/contact" },
+            { text: "Start Your Project", href: "/contact", props: { className: "glossy-btn" } },
+            { text: "View Our Work", href: "/portfolio" },
           ]}
           buttonAnimation="slide-up"
           carouselPosition="right"
