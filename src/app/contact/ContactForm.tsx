@@ -328,7 +328,7 @@ export default function ContactForm() {
       <div className="flex flex-col gap-3 pt-1">
         <Button
           variant="text-stagger"
-          text={isPending ? "Sending…" : "Send Message"}
+          text={isPending ? "Sending…" : "Send Your Brief"}
           type="submit"
           className="text-primary-cta-text glossy-btn w-full justify-center"
           bgClassName="primary-button"

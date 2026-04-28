@@ -18,6 +18,7 @@ export interface ContactFormData {
   company:     string;
   projectType: string;
   budget:      string;
+  timeline:    string;
   message:     string;
 }
 
