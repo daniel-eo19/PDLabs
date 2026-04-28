@@ -70,7 +70,7 @@ const projects: Project[] = [
     filterCategory: "Web App",
     title: "Luchy's Luxe",
     summary:
-      "Premium jewellery and accessories ecommerce store for a Lagos based luxury brand — editorial product presentation, custom collections flow, and a seamless storefront built for high intent shoppers.",
+      "Premium jewellery and accessories ecommerce store for a Lagos based luxury brand. The editorial product presentation, seamless collections flow, and luxury driven UX gave shoppers a buying experience that felt as premium as the products — with customers regularly complimenting the site before browsing.",
     tags: ["Shopify", "Ecommerce", "Luxury Retail", "UI Design"],
     image: "/images/web-agency-2/luchysluxe-screenshot.jpg",
     year: "2025",
@@ -428,11 +428,11 @@ export default function PortfolioPage() {
                 {/* Right */}
                 <div className="flex flex-col items-start md:items-end gap-4 sm:gap-5">
                   <p className="text-sm sm:text-base md:text-lg leading-relaxed text-primary-cta-text/65 max-w-xs md:text-right font-normal">
-                    Let&apos;s build something remarkable together. We&apos;d love to hear from you.
+                    Tell us what you are building and we will come back with a clear plan within 24 hours.
                   </p>
                   <Button
                     variant="text-stagger"
-                    text="Start a Conversation"
+                    text="Start Your Project"
                     href="/contact"
                     className="text-primary-cta-text glossy-btn"
                     bgClassName="primary-button"
