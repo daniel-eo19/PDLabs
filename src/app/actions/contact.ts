@@ -46,7 +46,7 @@ function isValidEmail(value: string): boolean {
 export async function submitContactForm(
   data: ContactFormData
 ): Promise<ContactResult> {
-  const { fullName, email, company, projectType, budget, message } = data;
+  const { fullName, email, company, projectType, budget, timeline, message } = data;
 
   // — Front-line validation ——————————————————————————————————————————————————
   if (!sanitize(fullName) || !sanitize(email) || !sanitize(message)) {
@@ -69,6 +69,7 @@ export async function submitContactForm(
     company:     sanitize(company, 200) || "—",
     projectType: sanitize(projectType, 100),
     budget:      sanitize(budget, 100),
+    timeline:    sanitize(timeline ?? "", 100),
     message:     sanitize(message, 5000),
   };
 
