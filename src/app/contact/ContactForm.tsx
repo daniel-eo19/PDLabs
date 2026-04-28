@@ -2,7 +2,6 @@
 
 import { useState, useTransition } from "react";
 import { submitContactForm, type ContactFormData } from "@/app/actions/contact";
-// ContactFormData includes: fullName, email, company, projectType, budget, timeline, message
 import Button from "@/components/button/Button";
 import { ChevronDown } from "lucide-react";
 
