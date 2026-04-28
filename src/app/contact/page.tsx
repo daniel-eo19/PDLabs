@@ -251,9 +251,9 @@ export default function ContactPage() {
                       How it works
                     </p>
                     {[
-                      { num: "01", label: "Share your brief",   desc: "What you're building, goals, and timeline." },
-                      { num: "02", label: "We review & align",  desc: "Clear perspective and honest proposal." },
-                      { num: "03", label: "We get to work",     desc: "Focused, collaborative — start to launch." },
+                      { num: "01", label: "Share your brief",      desc: "Tell us what you are building, your goals, and your ideal timeline." },
+                      { num: "02", label: "We review and align",   desc: "We come back with a clear perspective and an honest, detailed proposal." },
+                      { num: "03", label: "We build and launch",   desc: "Focused, collaborative delivery from kickoff all the way to go-live." },
                     ].map((step, i, arr) => (
                       <div
                         key={step.num}
