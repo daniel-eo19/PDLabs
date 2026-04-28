@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { submitContactForm, type ContactFormData } from "@/app/actions/contact";
+// ContactFormData includes: fullName, email, company, projectType, budget, timeline, message
 import Button from "@/components/button/Button";
 import { ChevronDown } from "lucide-react";
 
@@ -91,12 +92,30 @@ function Field({
 // ContactForm
 // ─────────────────────────────────────────────────────────────────────────────
 
+const BUDGET_OPTIONS = [
+  "Under $2,000",
+  "$2,000 – $5,000",
+  "$5,000 – $15,000",
+  "$15,000 – $30,000",
+  "$30,000+",
+  "Happy to discuss",
+];
+
+const TIMELINE_OPTIONS = [
+  "As soon as possible",
+  "Within 1 month",
+  "1 to 3 months",
+  "3 to 6 months",
+  "No fixed deadline",
+];
+
 const EMPTY_FORM: ContactFormData = {
   fullName:    "",
   email:       "",
   company:     "",
   projectType: "",
   budget:      "",
+  timeline:    "",
   message:     "",
 };
 
