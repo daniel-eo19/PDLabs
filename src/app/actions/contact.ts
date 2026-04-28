@@ -82,6 +82,7 @@ export async function submitContactForm(
     `Company:      ${clean.company}`,
     `Project Type: ${clean.projectType}`,
     `Budget:       ${clean.budget}`,
+    `Timeline:     ${clean.timeline}`,
     "",
     "Message:",
     clean.message,
@@ -130,8 +131,12 @@ export async function submitContactForm(
                 <td style="padding:10px 0;border-bottom:1px solid #f0f0f0;color:#0d0a0e;font-size:14px;">${clean.projectType}</td>
               </tr>
               <tr>
-                <td style="padding:10px 0;color:#888;font-size:13px;vertical-align:top;">Budget</td>
-                <td style="padding:10px 0;color:#0d0a0e;font-size:14px;">${clean.budget}</td>
+                <td style="padding:10px 0;border-bottom:1px solid #f0f0f0;color:#888;font-size:13px;vertical-align:top;">Budget</td>
+                <td style="padding:10px 0;border-bottom:1px solid #f0f0f0;color:#0d0a0e;font-size:14px;">${clean.budget}</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;color:#888;font-size:13px;vertical-align:top;">Timeline</td>
+                <td style="padding:10px 0;color:#0d0a0e;font-size:14px;">${clean.timeline || "—"}</td>
               </tr>
             </table>
             <p style="margin:0 0 8px;color:#888;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;">Message</p>
