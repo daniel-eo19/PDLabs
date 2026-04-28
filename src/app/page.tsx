@@ -303,9 +303,9 @@ export default function WebAgency2Page() {
           gridVariant="uniform-all-items-equal"
           animationType="slide-up"
           metrics={[
-            { id: "projects", value: "50+", title: "Projects Delivered", description: "Across diverse industries and sectors", icon: Award },
-            { id: "satisfaction", value: "98%", title: "Client Satisfaction", description: "Consistently exceeding expectations", icon: Users },
-            { id: "years", value: "5+", title: "Years Experience", description: "In digital design and development", icon: TrendingUp },
+            { id: "projects", value: "50+", title: "Projects Delivered", description: "From startups to established brands, across industries and continents", icon: Award },
+            { id: "satisfaction", value: "98%", title: "Client Satisfaction", description: "Measured through direct client feedback and long-term repeat partnerships", icon: Users },
+            { id: "years", value: "5+", title: "Years of Excellence", description: "Delivering premium digital products with a consistent track record", icon: TrendingUp },
           ]}
         />
         </div>
