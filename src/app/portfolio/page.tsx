@@ -4,7 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
-import ThemeToggle from "@/components/ThemeToggle";
 import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import Button from "@/components/button/Button";
 import SceneDecorations from "@/components/background/SceneDecorations";
@@ -206,16 +205,13 @@ export default function PortfolioPage() {
               />
             </Link>
 
-            <div className="flex items-center gap-3 shrink-0">
-              <ThemeToggle />
-              <Link
-                href="/contact"
-                className="hidden sm:inline-flex items-center gap-1.5 text-xs px-4 py-2 rounded-full border border-foreground/15 text-foreground/60 hover:bg-foreground/5 transition-all duration-200"
-              >
-                Start a Project
-                <ArrowUpRight className="w-3 h-3" />
-              </Link>
-            </div>
+            <Link
+              href="/contact"
+              className="hidden sm:inline-flex items-center gap-1.5 text-xs px-4 py-2 rounded-full border border-foreground/15 text-foreground/60 hover:bg-foreground/5 transition-all duration-200 shrink-0"
+            >
+              Start a Project
+              <ArrowUpRight className="w-3 h-3" />
+            </Link>
           </div>
         </header>
 
