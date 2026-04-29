@@ -254,16 +254,15 @@ const ShaderMaterial = ({
   const material = useMemo(() => {
     const materialObject = new THREE.ShaderMaterial({
       vertexShader: `
-      precision mediump float;
-      in vec2 coordinates;
+      precision highp float;
       uniform vec2 u_resolution;
-      out vec2 fragCoord;
+      out vec2 v_fragCoord;
       void main(){
         float x = position.x;
         float y = position.y;
         gl_Position = vec4(x, y, 0.0, 1.0);
-        fragCoord = (position.xy + vec2(1.0)) * 0.5 * u_resolution;
-        fragCoord.y = u_resolution.y - fragCoord.y;
+        v_fragCoord = (position.xy + vec2(1.0)) * 0.5 * u_resolution;
+        v_fragCoord.y = u_resolution.y - v_fragCoord.y;
       }
       `,
       fragmentShader: source,
@@ -293,7 +292,11 @@ interface ShaderProps {
 
 const Shader = ({ source, uniforms, maxFps = 60 }: ShaderProps) => {
   return (
-    <Canvas className="absolute inset-0 h-full w-full">
+    <Canvas
+      className="absolute inset-0 h-full w-full"
+      gl={{ antialias: false, alpha: true, powerPreference: 'high-performance' }}
+      dpr={[1, 2]}
+    >
       <ShaderMaterial source={source} uniforms={uniforms} maxFps={maxFps} />
     </Canvas>
   );
