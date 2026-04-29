@@ -118,8 +118,8 @@ const DotMatrix = ({
   return (
     <Shader
       source={`
-        precision mediump float;
-        in vec2 fragCoord;
+        precision highp float;
+        in vec2 v_fragCoord;
 
         uniform float u_time;
         uniform float u_opacities[10];
@@ -128,7 +128,7 @@ const DotMatrix = ({
         uniform float u_dot_size;
         uniform vec2 u_resolution;
         out vec4 fragColor;
-        float PHI = 1.61803398874989484820459;
+        const float PHI = 1.61803398874989484820459;
         float random(vec2 xy) {
             return fract(tan(distance(xy * PHI, xy) * 0.5) * xy.x);
         }
@@ -136,7 +136,7 @@ const DotMatrix = ({
             return min2 + (value - min1) * (max2 - min2) / (max1 - min1);
         }
         void main() {
-            vec2 st = fragCoord.xy;
+            vec2 st = v_fragCoord.xy;
             ${
               center.includes('x')
                 ? 'st.x -= abs(floor((mod(u_resolution.x, u_total_size) - u_dot_size) * 0.5));'
