@@ -2,10 +2,10 @@
 
 import ExpandingMenu from "../expandingMenu/ExpandingMenu";
 import Button from "../../button/Button";
+import ButtonTextUnderline from "../../button/ButtonTextUnderline";
 import Logo from "../Logo";
 import { useScrollDetection } from "./useScrollDetection";
 import { useMenuAnimation } from "./useMenuAnimation";
-import { useResponsive } from "./useResponsive";
 import type { NavItem } from "@/types/navigation";
 import { cls } from "@/lib/utils";
 import { getButtonProps } from "@/lib/buttonUtils";
@@ -37,48 +37,72 @@ const NavbarLayoutFloatingOverlay = ({
   buttonClassName = "",
   buttonTextClassName = "",
 }: NavbarLayoutFloatingOverlayProps) => {
-    const theme = useTheme();
-    const isScrolled = useScrollDetection(50);
-    const { menuOpen, buttonZIndex, handleMenuToggle } =
-      useMenuAnimation();
-    const isMobile = useResponsive(768);
+  const theme = useTheme();
+  const isScrolled = useScrollDetection(50);
+  const { menuOpen, buttonZIndex, handleMenuToggle } = useMenuAnimation();
 
-    return (
-      <nav
-        role="navigation"
-        aria-label="Main navigation"
-        className="fixed z-[100] top-6 w-full transition-all duration-500 ease-in-out"
+  return (
+    <nav
+      role="navigation"
+      aria-label="Main navigation"
+      className="fixed z-[100] top-6 w-full transition-all duration-500 ease-in-out"
+    >
+      <div
+        className={cls(
+          "w-content-width-expanded mx-auto",
+          "flex items-center justify-between",
+          "card rounded-theme backdrop-blur-xs",
+          "px-6",
+          className
+        )}
+        style={{
+          height: "calc(var(--vw-0_75) + var(--vw-0_75) + var(--height-10))",
+        }}
       >
-        <div
-          className={cls(
-            "w-content-width-expanded mx-auto",
-            "flex items-center justify-between",
-            "card rounded-theme backdrop-blur-xs",
-            "px-6 md:pr-3",
-            className
+        {/* Logo */}
+        <Logo
+          brandName={brandName}
+          logoSrc={logoSrc}
+          logoAlt={logoAlt}
+          className={logoClassName}
+          imageClassName={logoImageClassName}
+          href="/"
+        />
+
+        {/* Desktop nav links — centered, hidden on mobile */}
+        <div className="hidden lg:flex items-center gap-8 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          {navItems.map((item) => (
+            <ButtonTextUnderline
+              key={item.id}
+              text={item.name}
+              href={item.href ?? item.id}
+              className="!text-base font-medium tracking-wide"
+            />
+          ))}
+        </div>
+
+        {/* Right side */}
+        <div className="flex items-center gap-3">
+          {/* Desktop CTA button — hidden on mobile */}
+          {button && (
+            <div className="hidden lg:flex">
+              <Button
+                {...getButtonProps(
+                  button,
+                  0,
+                  theme.defaultButtonVariant,
+                  cls(buttonZIndex, buttonClassName),
+                  buttonTextClassName
+                )}
+              />
+            </div>
           )}
-          style={{
-            height: "calc(var(--vw-0_75) + var(--vw-0_75) + var(--height-10))",
-          }}
-        >
-          <Logo brandName={brandName} logoSrc={logoSrc} logoAlt={logoAlt} className={logoClassName} imageClassName={logoImageClassName} href="/" />
+
+          {/* Mobile hamburger — hidden on desktop */}
           <div
-            className="flex items-center transition-all duration-500 ease-in-out"
+            className="lg:hidden relative"
             style={{ paddingRight: "calc(var(--height-9) + var(--vw-0_75))" }}
           >
-            {!isMobile && button && (
-              <div className="hidden md:flex">
-                <Button
-                  {...getButtonProps(
-                    button,
-                    0,
-                    theme.defaultButtonVariant,
-                    cls(buttonZIndex, buttonClassName),
-                    buttonTextClassName
-                  )}
-                />
-              </div>
-            )}
             <ExpandingMenu
               isOpen={menuOpen}
               onToggle={handleMenuToggle}
@@ -87,7 +111,8 @@ const NavbarLayoutFloatingOverlay = ({
             />
           </div>
         </div>
-      </nav>
+      </div>
+    </nav>
   );
 };
 
