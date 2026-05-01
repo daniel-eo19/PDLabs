@@ -152,6 +152,19 @@ const projects: Project[] = [
     year: "2025",
     imageContain: true,
   },
+  {
+    id: "10",
+    category: "Web Platform",
+    filterCategory: "Web App",
+    title: "Segsalerty",
+    summary:
+      "Community platform for tech professionals dedicated to helping each other succeed — connecting members through shared knowledge, opportunities, and peer-driven growth in a focused and supportive digital space.",
+    tags: ["Web App", "Community", "Tech Platform", "UI/UX"],
+    image: "/images/web-agency-2/segsalerty-screenshot.jpg",
+    year: "2025",
+    link: "https://segsalerty.com",
+    imageContain: true,
+  },
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
