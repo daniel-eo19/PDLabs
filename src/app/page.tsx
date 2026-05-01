@@ -78,7 +78,7 @@ export default function WebAgency2Page() {
         {/* Services anchor — single scroll target for both mobile and desktop variants */}
         <div id="services">
         {/* Mobile + tablet: bento grid */}
-        <section className="lg:hidden">
+        <section className="xl:hidden">
           <FeatureBento
             title="What We Build"
             description="Comprehensive digital services for brands that mean business."
@@ -131,7 +131,7 @@ export default function WebAgency2Page() {
         </section>
 
         {/* Desktop only: sticky scroll-stack */}
-        <div className="hidden lg:block">
+        <div className="hidden xl:block">
           <ServicesStackSection
             eyebrow="What We Do"
             title="Our Services"
