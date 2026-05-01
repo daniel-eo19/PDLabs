@@ -300,24 +300,24 @@ export default function PortfolioPage() {
               </div>
 
               {/* Card stack */}
-              <div className="flex flex-col gap-4 sm:gap-[6.25vh]">
+              <div className="flex flex-col gap-8 sm:gap-10 md:gap-[6.25vh]">
                 {filtered.map((project) => (
                   <div
                     key={project.id}
-                    className="group md:sticky md:top-[12.5vh] w-full h-auto md:h-[75vh] rounded-2xl overflow-hidden border border-foreground/10 bg-card/60 backdrop-blur-md cursor-pointer transition-colors duration-300 hover:border-foreground/20"
+                    className="group md:sticky md:top-[12.5vh] w-full h-auto md:h-[78vh] rounded-2xl overflow-hidden border border-foreground/10 bg-card/60 backdrop-blur-md cursor-pointer transition-colors duration-300 hover:border-foreground/20"
                   >
                     <div className="relative z-10 w-full h-full flex flex-col md:flex-row justify-between overflow-hidden">
 
                       {/* ── Left: meta + content ───────────────────────────── */}
-                      <div className="w-full md:w-1/2 md:h-full flex flex-col justify-between p-6 sm:p-8 md:p-12 gap-6 md:gap-0">
+                      <div className="w-full md:w-1/2 md:h-full flex flex-col justify-between p-5 sm:p-7 md:p-10 lg:p-12 gap-5 md:gap-0">
 
                         {/* Top: label pill + large number */}
-                        <div className="flex flex-col gap-3 sm:gap-4 md:gap-6">
+                        <div className="flex flex-col gap-2 sm:gap-3 md:gap-5">
                           <span className="px-3 py-1 text-xs rounded-full border border-foreground/15 bg-foreground/5 inline-flex items-center gap-2 w-fit text-foreground/60 font-medium uppercase tracking-wider">
                             {project.category}
                           </span>
                           <h2
-                            className="text-5xl sm:text-6xl md:text-8xl font-bold leading-none text-foreground"
+                            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-none text-foreground"
                             style={akira}
                           >
                             {project.id}
@@ -326,17 +326,17 @@ export default function PortfolioPage() {
 
                         {/* Bottom: title + summary + tags */}
                         <div className="flex flex-col gap-2 sm:gap-3 md:gap-4">
-                          <h3 className="text-xl sm:text-2xl md:text-4xl font-semibold text-foreground">
+                          <h3 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-semibold text-foreground">
                             {project.title}
                           </h3>
-                          <p className="text-sm sm:text-base md:text-lg leading-relaxed text-foreground/65 font-normal">
+                          <p className="text-sm sm:text-base md:text-base lg:text-lg leading-relaxed text-foreground/65 font-normal line-clamp-4 md:line-clamp-none">
                             {project.summary}
                           </p>
                           <div className="flex flex-wrap gap-2 pt-1">
                             {project.tags.map((tag) => (
                               <span
                                 key={tag}
-                                className="px-3 py-1 text-xs rounded-full border border-foreground/15 bg-foreground/5 text-foreground/55 font-medium"
+                                className="px-2.5 py-0.5 text-xs rounded-full border border-foreground/15 bg-foreground/5 text-foreground/55 font-medium"
                               >
                                 {tag}
                               </span>
@@ -347,13 +347,13 @@ export default function PortfolioPage() {
                       </div>
 
                       {/* ── Right: ghost number + project image ────────────── */}
-                      <div className="w-full md:w-5/12 md:h-full flex flex-col gap-4 md:gap-6 p-6 sm:p-8 md:p-12 pt-0 md:pt-12">
+                      <div className="w-full md:w-[48%] md:h-full flex flex-col gap-3 md:gap-5 p-5 sm:p-7 md:p-10 lg:p-12 pt-3 sm:pt-4 md:pt-10 lg:pt-12">
 
-                        {/* Ghost number — desktop only */}
-                        <div className="hidden md:flex items-center justify-between">
+                        {/* Ghost number — tablet/desktop only */}
+                        <div className="hidden md:flex items-center justify-between shrink-0">
                           <span className="text-sm font-medium text-foreground/25">{project.year}</span>
                           <span
-                            className="text-9xl font-bold text-foreground/[0.06] leading-none select-none"
+                            className="text-8xl lg:text-9xl font-bold text-foreground/[0.06] leading-none select-none"
                             style={akira}
                           >
                             {project.id}
@@ -362,20 +362,20 @@ export default function PortfolioPage() {
 
                         {/* Image thumbnail */}
                         <div
-                          className="relative w-full h-48 sm:h-64 md:h-auto md:flex-1 rounded-xl overflow-hidden md:rotate-3 transition-transform duration-500 group-hover:rotate-0 group-hover:scale-[1.02]"
+                          className="relative w-full h-64 sm:h-80 md:h-auto md:flex-1 rounded-xl overflow-hidden md:rotate-3 transition-transform duration-500 group-hover:rotate-0 group-hover:scale-[1.02]"
                           style={project.imageContain ? { background: "#0d0a0e" } : undefined}
                         >
                           <Image
                             src={project.image}
                             alt={project.title}
                             fill
-                            className={project.imageContain ? "object-contain" : "object-cover object-top"}
-                            sizes="(max-width: 768px) 100vw, 40vw"
+                            className={project.imageContain ? "object-contain p-2 md:p-3" : "object-cover object-top"}
+                            sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 40vw"
                           />
                         </div>
 
                         {/* View arrow */}
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-center justify-between shrink-0">
                           <span className="text-xs font-medium text-foreground/30 uppercase tracking-widest">
                             {project.link ? "Live Site" : "Case Study"}
                           </span>
