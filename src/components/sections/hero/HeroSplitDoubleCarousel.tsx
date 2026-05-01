@@ -166,7 +166,7 @@ const HeroSplitDoubleCarousel = ({
   return (
     <section
       aria-label={ariaLabel}
-      className={cls("relative w-full h-fit py-hero-page-padding md:py-0 md:h-svh flex items-center", className)}
+      className={cls("relative w-full h-fit py-hero-page-padding md:py-0 md:h-svh-safe flex items-center", className)}
     >
       <HeroBackgrounds {...background} />
       <div className={cls("w-content-width mx-auto flex flex-col md:flex-row gap-10 md:gap-15 items-center relative z-10", containerClassName)}>

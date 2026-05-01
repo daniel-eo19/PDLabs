@@ -1,11 +1,28 @@
 * {
+  /* Firefox scrollbar */
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 1) rgba(255, 255, 255, 0);
+}
+
+/* Chrome / Safari / Brave scrollbar — matches Firefox style */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
 }
 
 html {
   overscroll-behavior: none;
   overscroll-behavior-y: none;
+  /* Prevent Safari from inflating font sizes on rotation */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -16,6 +33,10 @@ body {
   min-height: 100vh;
   overscroll-behavior: none;
   overscroll-behavior-y: none;
+  /* Consistent font rendering across Chrome, Firefox, Safari */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 h1,

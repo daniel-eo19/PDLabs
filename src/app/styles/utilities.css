@@ -1,3 +1,31 @@
+/*
+ * Cross-browser: ensure backdrop-filter always has the -webkit- prefix.
+ * Tailwind v4 handles this for utility classes, but any custom CSS that
+ * sets backdrop-filter without it will break Safari.
+ */
+[style*="backdrop-filter"] {
+  -webkit-backdrop-filter: inherit;
+}
+
+/*
+ * Header background using color-mix() with a solid rgba() fallback.
+ * color-mix() is supported in Chrome 111+, Firefox 113+, Safari 16.2+.
+ * The fallback covers older browser versions.
+ */
+.header-blur-bg {
+  background-color: rgba(13, 10, 14, 0.82); /* fallback */
+  background-color: color-mix(in srgb, var(--background) 82%, transparent);
+}
+
+/*
+ * svh (small viewport height) with vh fallback.
+ * svh accounts for mobile browser toolbars; older browsers fall back to vh.
+ */
+.h-svh-safe {
+  height: 100vh;
+  height: 100svh;
+}
+
 @keyframes gloss-sweep {
   0%   { transform: translateX(-200%) skewX(-20deg); opacity: 1; }
   10%  { transform: translateX(300%) skewX(-20deg); opacity: 1; }

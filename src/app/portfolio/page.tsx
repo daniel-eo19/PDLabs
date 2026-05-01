@@ -193,8 +193,7 @@ export default function PortfolioPage() {
 
         {/* ── Fixed page header ───────────────────────────────────────────── */}
         <header
-          className="fixed top-0 left-0 right-0 z-40 h-14 border-b border-foreground/8 backdrop-blur-md"
-          style={{ backgroundColor: "color-mix(in srgb, var(--background) 82%, transparent)" }}
+          className="fixed top-0 left-0 right-0 z-40 h-14 border-b border-foreground/8 backdrop-blur-md header-blur-bg"
         >
           <div className="w-content-width mx-auto h-full px-4 flex items-center justify-between gap-4">
             <Link
