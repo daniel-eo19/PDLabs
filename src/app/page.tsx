@@ -181,7 +181,8 @@ export default function WebAgency2Page() {
             useInvertedBackground={false}
             buttons={[{ text: "View All Work", href: "/portfolio" }]}
             buttonAnimation="slide-up"
-            cardClassName="!h-auto aspect-video"
+            hideCardOverlay={true}
+            cardClassName="!h-auto aspect-[4/3] sm:aspect-[3/2] md:aspect-video"
             features={[
               {
                 title: "Aether Labs Studios",
