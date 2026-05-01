@@ -52,14 +52,15 @@ const NavbarLayoutFloatingOverlay = ({
           "w-content-width-expanded mx-auto",
           "flex items-center justify-between",
           "card rounded-theme backdrop-blur-xs",
-          "px-6",
+          // Reduce right padding on desktop so the CTA button isn't over-spaced
+          "px-6 lg:pr-3",
           className
         )}
         style={{
           height: "calc(var(--vw-0_75) + var(--vw-0_75) + var(--height-10))",
         }}
       >
-        {/* Logo */}
+        {/* Logo — always visible */}
         <Logo
           brandName={brandName}
           logoSrc={logoSrc}
@@ -69,21 +70,22 @@ const NavbarLayoutFloatingOverlay = ({
           href="/"
         />
 
-        {/* Desktop nav links — centered, hidden on mobile */}
-        <div className="hidden lg:flex items-center gap-8 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        {/* Desktop nav links — centered, hidden on mobile/tablet */}
+        <div className="hidden lg:flex items-center gap-8 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
           {navItems.map((item) => (
-            <ButtonTextUnderline
-              key={item.id}
-              text={item.name}
-              href={item.href ?? item.id}
-              className="!text-base font-medium tracking-wide"
-            />
+            <div key={item.id} className="pointer-events-auto">
+              <ButtonTextUnderline
+                text={item.name}
+                href={item.href ?? item.id}
+                className="!text-base font-medium tracking-wide opacity-80 hover:opacity-100 transition-opacity duration-200"
+              />
+            </div>
           ))}
         </div>
 
         {/* Right side */}
-        <div className="flex items-center gap-3">
-          {/* Desktop CTA button — hidden on mobile */}
+        <div className="flex items-center">
+          {/* Desktop CTA — hidden on mobile/tablet */}
           {button && (
             <div className="hidden lg:flex">
               <Button
@@ -98,11 +100,15 @@ const NavbarLayoutFloatingOverlay = ({
             </div>
           )}
 
-          {/* Mobile hamburger — hidden on desktop */}
-          <div
-            className="lg:hidden relative"
-            style={{ paddingRight: "calc(var(--height-9) + var(--vw-0_75))" }}
-          >
+          {/*
+           * Mobile/tablet hamburger — hidden on desktop.
+           *
+           * IMPORTANT: No `position: relative` here.
+           * ExpandingMenu uses `absolute` positioning and must
+           * anchor to the `<nav>` (fixed) element, not this wrapper.
+           * Adding `relative` here would break its placement.
+           */}
+          <div className="lg:hidden">
             <ExpandingMenu
               isOpen={menuOpen}
               onToggle={handleMenuToggle}
