@@ -126,7 +126,7 @@ const ExpandingMenu = ({
                     aria-hidden="true"
                     className={`
                     transition-transform duration-700 ease-[cubic-bezier(0.5,0.5,0,1)]
-                    bg-background w-[40%] h-0.25 absolute
+                    bg-primary-cta-text w-[40%] h-0.25 absolute
                     ${isOpen
                         ? 'translate-y-0 rotate-45'
                         : '-translate-y-1 hover:translate-y-1'
@@ -136,7 +136,7 @@ const ExpandingMenu = ({
                     aria-hidden="true"
                     className={`
                     transition-transform duration-700 ease-[cubic-bezier(0.5,0.5,0,1)]
-                    bg-background w-[40%] h-0.25 absolute
+                    bg-primary-cta-text w-[40%] h-0.25 absolute
                     ${isOpen
                         ? 'translate-y-0 -rotate-45'
                         : 'translate-y-1 hover:-translate-y-1'
