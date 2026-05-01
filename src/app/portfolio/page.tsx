@@ -300,24 +300,24 @@ export default function PortfolioPage() {
               </div>
 
               {/* Card stack */}
-              <div className="flex flex-col gap-8 sm:gap-10 lg:gap-[6.25vh]">
+              <div className="flex flex-col gap-8 sm:gap-10 xl:gap-[6.25vh]">
                 {filtered.map((project) => (
                   <div
                     key={project.id}
-                    className="group lg:sticky lg:top-[12.5vh] w-full h-auto lg:h-[78vh] rounded-2xl overflow-hidden border border-foreground/10 bg-card/60 backdrop-blur-md cursor-pointer transition-colors duration-300 hover:border-foreground/20"
+                    className="group xl:sticky xl:top-[12.5vh] w-full h-auto xl:h-[78vh] rounded-2xl overflow-hidden border border-foreground/10 bg-card/60 backdrop-blur-md cursor-pointer transition-colors duration-300 hover:border-foreground/20"
                   >
-                    <div className="relative z-10 w-full h-full flex flex-col lg:flex-row justify-between overflow-hidden">
+                    <div className="relative z-10 w-full h-full flex flex-col xl:flex-row justify-between overflow-hidden">
 
                       {/* ── Left: meta + content ───────────────────────────── */}
-                      <div className="w-full lg:w-1/2 lg:h-full flex flex-col justify-between p-5 sm:p-7 lg:p-10 xl:p-12 gap-5 lg:gap-0">
+                      <div className="w-full xl:w-1/2 xl:h-full flex flex-col justify-between p-5 sm:p-7 xl:p-10 2xl:p-12 gap-5 xl:gap-0">
 
                         {/* Top: label pill + large number */}
-                        <div className="flex flex-col gap-2 sm:gap-3 lg:gap-5">
+                        <div className="flex flex-col gap-2 sm:gap-3 xl:gap-5">
                           <span className="px-3 py-1 text-xs rounded-full border border-foreground/15 bg-foreground/5 inline-flex items-center gap-2 w-fit text-foreground/60 font-medium uppercase tracking-wider">
                             {project.category}
                           </span>
                           <h2
-                            className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold leading-none text-foreground"
+                            className="text-4xl sm:text-5xl xl:text-7xl 2xl:text-8xl font-bold leading-none text-foreground"
                             style={akira}
                           >
                             {project.id}
@@ -325,11 +325,11 @@ export default function PortfolioPage() {
                         </div>
 
                         {/* Bottom: title + summary + tags */}
-                        <div className="flex flex-col gap-2 sm:gap-3 lg:gap-4">
-                          <h3 className="text-lg sm:text-2xl lg:text-3xl xl:text-4xl font-semibold text-foreground">
+                        <div className="flex flex-col gap-2 sm:gap-3 xl:gap-4">
+                          <h3 className="text-lg sm:text-2xl xl:text-3xl 2xl:text-4xl font-semibold text-foreground">
                             {project.title}
                           </h3>
-                          <p className="text-sm sm:text-base leading-relaxed text-foreground/65 font-normal line-clamp-4 lg:line-clamp-none">
+                          <p className="text-sm sm:text-base leading-relaxed text-foreground/65 font-normal line-clamp-4 xl:line-clamp-none">
                             {project.summary}
                           </p>
                           <div className="flex flex-wrap gap-2 pt-1">
@@ -347,13 +347,13 @@ export default function PortfolioPage() {
                       </div>
 
                       {/* ── Right: ghost number + project image ────────────── */}
-                      <div className="w-full lg:w-[48%] lg:h-full flex flex-col gap-3 lg:gap-5 p-5 sm:p-7 lg:p-10 xl:p-12 pt-3 sm:pt-4 lg:pt-10 xl:pt-12">
+                      <div className="w-full xl:w-[48%] xl:h-full flex flex-col gap-3 xl:gap-5 p-5 sm:p-7 xl:p-10 2xl:p-12 pt-3 sm:pt-4 xl:pt-10 2xl:pt-12">
 
                         {/* Ghost number — desktop only */}
-                        <div className="hidden lg:flex items-center justify-between shrink-0">
+                        <div className="hidden xl:flex items-center justify-between shrink-0">
                           <span className="text-sm font-medium text-foreground/25">{project.year}</span>
                           <span
-                            className="text-8xl xl:text-9xl font-bold text-foreground/[0.06] leading-none select-none"
+                            className="text-8xl 2xl:text-9xl font-bold text-foreground/[0.06] leading-none select-none"
                             style={akira}
                           >
                             {project.id}
@@ -362,15 +362,15 @@ export default function PortfolioPage() {
 
                         {/* Image thumbnail */}
                         <div
-                          className="relative w-full h-64 sm:h-80 md:h-96 lg:h-auto lg:flex-1 rounded-xl overflow-hidden lg:rotate-3 transition-transform duration-500 group-hover:rotate-0 group-hover:scale-[1.02]"
+                          className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[28rem] xl:h-auto xl:flex-1 rounded-xl overflow-hidden xl:rotate-3 transition-transform duration-500 group-hover:rotate-0 group-hover:scale-[1.02]"
                           style={project.imageContain ? { background: "#0d0a0e" } : undefined}
                         >
                           <Image
                             src={project.image}
                             alt={project.title}
                             fill
-                            className={project.imageContain ? "object-contain p-2 lg:p-3" : "object-cover object-top"}
-                            sizes="(max-width: 640px) 90vw, (max-width: 1024px) 90vw, 40vw"
+                            className={project.imageContain ? "object-contain p-2 xl:p-3" : "object-cover object-top"}
+                            sizes="(max-width: 1280px) 90vw, 40vw"
                           />
                         </div>
 
