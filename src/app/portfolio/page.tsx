@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
-import Button from "@/components/button/Button";
 import SceneDecorations from "@/components/background/SceneDecorations";
 import SplitHeading from "@/components/text/SplitHeading";
 
@@ -430,13 +429,13 @@ export default function PortfolioPage() {
                   <p className="text-sm sm:text-base md:text-lg leading-relaxed text-primary-cta-text/65 max-w-xs md:text-right font-normal">
                     Tell us what you are building and we will come back with a clear plan within 24 hours.
                   </p>
-                  <Button
-                    variant="text-stagger"
-                    text="Start Your Project"
+                  <Link
                     href="/contact"
-                    className="text-primary-cta-text glossy-btn"
-                    bgClassName="primary-button"
-                  />
+                    className="inline-flex items-center gap-2.5 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm font-semibold bg-primary-cta-text text-primary-cta hover:opacity-90 transition-opacity duration-200 shrink-0"
+                  >
+                    Start Your Project
+                    <ArrowUpRight className="w-4 h-4" />
+                  </Link>
                 </div>
 
               </div>
