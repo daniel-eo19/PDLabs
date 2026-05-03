@@ -219,7 +219,7 @@ export default function ContactPage() {
                       {
                         icon:  <IconGlobe />,
                         label: "Location",
-                        value: "Remote first — Global",
+                        value: "Remote. Worldwide.",
                         href:  null,
                       },
                     ].map((item) => (

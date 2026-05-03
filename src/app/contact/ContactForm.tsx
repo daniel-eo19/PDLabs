@@ -291,7 +291,7 @@ export default function ContactForm() {
       <Field label="Project Details" htmlFor="message" required>
         <textarea
           id="message"
-          placeholder="Tell us about your project — what you're building, your goals, timeline, or anything that helps us understand the brief."
+          placeholder="Tell us about your project. What you are building, your goals, your timeline, and anything else that helps us understand what you need."
           value={form.message}
           onChange={(e) => update("message", e.target.value)}
           disabled={isPending}
