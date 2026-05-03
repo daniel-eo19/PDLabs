@@ -15,7 +15,7 @@ import gsap from "gsap";
 const TESTIMONIALS = [
   {
     quote:
-      "PD Labs built our studio website from scratch and got the look exactly right. The dark feel, the 3D visuals, the animations, it all came together just as we pictured it. Clients tell us the site is what made them reach out.",
+      "PD Labs built our studio website from scratch and nailed the aesthetic. The dark feel, the 3D visuals, the animations, it all came together exactly as we pictured. The site is what brings most clients to us.",
     name: "Aether Labs Studios",
     handle: "@aetherlabsstudios",
     avatarSrc: "/images/web-agency-2/dev-1.webp",
@@ -23,7 +23,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "We needed a website that would hold up in front of corporate clients and government agencies. PD Labs built something clean and credible with a booking flow that just works. Enquiries have gone up a lot since we launched.",
+      "We needed a site credible enough for corporate clients and government agencies. PD Labs built something clean, easy to use, and properly functional. Enquiries have gone up a lot since we launched.",
     name: "Vaness Integrated Resources",
     handle: "@vaness.org",
     avatarSrc: "/images/web-agency-2/team-1.webp",
@@ -31,7 +31,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "We needed our Shopify store to feel as premium as the jewellery we sell. PD Labs delivered exactly that. Customers compliment the site all the time before they have even looked at the products.",
+      "We needed our Shopify store to feel as premium as the jewellery we sell. PD Labs delivered exactly that. Customers often tell us they love the site before they have even started browsing the collection.",
     name: "Luchy's Luxe",
     handle: "@luchysluxe",
     avatarSrc: "/images/web-agency-2/dev-2.webp",
@@ -246,7 +246,7 @@ export default function TestimonialHeroCard() {
             {/* Quote */}
             <p
               ref={quoteRef}
-              className="text-xs sm:text-sm md:text-base leading-relaxed text-foreground/75 font-normal text-center px-5 sm:px-8 md:px-12 py-4 sm:py-6"
+              className="text-xs sm:text-sm md:text-base leading-relaxed text-foreground/75 font-normal [text-align:justify] px-5 sm:px-8 md:px-12 py-4 sm:py-6"
             >
               &ldquo;{t.quote}&rdquo;
             </p>
