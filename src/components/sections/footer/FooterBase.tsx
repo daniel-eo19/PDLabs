@@ -58,9 +58,9 @@ const FooterBase = ({
       <div
         className={cls("relative w-content-width mx-auto z-10", containerClassName)}
       >
-        <div className="flex flex-col md:flex-row gap-10 md:gap-0 justify-between items-start mb-10">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-0 justify-between items-center md:items-start mb-10">
           {logoSrc ? (
-            <div className={cls("relative h-[calc(var(--text-4xl)*1.25)] w-auto flex-shrink-0", logoClassName)}>
+            <div className={cls("relative h-[calc(var(--text-4xl)*1.25)] w-auto flex-shrink-0 mx-auto md:mx-0", logoClassName)}>
               <Image
                 src={logoSrc}
                 alt={logoAlt}
@@ -71,14 +71,14 @@ const FooterBase = ({
               />
             </div>
           ) : (
-            <h2 className={cls("text-4xl font-medium text-primary-cta-text", logoTextClassName)}>
+            <h2 className={cls("text-4xl font-medium text-primary-cta-text mx-auto md:mx-0", logoTextClassName)}>
               {logoText}
             </h2>
           )}
 
           <FooterColumns
             columns={columns}
-            className={columnsClassName}
+            className={cls("mx-auto md:mx-0", columnsClassName)}
             columnClassName={columnClassName}
             columnTitleClassName={cls("text-primary-cta-text/50", columnTitleClassName)}
             columnItemClassName={cls("text-primary-cta-text", columnItemClassName)}
@@ -86,9 +86,9 @@ const FooterBase = ({
         </div>
 
         <div
-          className={cls("w-full flex items-center justify-between pt-9 border-t border-primary-cta-text/20", copyrightContainerClassName)}
+          className={cls("w-full flex flex-col sm:flex-row items-center gap-3 sm:justify-between pt-9 border-t border-primary-cta-text/20", copyrightContainerClassName)}
         >
-          <span className={cls("text-primary-cta-text/50 text-sm", copyrightTextClassName)}>
+          <span className={cls("text-primary-cta-text/50 text-sm text-center sm:text-left", copyrightTextClassName)}>
             {copyrightText}
           </span>
           <ButtonTextUnderline

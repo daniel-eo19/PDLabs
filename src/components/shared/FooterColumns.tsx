@@ -30,12 +30,12 @@ const FooterColumns = ({
 }: FooterColumnsProps) => {
   return (
     <div
-      className={cls("w-full md:w-fit flex flex-wrap gap-y-[var(--width-10)] md:gap-[calc(var(--width-10)/1.5)]", className)}
+      className={cls("w-full md:w-fit grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap gap-8 md:gap-[calc(var(--width-10)/1.5)]", className)}
     >
       {columns.map((column) => (
         <div
           key={column.title}
-          className={cls("relative z-1 w-1/2 md:w-auto flex items-start flex-col gap-4", columnClassName)}
+          className={cls("relative z-1 flex items-start flex-col gap-3", columnClassName)}
         >
           <h3
             className={cls("text-sm text-accent/75", columnTitleClassName)}
