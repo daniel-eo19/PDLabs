@@ -43,7 +43,7 @@ const projects: Project[] = [
     filterCategory: "Web App",
     title: "Aether Labs Studios",
     summary:
-      "Full website design and build for a leading product design studio. The immersive hero, 3D visual language, and dark cinematic aesthetic gave the brand a digital presence that immediately communicates premium quality — with clients regularly citing the site as the reason they made contact.",
+      "Full website design and build for a product design studio. The dark, cinematic feel and 3D visuals gave the brand a presence that speaks for itself. Clients regularly mention the site as the reason they got in touch.",
     tags: ["Web Design", "UI/UX", "3D Visuals", "Motion UI"],
     image: "/images/web-agency-2/aetherlabs-screenshot.jpg",
     year: "2025",
@@ -56,7 +56,7 @@ const projects: Project[] = [
     filterCategory: "Landing Page",
     title: "Vaness Integrated Resources",
     summary:
-      "Full website for a Lagos based professional training and consultancy firm. Clean service architecture, an optimised booking flow, and a trust driven layout built specifically to convert corporate and government prospects — resulting in a measurable uplift in qualified enquiries.",
+      "Full website for a training and consultancy firm based in Lagos. Clear service pages, a simple booking flow, and a layout built to earn the trust of corporate and government clients. Enquiries went up noticeably after launch.",
     tags: ["Web Design", "Landing Page", "Consultancy", "UI/UX"],
     image: "/images/web-agency-2/vaness-screenshot.jpg",
     year: "2025",
@@ -69,7 +69,7 @@ const projects: Project[] = [
     filterCategory: "Web App",
     title: "Luchy's Luxe",
     summary:
-      "Premium jewellery and accessories ecommerce store for a Lagos based luxury brand. The editorial product presentation, seamless collections flow, and luxury driven UX gave shoppers a buying experience that felt as premium as the products — with customers regularly complimenting the site before browsing.",
+      "Jewellery and accessories store for a luxury brand based in Lagos. We focused on making the shopping experience feel as premium as the products themselves. Customers often compliment the site before they even start browsing.",
     tags: ["Shopify", "Ecommerce", "Luxury Retail", "UI Design"],
     image: "/images/web-agency-2/luchysluxe-screenshot.jpg",
     year: "2025",
@@ -82,7 +82,7 @@ const projects: Project[] = [
     filterCategory: "Web App",
     title: "Modojaa",
     summary:
-      "Fashion forward clothing store with a curated catalogue, smooth product discovery, and a bold visual identity — designed to help the brand stand out in a competitive streetwear and fashion market.",
+      "A clothing store with a sharp visual identity, clean catalogue layout, and easy product discovery. Built to help the brand stand out in a crowded fashion and streetwear market.",
     tags: ["Shopify", "Fashion", "Ecommerce", "Brand Design"],
     image: "/images/web-agency-2/modojaa-screenshot.jpg",
     year: "2025",
@@ -95,7 +95,7 @@ const projects: Project[] = [
     filterCategory: "Web App",
     title: "Hippo Voices",
     summary:
-      "Full stack platform for casting African voice over talents, translators and dubbing professionals — talent discovery, job listings, quote requests, and a vibrant brand identity built for a pan African audience.",
+      "A full platform for booking African voiceover artists, translators, and dubbing professionals. Includes talent discovery, job listings, and quote requests, all tied together with a bold brand built for a pan African audience.",
     tags: ["Web App", "Marketplace", "UI/UX", "Brand Identity"],
     image: "/images/web-agency-2/hippovoices-screenshot.jpg",
     year: "2025",
@@ -108,7 +108,7 @@ const projects: Project[] = [
     filterCategory: "Landing Page",
     title: "Rain Removals",
     summary:
-      "Clean, professional website for a Greater Manchester based house clearance and rubbish removal company. Built to convert local search traffic with clear service listings, a trust driven layout, and a simple quote request flow.",
+      "A professional website for a house clearance and rubbish removal company in Greater Manchester. Built to turn local search traffic into bookings, with clear service pages and a simple quote request form.",
     tags: ["Web Design", "UI/UX", "Local Business"],
     image: "/images/web-agency-2/rainremovals-screenshot.jpg",
     year: "2025",
@@ -121,7 +121,7 @@ const projects: Project[] = [
     filterCategory: "Web App",
     title: "David's Christian Centre",
     summary:
-      "Modern, responsive church website featuring sermon listings, event pages, a blog, and an online giving section. Built with Next.js, TailwindCSS, and Framer Motion for smooth page transitions that give members a richer online experience.",
+      "A church website with sermon listings, event pages, a blog, and online giving. Built with Next.js, Tailwind CSS, and Framer Motion to give members a polished and engaging experience online.",
     tags: ["Web Design", "Next.js", "Framer Motion", "Web App"],
     image: "/images/web-agency-2/dcc-screenshot.jpg",
     year: "2025",
@@ -134,7 +134,7 @@ const projects: Project[] = [
     filterCategory: "Mobile App",
     title: "Destina App",
     summary:
-      "Modern transport booking platform enabling users to search routes, reserve seats, track trips, and manage travel seamlessly. Built with Flutter for a smooth cross platform mobile experience backed by Python and PostgreSQL.",
+      "A transport booking app where users can search routes, reserve seats, and track their trips. Built with Flutter for iOS and Android, with Python and PostgreSQL powering the backend.",
     tags: ["Mobile App", "Flutter", "Python", "UI/UX"],
     image: "/images/web-agency-2/destina-screenshot.jpg",
     year: "2025",
@@ -146,7 +146,7 @@ const projects: Project[] = [
     filterCategory: "Mobile App",
     title: "Vaultify App",
     summary:
-      "Smart estate management app enabling access codes, visitor tracking, service bookings, payments, and alerts in one unified mobile experience. Built with Flutter, Python, PostgreSQL, and Google Maps API.",
+      "An estate management app that handles access codes, visitor tracking, service bookings, payments, and alerts. Built with Flutter, Python, PostgreSQL, and Google Maps.",
     tags: ["Mobile App", "Flutter", "Estate Management", "UI/UX"],
     image: "/images/web-agency-2/vaultify-screenshot.jpg",
     year: "2025",
@@ -158,7 +158,7 @@ const projects: Project[] = [
     filterCategory: "Web App",
     title: "Segsalerty",
     summary:
-      "Community platform for tech professionals dedicated to helping each other succeed — connecting members through shared knowledge, opportunities, and peer-driven growth in a focused and supportive digital space.",
+      "A community platform built for tech professionals who want to grow and support each other. Members share knowledge, find opportunities, and connect in a space designed specifically for that.",
     tags: ["Web App", "Community", "Tech Platform", "UI/UX"],
     image: "/images/web-agency-2/segsalerty-screenshot.jpg",
     year: "2025",
@@ -270,8 +270,8 @@ export default function PortfolioPage() {
               <div className="w-16 sm:w-24 h-px bg-foreground/10" />
 
               <p className="text-sm sm:text-base md:text-lg text-foreground/50 font-normal max-w-md sm:max-w-lg leading-relaxed">
-                A curated selection of digital work — spanning strategy, craft,
-                and code. Every project starts with a problem worth solving.
+                A look at the work we have done. Every project starts with a
+                real problem and a client who wants it solved.
               </p>
 
             </div>
@@ -439,7 +439,7 @@ export default function PortfolioPage() {
                 {/* Right */}
                 <div className="flex flex-col items-start md:items-end gap-4 sm:gap-5">
                   <p className="text-sm sm:text-base md:text-lg leading-relaxed text-primary-cta-text/65 max-w-xs md:text-right font-normal">
-                    Tell us what you are building and we will come back with a clear plan within 24 hours.
+                    Tell us what you are working on and we will come back with a clear plan within 24 hours.
                   </p>
                   <Link
                     href="/contact"

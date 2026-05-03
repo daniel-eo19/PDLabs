@@ -165,8 +165,8 @@ export default function ContactPage() {
               <div className="w-16 sm:w-24 h-px bg-foreground/10" />
 
               <p className="text-sm sm:text-base md:text-lg text-foreground/50 font-normal max-w-md sm:max-w-lg leading-relaxed">
-                We work with ambitious teams and founders to craft digital
-                products worth noticing. Let&apos;s talk about yours.
+                We work with founders and teams who want to build something
+                worth paying attention to. Tell us about yours.
               </p>
 
             </div>
@@ -194,7 +194,7 @@ export default function ContactPage() {
                       <span className="text-foreground/25">Touch.</span>
                     </h2>
                     <p className="text-sm sm:text-base leading-relaxed text-foreground/55 font-normal max-w-sm">
-                      Every great project starts with a conversation. Share your brief and we will come back with an honest assessment and a clear plan within 24 hours.
+                      Every good project starts with a conversation. Send us your brief and we will come back with an honest assessment and a clear plan within 24 hours.
                     </p>
                   </div>
 
@@ -250,7 +250,7 @@ export default function ContactPage() {
                     {[
                       { num: "01", label: "Share your brief",      desc: "Tell us what you are building, your goals, and your ideal timeline." },
                       { num: "02", label: "We review and align",   desc: "We come back with a clear perspective and an honest, detailed proposal." },
-                      { num: "03", label: "We build and launch",   desc: "Focused, collaborative delivery from kickoff all the way to go-live." },
+                      { num: "03", label: "We build and launch",   desc: "We work closely with you from kickoff through to launch, keeping you in the loop at every stage." },
                     ].map((step, i, arr) => (
                       <div
                         key={step.num}
@@ -286,7 +286,7 @@ export default function ContactPage() {
                       <span className="text-foreground/25">Something.</span>
                     </h3>
                     <p className="text-sm text-foreground/40 font-normal leading-relaxed max-w-sm sm:max-w-md">
-                      Fill in what you can — the more detail the better.
+                      Fill in as much as you can. The more detail the better.
                       Fields marked <span style={{ color: "var(--accent)" }}>*</span> are required.
                     </p>
                   </div>
@@ -314,8 +314,7 @@ export default function ContactPage() {
                     Not sure yet?
                   </h2>
                   <p className="text-sm leading-relaxed text-primary-cta-text/60 max-w-xs font-normal">
-                    Browse our portfolio to see the kind of work we do and the
-                    standards we hold ourselves to.
+                    Browse the portfolio to see what we build and how we work.
                   </p>
                 </div>
                 <Link

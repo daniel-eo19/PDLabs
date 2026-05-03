@@ -15,7 +15,7 @@ import gsap from "gsap";
 const TESTIMONIALS = [
   {
     quote:
-      "PD Labs built our entire studio website from scratch and absolutely nailed the aesthetic. The dark cinematic feel, the 3D visuals, the animations — it all came together exactly how we envisioned. Our clients consistently mention the site as the reason they reached out.",
+      "PD Labs built our studio website from scratch and got the look exactly right. The dark feel, the 3D visuals, the animations, it all came together just as we pictured it. Clients tell us the site is what made them reach out.",
     name: "Aether Labs Studios",
     handle: "@aetherlabsstudios",
     avatarSrc: "/images/web-agency-2/dev-1.webp",
@@ -23,7 +23,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "We needed a professional web presence that would speak to corporate clients and government agencies. PD Labs delivered a clean, credible platform with a smooth booking flow. Enquiries have increased significantly since we launched.",
+      "We needed a website that would hold up in front of corporate clients and government agencies. PD Labs built something clean and credible with a booking flow that just works. Enquiries have gone up a lot since we launched.",
     name: "Vaness Integrated Resources",
     handle: "@vaness.org",
     avatarSrc: "/images/web-agency-2/team-1.webp",
@@ -31,7 +31,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "Our Shopify store needed to feel as luxurious as our jewellery. PD Labs understood the assignment — every detail feels premium. Customers regularly compliment how beautiful the site is before they've even browsed the collection.",
+      "We needed our Shopify store to feel as premium as the jewellery we sell. PD Labs delivered exactly that. Customers compliment the site all the time before they have even looked at the products.",
     name: "Luchy's Luxe",
     handle: "@luchysluxe",
     avatarSrc: "/images/web-agency-2/dev-2.webp",
@@ -39,7 +39,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "PD Labs gave Hippo Voices a platform we're genuinely proud to show off. The marketplace experience is seamless, the branding is bold, and the whole build was handled professionally from brief to launch. Exactly the partner we needed.",
+      "PD Labs built us a platform we are genuinely proud of. The marketplace works well, the branding is bold, and the whole project was handled properly from start to finish. Exactly what we were looking for.",
     name: "Hippo Voices",
     handle: "@hippovoices.com",
     avatarSrc: "/images/web-agency-2/dev-3.webp",

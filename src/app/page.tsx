@@ -49,7 +49,7 @@ export default function WebAgency2Page() {
         />
         <HeroSplitDoubleCarousel
           title="We Build Premium Digital Products"
-          description="PD Labs designs and builds high-performance websites, web apps, and mobile experiences for brands that demand excellence — strategy-led and beautifully executed."
+          description="PD Labs builds websites, web apps, and mobile products for brands that care about quality. Good looking and built to last."
           tagImageSrc="/images/web-agency-2/PD_LABS_PRIMARY_WHITE.png"
           tagImageAlt="PD Labs Primary"
           tagAnimation="slide-up"
@@ -81,7 +81,7 @@ export default function WebAgency2Page() {
         <section className="xl:hidden">
           <FeatureBento
             title="What We Build"
-            description="Comprehensive digital services for brands that mean business."
+            description="Digital services for brands that take their work seriously."
             textboxLayout="default"
             useInvertedBackground={false}
             animationType="slide-up"
@@ -90,7 +90,7 @@ export default function WebAgency2Page() {
             features={[
               {
                 title: "Custom Web Apps & Landing Pages",
-                description: "Scalable web platforms and high converting landing pages built for performance and conversion — from concept through to deployment.",
+                description: "Web platforms and landing pages built to perform and convert, from the first design to the final deployment.",
                 bentoComponent: "marquee",
                 centerIcon: Zap,
                 variant: "text",
@@ -98,7 +98,7 @@ export default function WebAgency2Page() {
               },
               {
                 title: "Mobile App Development",
-                description: "Native and cross platform mobile apps for iOS and Android, built with Flutter and React Native. Fast, beautiful, and intuitive from day one.",
+                description: "iOS and Android apps built with Flutter and React Native. Smooth, good looking, and easy to use from the start.",
                 bentoComponent: "media-stack",
                 items: [
                   { imageSrc: "/images/web-agency-2/phone-in-hand-2.jpg", imageAlt: "PD Labs mobile app" },
@@ -108,7 +108,7 @@ export default function WebAgency2Page() {
               },
               {
                 title: "UI & UX Design",
-                description: "Beautiful, intuitive interfaces that engage users and drive conversions.",
+                description: "Clean, user-friendly interfaces that look great and keep people coming back.",
                 bentoComponent: "media-stack",
                 items: [
                   { imageSrc: "/images/web-agency-2/macbook-mockup.png", imageAlt: "PD Labs web design" },
@@ -118,7 +118,7 @@ export default function WebAgency2Page() {
               },
               {
                 title: "Brand Identity",
-                description: "Complete brand solutions that resonate with your target audience.",
+                description: "Full brand packages that connect with the right people and hold up everywhere.",
                 bentoComponent: "media-stack",
                 items: [
                   { imageSrc: "/images/web-agency-2/hoodie-mockup.jpg", imageAlt: "PD Labs brand merchandise" },
@@ -135,13 +135,13 @@ export default function WebAgency2Page() {
           <ServicesStackSection
             eyebrow="What We Do"
             title="Our Services"
-            description="Comprehensive digital solutions for modern brands."
+            description="Digital solutions for brands that want more."
             services={[
               {
                 number: "01",
                 label: "Service 01",
                 title: "Custom Web Apps & Landing Pages",
-                description: "Scalable web platforms and high converting landing pages built with modern stacks. We design for conversion and develop for performance — delivering both in one cohesive build.",
+                description: "Web platforms and landing pages built with modern tools. We focus on getting you conversions and keeping things fast, all in one solid build.",
                 imageSrc: "/images/web-agency-2/macbook-mockup.png",
                 imageAlt: "PD Labs web platform",
               },
@@ -149,7 +149,7 @@ export default function WebAgency2Page() {
                 number: "02",
                 label: "Service 02",
                 title: "Mobile App Development",
-                description: "Native and cross platform mobile apps for iOS and Android, built with Flutter and React Native. From prototype to App Store launch — fast, beautiful, and intuitive mobile products your users will love.",
+                description: "iOS and Android apps built with Flutter and React Native. From the first prototype to App Store approval, we build mobile products people actually enjoy using.",
                 imageSrc: "/images/web-agency-2/phone-in-hand-2.jpg",
                 imageAlt: "PD Labs mobile app development",
               },
@@ -157,7 +157,7 @@ export default function WebAgency2Page() {
                 number: "03",
                 label: "Service 03",
                 title: "UI & UX Design",
-                description: "Research-led UI and UX design that converts. We craft interfaces that communicate clearly, feel effortless to use, and reflect the full quality of your brand across every interaction.",
+                description: "UI and UX design grounded in how real users think. We build interfaces that are clear, easy to navigate, and true to your brand on every screen.",
                 imageSrc: "/images/web-agency-2/phone-in-hand-3.jpg",
                 imageAlt: "PD Labs UI UX design",
               },
@@ -165,7 +165,7 @@ export default function WebAgency2Page() {
                 number: "04",
                 label: "Service 04",
                 title: "Brand Identity",
-                description: "Complete brand systems — logo, typography, colour, and collateral — built to resonate with your audience and hold up consistently across every touchpoint.",
+                description: "Full brand systems covering logo, typography, colour, and all your materials. Built to connect with your audience and stay consistent wherever your brand shows up.",
                 imageSrc: "/images/web-agency-2/pd-bcard.jpg",
                 imageAlt: "PD Labs brand identity",
               },
@@ -176,7 +176,7 @@ export default function WebAgency2Page() {
         <section id="portfolio">
           <FeatureCardTwentySix
             title="Selected Work"
-            description="A curated look at what we have built for ambitious clients."
+            description="A look at what we have built for clients who wanted real results."
             textboxLayout="default"
             useInvertedBackground={false}
             buttons={[{ text: "View All Work", href: "/portfolio" }]}
@@ -186,7 +186,7 @@ export default function WebAgency2Page() {
             features={[
               {
                 title: "Aether Labs Studios",
-                description: "Dark cinematic studio website with 3D visual language",
+                description: "Dark cinematic studio site with immersive 3D visuals",
                 imageSrc: "/images/web-agency-2/aetherlabs-screenshot.jpg",
                 imageAlt: "Aether Labs Studios website",
                 buttonIcon: ArrowUpRight,
@@ -202,7 +202,7 @@ export default function WebAgency2Page() {
               },
               {
                 title: "Luchy's Luxe",
-                description: "Premium luxury jewellery ecommerce storefront",
+                description: "Luxury jewellery ecommerce store",
                 imageSrc: "/images/web-agency-2/luchysluxe-screenshot.jpg",
                 imageAlt: "Luchys Luxe ecommerce store",
                 buttonIcon: ArrowUpRight,
@@ -210,7 +210,7 @@ export default function WebAgency2Page() {
               },
               {
                 title: "Hippo Voices",
-                description: "African voiceover talent marketplace platform",
+                description: "African voiceover talent marketplace",
                 imageSrc: "/images/web-agency-2/hippovoices-screenshot.jpg",
                 imageAlt: "Hippo Voices marketplace",
                 buttonIcon: ArrowUpRight,
@@ -229,14 +229,14 @@ export default function WebAgency2Page() {
         </section>
         <FeatureBento
           title="What You Get With PD Labs"
-          description="Every project we take on is built to the same high standard — no exceptions."
+          description="Every project we take on gets the same level of care and attention. No shortcuts."
           textboxLayout="default"
           useInvertedBackground={false}
           animationType="slide-up"
           features={[
             {
               title: "Responsive on Every Device",
-              description: "Every interface we build works flawlessly across mobile, tablet, and desktop — with zero layout breaks and no visual compromises.",
+              description: "Every site and app we build looks right on mobile, tablet, and desktop. Nothing breaks and nothing gets cut off.",
               bentoComponent: "phone",
               statusIcon: Lock,
               alertIcon: Monitor,
@@ -254,14 +254,14 @@ export default function WebAgency2Page() {
               ],
             },
             {
-              title: "Performance-First Builds",
-              description: "Optimised code, clean architecture, and fast load times — built to perform on Core Web Vitals and scale confidently as your business grows.",
+              title: "Fast by Default",
+              description: "Clean code, solid structure, and pages that load quickly. Built to score well on Core Web Vitals and grow with your business.",
               bentoComponent: "reveal-icon",
               icon: Shield,
             },
             {
               title: "Structured Delivery",
-              description: "From brief to launch in a clear, disciplined timeline. No surprises — you always know exactly what is happening and what is next.",
+              description: "We work to a clear timeline from brief to launch. You will always know where we are and what is coming next.",
               bentoComponent: "timeline",
               heading: "Project Launch",
               subheading: "Week 1",
@@ -273,8 +273,8 @@ export default function WebAgency2Page() {
               completedLabel: "Live",
             },
             {
-              title: "End-to-End Integration",
-              description: "We connect your product with payment systems, CRMs, analytics platforms, and APIs — so your full stack works seamlessly together from day one.",
+              title: "Full Stack Integration",
+              description: "We connect your product with payments, CRMs, analytics, and APIs so everything works together properly from day one.",
               bentoComponent: "orbiting-icons",
               centerIcon: Puzzle,
               items: [
@@ -285,8 +285,8 @@ export default function WebAgency2Page() {
               ],
             },
             {
-              title: "Outcomes Over Aesthetics",
-              description: "Every design decision is informed by user behaviour and business objectives. We build for real, measurable outcomes — not just great-looking screens.",
+              title: "Results That Matter",
+              description: "Every design choice is driven by how users actually behave and what your business needs. We build for results, not just screens that look good.",
               bentoComponent: "line-chart",
             },
           ]}
@@ -298,15 +298,15 @@ export default function WebAgency2Page() {
           <SceneDecorations preset="sparse" />
         <MetricCardOne
           title="Our Track Record"
-          description="Proven expertise in delivering high-impact digital solutions."
+          description="Here is what we have built and who we have worked with."
           textboxLayout="default"
           useInvertedBackground={false}
           gridVariant="uniform-all-items-equal"
           animationType="slide-up"
           metrics={[
-            { id: "projects", value: "50+", title: "Projects Delivered", description: "From startups to established brands, across industries and continents", icon: Award },
-            { id: "satisfaction", value: "98%", title: "Client Satisfaction", description: "Measured through direct client feedback and long-term repeat partnerships", icon: Users },
-            { id: "years", value: "5+", title: "Years of Excellence", description: "Delivering premium digital products with a consistent track record", icon: TrendingUp },
+            { id: "projects", value: "50+", title: "Projects Delivered", description: "Across industries, markets, and businesses of every size", icon: Award },
+            { id: "satisfaction", value: "98%", title: "Client Satisfaction", description: "Based on direct feedback and the number of clients who come back for more", icon: Users },
+            { id: "years", value: "5+", title: "Years in Business", description: "Delivering quality digital products with a track record to show for it", icon: TrendingUp },
           ]}
         />
         </div>
@@ -314,7 +314,7 @@ export default function WebAgency2Page() {
           <SceneDecorations preset="corners" />
           <FeatureCardSixteen
             title="Why Choose PD Labs"
-          description="The difference between a good agency and the right one comes down to craft, communication, and genuine investment in your results."
+          description="A good agency builds something. The right agency builds something that works for you. Here is the difference."
           textboxLayout="default"
           useInvertedBackground={false}
           animationType="slide-up"
@@ -322,18 +322,18 @@ export default function WebAgency2Page() {
             items: [
               "Template sites that look like everyone else",
               "Slow pages that cost you conversions",
-              "Mobile layouts that break the brand experience",
-              "Design made for portfolios, not client results",
-              "Delivered and forgotten with no post-launch support",
+              "Mobile layouts that look broken or inconsistent",
+              "Work designed to impress, not to perform",
+              "Handed over with no support after launch",
             ],
           }}
           positiveCard={{
             items: [
               "Custom design built for your brand and your goals",
-              "Performance optimised builds with fast load times",
-              "Mobile first and fully responsive on every screen",
-              "Strategy and data led decisions throughout every build",
-              "Ongoing partnership and support beyond launch day",
+              "Clean builds that load fast and run well",
+              "Fully responsive and tested on every screen size",
+              "Decisions backed by real user behaviour and business goals",
+              "Support and updates well beyond your launch date",
               "Transparent process from brief to deployment",
               ],
             }}
@@ -343,7 +343,7 @@ export default function WebAgency2Page() {
           <SceneDecorations preset="sparse" />
           <TeamCardFive
           title="Meet Our Team"
-          description="Talented professionals dedicated to your success."
+          description="The people who build your product."
           textboxLayout="default"
           useInvertedBackground={false}
           animationType="slide-up"
@@ -364,11 +364,11 @@ export default function WebAgency2Page() {
           useInvertedBackground={false}
           faqsAnimation="slide-up"
           faqs={[
-            { id: "1", title: "What can PD Labs build for me?", content: "We build custom websites, web apps, mobile apps, UI and UX design systems, and brand identity packages. Whether you need a high-converting landing page, a complex web platform, a Shopify store, or a full mobile product — we handle the complete scope from strategy through to launch." },
-            { id: "2", title: "How long does a typical project take?", content: "Most projects run between two and eight weeks depending on scope and complexity. A focused landing page can be live in two weeks. A full web platform or mobile app typically takes six to twelve weeks. We share a clear delivery timeline at the start of every engagement." },
-            { id: "3", title: "What happens after my project goes live?", content: "We offer dedicated post-launch support covering maintenance, updates, performance monitoring, and new feature development. Most clients continue working with us beyond the initial build — we become a long-term partner, not just a delivery vendor." },
-            { id: "4", title: "What technologies does PD Labs use?", content: "We build with Next.js, React, TypeScript, and Tailwind CSS for modern web products. We use Flutter for mobile apps and Shopify for ecommerce projects. We choose the right tool for each project rather than forcing a one-size-fits-all approach." },
-            { id: "5", title: "How do I start a project with PD Labs?", content: "Reach out via our contact page or email us directly at hello@pdlabs.io. Share what you are building, your goals, and your timeline. We review every enquiry personally and respond within 24 hours with a clear, honest perspective on how we can help." },
+            { id: "1", title: "What can PD Labs build for me?", content: "We build custom websites, web apps, mobile apps, UI and UX design systems, and brand identity packages. Whether you need a landing page, a full web platform, a Shopify store, or a mobile app, we handle the entire project from start to finish." },
+            { id: "2", title: "How long does a typical project take?", content: "It depends on what you are building. A landing page can be live in about two weeks. A full web platform or mobile app usually takes six to twelve weeks. We agree on a timeline at the start and stick to it." },
+            { id: "3", title: "What happens after my project goes live?", content: "We offer ongoing support covering maintenance, updates, performance checks, and new features. Most clients carry on working with us after the initial build. We are not the type to hand over the files and disappear." },
+            { id: "4", title: "What technologies does PD Labs use?", content: "For web, we use Next.js, React, TypeScript, and Tailwind CSS. For mobile apps we use Flutter, and for ecommerce we work with Shopify. We pick the right tool for the job rather than using the same stack on every project." },
+            { id: "5", title: "How do I start a project with PD Labs?", content: "Get in touch through the contact page or email us at hello@pdlabs.io. Tell us what you are building, what you are trying to achieve, and when you need it. We read every message personally and get back to you within 24 hours." },
           ]}
         />
         </div>
@@ -376,7 +376,7 @@ export default function WebAgency2Page() {
           <ContactCTA
             tag="Ready to Build?"
             title="Your Next Project Starts Here."
-            description="Tell us what you are building. We will review your brief personally and come back with a clear plan within 24 hours."
+            description="Tell us what you are working on. We read every message personally and come back with a clear plan within 24 hours."
             background={{ variant: "rotated-rays-animated" }}
             buttons={[
               { text: "Start Your Project", href: "/contact" },
