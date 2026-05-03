@@ -9,8 +9,21 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://pdlabshq.com"),
   title: "PD Labs - Custom Web Apps & Digital Design",
   description: "Premium digital solutions: custom web apps, UI & UX design, and brand identity. Transform your vision into reality.",
+  openGraph: {
+    title: "PD Labs - Custom Web Apps & Digital Design",
+    description: "Premium digital solutions: custom web apps, UI & UX design, and brand identity. Transform your vision into reality.",
+    url: "https://pdlabshq.com",
+    siteName: "PD Labs",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PD Labs - Custom Web Apps & Digital Design",
+    description: "Premium digital solutions: custom web apps, UI & UX design, and brand identity. Transform your vision into reality.",
+  },
 };
 
 export default function RootLayout({
