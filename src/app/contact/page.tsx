@@ -207,8 +207,8 @@ export default function ContactPage() {
                       {
                         icon:  <IconMail />,
                         label: "Email us",
-                        value: "hello@pdlabs.io",
-                        href:  "mailto:hello@pdlabs.io",
+                        value: "pdlabsteam@gmail.com",
+                        href:  "mailto:pdlabsteam@gmail.com",
                       },
                       {
                         icon:  <IconClock />,
