@@ -349,9 +349,9 @@ export default function WebAgency2Page() {
           animationType="slide-up"
           mediaClassName="object-[65%_center]"
           team={[
-            { id: "1", name: "Daniel.E Obi", role: "Founder & Lead Developer" },
-            { id: "2", name: "Phillip.I Osakwe", role: "UI & UX Design Director" },
-            { id: "3", name: "Emmanuel.O", role: "Full Stack Engineer" },
+            { id: "1", name: "Daniel.E Obi", role: "" },
+            { id: "2", name: "Phillip.I Osakwe", role: "" },
+            { id: "3", name: "Emmanuel.O", role: "" },
             ]}
           />
         </section>
