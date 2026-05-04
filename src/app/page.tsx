@@ -349,9 +349,9 @@ export default function WebAgency2Page() {
           animationType="slide-up"
           mediaClassName="object-[65%_center]"
           team={[
-            { id: "1", name: "Emmanuel O.", role: "Founder & Lead Developer", imageSrc: "/images/web-agency-2/dev-1.webp", imageAlt: "Founder and Lead Developer" },
-            { id: "2", name: "Creative Lead", role: "UI & UX Design Director", imageSrc: "/images/web-agency-2/team-1.webp", imageAlt: "UI UX Design Director" },
-            { id: "3", name: "Dev Team", role: "Full Stack Engineer", imageSrc: "/images/web-agency-2/dev-2.webp", imageAlt: "Full Stack Engineer" },
+            { id: "1", name: "Daniel.E Obi", role: "Founder & Lead Developer", imageSrc: "/images/web-agency-2/dev-1.webp", imageAlt: "Daniel E Obi" },
+            { id: "2", name: "Phillip.I Osakwe", role: "UI & UX Design Director", imageSrc: "/images/web-agency-2/team-1.webp", imageAlt: "Phillip I Osakwe" },
+            { id: "3", name: "Emmanuel.O", role: "Full Stack Engineer", imageSrc: "/images/web-agency-2/dev-2.webp", imageAlt: "Emmanuel O" },
             ]}
           />
         </section>
