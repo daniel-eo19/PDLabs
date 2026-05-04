@@ -17,7 +17,6 @@ export interface ContactFormData {
   email:       string;
   company:     string;
   projectType: string;
-  budget:      string;
   timeline:    string;
   message:     string;
 }
@@ -46,7 +45,7 @@ function isValidEmail(value: string): boolean {
 export async function submitContactForm(
   data: ContactFormData
 ): Promise<ContactResult> {
-  const { fullName, email, company, projectType, budget, timeline, message } = data;
+  const { fullName, email, company, projectType, timeline, message } = data;
 
   // — Front-line validation ——————————————————————————————————————————————————
   if (!sanitize(fullName) || !sanitize(email) || !sanitize(message)) {
@@ -68,7 +67,6 @@ export async function submitContactForm(
     email:       sanitize(email, 200),
     company:     sanitize(company, 200) || "—",
     projectType: sanitize(projectType, 100),
-    budget:      sanitize(budget, 100),
     timeline:    sanitize(timeline ?? "", 100),
     message:     sanitize(message, 5000),
   };
@@ -81,7 +79,6 @@ export async function submitContactForm(
     `Email:        ${clean.email}`,
     `Company:      ${clean.company}`,
     `Project Type: ${clean.projectType}`,
-    `Budget:       ${clean.budget}`,
     `Timeline:     ${clean.timeline}`,
     "",
     "Message:",
@@ -129,10 +126,6 @@ export async function submitContactForm(
               <tr>
                 <td style="padding:10px 0;border-bottom:1px solid #f0f0f0;color:#888;font-size:13px;vertical-align:top;">Project</td>
                 <td style="padding:10px 0;border-bottom:1px solid #f0f0f0;color:#0d0a0e;font-size:14px;">${clean.projectType}</td>
-              </tr>
-              <tr>
-                <td style="padding:10px 0;border-bottom:1px solid #f0f0f0;color:#888;font-size:13px;vertical-align:top;">Budget</td>
-                <td style="padding:10px 0;border-bottom:1px solid #f0f0f0;color:#0d0a0e;font-size:14px;">${clean.budget}</td>
               </tr>
               <tr>
                 <td style="padding:10px 0;color:#888;font-size:13px;vertical-align:top;">Timeline</td>
