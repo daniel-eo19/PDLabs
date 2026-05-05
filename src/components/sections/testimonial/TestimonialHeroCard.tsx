@@ -18,7 +18,7 @@ const TESTIMONIALS = [
       "PD Labs built our studio website from scratch and nailed the aesthetic. The dark feel, the 3D visuals, the animations, it all came together exactly as we pictured. The site is what brings most clients to us.",
     name: "Aether Labs Studios",
     handle: "@aetherlabsstudios",
-    avatarSrc: "/images/web-agency-2/dev-1.webp",
+    avatarSrc: "",
     avatarAlt: "Aether Labs Studios",
   },
   {
@@ -26,7 +26,7 @@ const TESTIMONIALS = [
       "We needed a site credible enough for corporate clients and government agencies. PD Labs built something clean, easy to use, and properly functional. Enquiries have gone up a lot since we launched.",
     name: "Vaness Integrated Resources",
     handle: "@vaness.org",
-    avatarSrc: "/images/web-agency-2/team-1.webp",
+    avatarSrc: "",
     avatarAlt: "Vaness Integrated Resources",
   },
   {
@@ -34,7 +34,7 @@ const TESTIMONIALS = [
       "We needed our Shopify store to feel as premium as the jewellery we sell. PD Labs delivered exactly that. Customers often tell us they love the site before they have even started browsing the collection.",
     name: "Luchy's Luxe",
     handle: "@luchysluxe",
-    avatarSrc: "/images/web-agency-2/dev-2.webp",
+    avatarSrc: "",
     avatarAlt: "Luchy's Luxe",
   },
   {
@@ -42,7 +42,7 @@ const TESTIMONIALS = [
       "PD Labs built us a platform we are genuinely proud of. The marketplace works well, the branding is bold, and the whole project was handled properly from start to finish. Exactly what we were looking for.",
     name: "Hippo Voices",
     handle: "@hippovoices.com",
-    avatarSrc: "/images/web-agency-2/dev-3.webp",
+    avatarSrc: "",
     avatarAlt: "Hippo Voices",
   },
 ] as const;
@@ -223,13 +223,15 @@ export default function TestimonialHeroCard() {
                 zIndex:       20,
               }}
             >
-              <Image
-                src={t.avatarSrc}
-                alt={t.avatarAlt}
-                fill
-                className="object-cover object-top"
-                sizes="96px"
-              />
+              {t.avatarSrc && (
+                <Image
+                  src={t.avatarSrc}
+                  alt={t.avatarAlt}
+                  fill
+                  className="object-cover object-top"
+                  sizes="96px"
+                />
+              )}
             </div>
 
             {/* Handle */}
